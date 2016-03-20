@@ -1,4 +1,3 @@
-#! python2
 from glob import glob
 
 project_name = "project"
@@ -10,7 +9,7 @@ include_dir = 'include/'
 local_libs = ['']
 
 ccflags = ['-Werror']
-ccflags.append('-std=c++11')
+# ccflags.append('-std=c++11')
 
 
 env = Environment(CC='gcc')
