@@ -29,6 +29,8 @@ for lib in local_libs:
 # env.Append(LIBS=['SDL2'])
 # env.Append(LIBPATH=['/usr/local/lib/'])
 
+env.Append(CCFLAGS='-L/usr/')
+
 print("cpppath: %s" % env['CPPPATH'])
 print("libs: %s" % env['LIBS'])
 print("libpath: %s" % env['LIBPATH'])
