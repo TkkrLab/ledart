@@ -29,7 +29,7 @@ void Network::transmit(uint8_t *data, size_t size, char *target)
     int res = sendto(this->sockfd, data, size, 0, (struct sockaddr *)&addr, sizeof(addr));
     if(res < 0)
     {
-        printf("Unable to set to socket.\n");
+        printf("Unable to send to socket.\n");
         exit(0);
     }
 }
