@@ -3,10 +3,11 @@ from glob import glob
 project_name = "project"
 build_dir = 'build/'
 src_dir = 'src/'
-lib_dir = 'lib/'
+lib_dir = 'libraries/'
 include_dir = 'include/'
 
-local_libs = ['']
+system_libs = []
+local_libs = []
 
 ccflags = ['-Werror']
 # ccflags.append('-std=c++11')
@@ -18,22 +19,26 @@ env.Append(CCFLAGS=ccflags)
 env.Append(CPPPATH=[include_dir])
 
 # run for local libs
-for lib in local_libs:
-    env.Append(CPPPATH=[lib_dir + lib + '/' + 'include/'])
-    env.Append(LIBS=[lib])
-    env.Append(LIBPATH=[lib_dir + lib + '/' + 'lib/'])
+if len(local_libs):
+    for lib in local_libs:
+        env.Append(CPPPATH=[lib_dir + lib + '/' + 'include/'])
+        env.Append(LIBPATH=[lib_dir + lib + '/' + 'lib/'])
+    print("cpppath: %s" % env['CPPPATH'])
+    print("libpath: %s" % env['LIBPATH'])
+
+# run for system libs
+if len(system_libs):
+    # run for system installed libs
+    for lib in system_libs:
+        env.Append(LIBS=[lib]);
+    print("libs: %s" % env['LIBS'])
 
 # sdl
 # env.Append(CCFLAGS='-L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,--no-undefined -lm -ldl -lpthread -lrt')
 # env.Append(CPPPATH=['/usr/local/include/SDL2/'])
 # env.Append(LIBS=['SDL2'])
 # env.Append(LIBPATH=['/usr/local/lib/'])
-
-env.Append(CCFLAGS='-L/usr/')
-
-print("cpppath: %s" % env['CPPPATH'])
-print("libs: %s" % env['LIBS'])
-print("libpath: %s" % env['LIBPATH'])
+# env.Append(CCFLAGS='-L/usr/')
 
 # collect source and make object names for them.
 obj_targets = []
@@ -49,3 +54,5 @@ for (obj_target, src_file) in zip(obj_targets, src_files):
     objects.append(env.Object(target=obj_target, source=src_file))
 
 env.Program(target=build_dir+project_name, source=objects)
+
+Clean('.', build_dir)
