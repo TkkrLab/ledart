@@ -38,9 +38,8 @@ void Network::transmit(uint8_t *data, size_t size, char *target)
   this function is what
   you should override to implement protocol specifics.
 */
-void Network::send(uint8_t *data, size_t size, char *target)
+void Network::send(Surface &surface, char *target)
 {
-    this->transmit(data, size, target);
 }
 
 void Network::set_port(uint16_t port)

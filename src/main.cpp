@@ -1,75 +1,16 @@
-#include <vector>
-#include <new>
 #include <stdio.h>
 #include <network.h>
-
-using std::vector;
+#include <surface.h>
 
 #define MATRIX_WIDTH 96
 #define MATRIX_HEIGHT 48
 
-char target[] = "10.42.3.12";
-
-class Surface
-{
-public:
-    Surface(int, int);
-    Surface(int, int, int, int);
-    void create(int, int);
-    ~Surface();
-    typedef vector<vector<vector<int> > > int_3array_t;
-private:
-    // 3D array vector for x, y, color;
-    static Surface::int_3array_t surface;
-    static int width;
-    static int height;
-    static int x;
-    static int y;
-    static int size;
-};
-
-Surface::int_3array_t Surface::surface;
-int Surface::width;
-int Surface::height;
-int Surface::x;
-int Surface::y;
-int Surface::size;
-
-Surface::Surface(int width, int height)
-{
-    this->width = width;
-    this->height = height;
-}
-
-Surface::Surface(int width, int height, int x, int y)
-{
-    this->width = width;
-    this->height = height;
-    this->x = x;
-    this->y = y;
-};
-
-void Surface::create(int width, int height)
-{
-    this->surface.resize(this->height);
-    int h;
-    for(h = 0; h < this->height; h++)
-    {
-        this->surface[h].resize(this->width);
-        int w;
-        for(w = 0; w < this->width; w++)
-        {
-            this->surface[h][w].resize(3);
-        }
-    }
-}
-
-Surface::~Surface(){};
+char target[] = "127.0.0.1";
 
 class Lmcp: public Network
 {
 public:
-    void send(uint8_t *, size_t, char *);
+    void send(Surface &, char *);
     void send_command(uint8_t);
 private:
     static const uint8_t WRITE_BUFF = 0x01;
@@ -88,56 +29,16 @@ void Lmcp::send_command(uint8_t command)
     transmit(data, 1, target);
 }
 
-void Lmcp::send(uint8_t *image, size_t size, char *target)
+void Lmcp::send(Surface &surf, char *target)
 {
-    static uint8_t x, y, width, height;
-    static uint8_t data[MAX_UDP_PACKETSIZE];
-    // 5 bytes are used for command bytes.
-    // so if image is bigger then what fits a udp packet.
-    // then we have some magic to figure out.
-    if(size > (MAX_UDP_PACKETSIZE - 5))
-    {
-        return;
-    }
-    else
-    {
-        // setup first part of packet.
-        data[0] = DRAW_IMG_RECT;
-        data[1] = x;
-        data[2] = y;
-        data[3] = MATRIX_WIDTH;
-        data[4] = MATRIX_HEIGHT;
-
-        printf("Draw_IMG_RECT: %d\n"
-               "x:%d\n"
-               "y:%d\n"
-               "width:%d\n"
-               "height:%d\n",
-               data[0],
-               data[1],
-               data[2],
-               data[3],
-               data[4]);
-
-        // copy in our data.
-        int i;
-        for(i = 0;i < size; i++)
-        {
-            data[i+5] = image[i];
-            printf("|%d:%d:%d|\n", i, i + 5, data[i+5]);
-        }
-        // transmit data and display it on the ledboard.
-        transmit(data, size, target);
-        send_command(WRITE_BUFF);
-    }
 }
 
-void networkTest()
-{
-    Network net = Network();
-    uint8_t data[1024] = {0x02};
-    net.send(data, 1024, target);
-}
+// void networkTest()
+// {
+//     Network net = Network();
+//     uint8_t data[1024] = {0x02};
+//     net.send(data, 1024, target);
+// }
 
 int main(int argc, char **argv)
 {
@@ -152,18 +53,56 @@ int main(int argc, char **argv)
 
     // lmcp.send(data, 1019, target);
 
-    Network net = Network();
+    // Network net = Network();
     static uint8_t clear[1024] = {0x02};
     static uint8_t writeout[1024] = {0x01};
-    static uint8_t data[6] = {0x11, 0, 0, 1, 1, 0xff};
+    static uint8_t data[(31 * 31) + 5] = {0x11, 0, 0, 1, 1, 0xff};
 
-    net.send(clear, 1, target);
-    net.send(data, 6, target);
-    net.send(writeout, 1, target);
-    net.send(writeout, 1, target);
-    net.send(writeout, 1, target);
-    net.send(writeout, 1, target);
-    net.send(writeout, 1, target);
+    // net.send(clear, 1, target);
+    // net.send(data, 6, target);
+    // net.send(writeout, 1, target);
+    // net.send(writeout, 1, target);
+    // net.send(writeout, 1, target);
+    // net.send(writeout, 1, target);
+    // net.send(writeout, 1, target);
     // networkTest();
+
+    Network net = Network();
+    Surface surf = Surface(31, 31);
+    int white[] = {0xff, 0xff, 0xff};
+    int color[3];
+
+    rect_t surf_rect = surf.get_rect();
+    data[0] = 0x11;
+    data[1] = surf_rect.x;
+    data[2] = surf_rect.y;
+    data[3] = surf_rect.width;
+    data[4] = surf_rect.height;
+    
+    // int i;
+    // for(i = 0; i < 31; i++)
+    //     surf.write_pixel(i, i, white);
+    for(int x = 0; x < surf_rect.width; x++)
+    {
+        for(int y = 0; y < surf_rect.height; y++)
+        {
+            surf.write_pixel(x, y, white);
+        }
+    }
+
+    size_t p = 5;
+    for(int x = 0; x < surf_rect.width; x++)
+    {
+        for(int y = 0; y < surf_rect.height; y++)
+        {
+            surf.read_pixel(x, y, color);
+            data[p] = (color[0] + color[1] + color[2]) / 3;
+            p++;
+        }
+    }
+    net.transmit(clear, 1, target);
+    net.transmit(data, (31 * 31 + 5), target);
+    net.transmit(writeout, 1, target);
+    // net.send
     return 0;
 }
