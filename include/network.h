@@ -17,8 +17,8 @@ public:
     Network(uint16_t port=1337);
     ~Network();
     void open();
-    void transmit(uint8_t*, size_t size, char*);
-    virtual void send(uint8_t*, size_t size, char*);
+    void transmit(uint8_t*, size_t, char*);
+    virtual void send(uint8_t*, size_t, char*);
     void set_port(uint16_t);
     uint16_t get_port();
 private:

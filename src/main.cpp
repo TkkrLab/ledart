@@ -1,10 +1,70 @@
+#include <vector>
+#include <new>
 #include <stdio.h>
 #include <network.h>
+
+using std::vector;
 
 #define MATRIX_WIDTH 96
 #define MATRIX_HEIGHT 48
 
 char target[] = "10.42.3.12";
+
+class Surface
+{
+public:
+    Surface(int, int);
+    Surface(int, int, int, int);
+    void create(int, int);
+    ~Surface();
+    typedef vector<vector<vector<int> > > int_3array_t;
+private:
+    // 3D array vector for x, y, color;
+    static Surface::int_3array_t surface;
+    static int width;
+    static int height;
+    static int x;
+    static int y;
+    static int size;
+};
+
+Surface::int_3array_t Surface::surface;
+int Surface::width;
+int Surface::height;
+int Surface::x;
+int Surface::y;
+int Surface::size;
+
+Surface::Surface(int width, int height)
+{
+    this->width = width;
+    this->height = height;
+}
+
+Surface::Surface(int width, int height, int x, int y)
+{
+    this->width = width;
+    this->height = height;
+    this->x = x;
+    this->y = y;
+};
+
+void Surface::create(int width, int height)
+{
+    this->surface.resize(this->height);
+    int h;
+    for(h = 0; h < this->height; h++)
+    {
+        this->surface[h].resize(this->width);
+        int w;
+        for(w = 0; w < this->width; w++)
+        {
+            this->surface[h][w].resize(3);
+        }
+    }
+}
+
+Surface::~Surface(){};
 
 class Lmcp: public Network
 {
