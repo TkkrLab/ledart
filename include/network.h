@@ -9,6 +9,8 @@
 #include <stdint.h>
 #include <string.h>
 
+#define MAX_UDP_PACKETSIZE 1024
+
 class Network
 {
 public:

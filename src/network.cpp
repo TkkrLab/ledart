@@ -46,6 +46,7 @@ void Network::send(uint8_t *data, size_t size, char *target)
 void Network::set_port(uint16_t port)
 {
     this->port = port;
+    this->addr.sin_port = port;
 }
 
 uint16_t Network::get_port()
