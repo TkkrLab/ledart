@@ -63,4 +63,7 @@ int *Surface::get_surface()
     return this->surface;
 }
 
-Surface::~Surface(){};
+Surface::~Surface()
+{
+    delete[] this->surface;
+};

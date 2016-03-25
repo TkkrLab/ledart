@@ -9,11 +9,11 @@ void test_surface(char *target)
 {
     Surface surf = Surface(31, 31);
     int white[] = {0xff, 0xff, 0xff};
-    int color[3];
 
     for(int i = 0; i < 31; i++)
     {
-        surf.write_pixel(i, i/2, white);
+        surf.write_pixel(i, i / 2, white);
+        surf.write_pixel(i / 2, i, white);
     }
 
     Lmcp lmcp = Lmcp();
