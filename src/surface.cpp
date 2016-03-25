@@ -1,6 +1,6 @@
 #include "surface.h"
 
-int ***Surface::surface;
+int *Surface::surface;
 rect_t Surface::rect;
 
 Surface::Surface(int width, int height)
@@ -19,41 +19,38 @@ Surface::Surface(int width, int height, int x, int y)
     this->create_surface();
 };
 
+// cordinate (x, y, z) to 1D pos
+// z == color.
+size_t Surface::ctop(int x, int y, int z)
+{
+    return (x*this->rect.width*this->rect.height+y*this->rect.width+z);
+}
+
 void Surface::write_pixel(int x, int y, int *color)
 {
-    this->surface[x][y][0] = color[0];
-    this->surface[x][y][1] = color[1];
-    this->surface[x][y][2] = color[2];
+    // get index for color.
+    int index = this->ctop(x, y, 0);
+
+    this->surface[index] = color[0];
+    this->surface[index + 1] = color[1];
+    this->surface[index + 2] = color[2];
 }
 
 void Surface::read_pixel(int x, int y, int *color)
 {
-    // return this->surface[x][y];
-    color[0] = this->surface[x][y][0];
-    color[1] = this->surface[x][y][1];
-    color[2] = this->surface[x][y][2];
+    // get base index.
+    int index = this->ctop(x, y, 0);
+
+    color[0] = this->surface[index];
+    color[1] = this->surface[index + 1];
+    color[2] = this->surface[index + 2];
 }
 
 void Surface::create_surface()
 {
-    int x, y, width, height;
-    x = this->rect.x;
-    y = this->rect.y;
-    width = this->rect.width;
-    height = this->rect.height;
-
-    this->surface = new int**[width];
-    for(int x = 0; x < width; x++){
-       this->surface[x] = new int*[height];
-       
-       for(int y = 0; y < height; y++){
-           this->surface[x][y] = new int[3];
-           
-           for(int z = 0; z < 3; z++){
-              this->surface[x][y][z] = 0;
-           }
-       }
-    }
+    this->rect.size = (this->rect.width * this->rect.height);
+    // 3 colors. depth is 3.
+    this->surface = new int[this->rect.size * 3];
 }
 
 rect_t Surface::get_rect()
@@ -61,7 +58,7 @@ rect_t Surface::get_rect()
     return this->rect;
 }
 
-int ***Surface::get_surface()
+int *Surface::get_surface()
 {
     return this->surface;
 }

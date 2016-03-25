@@ -2,9 +2,8 @@
 #define __SURFACE_H__
 
 #include <stdint.h>
-#include <vector>
-
-using std::vector;
+#include <stdlib.h>
+#include <new>
 
 typedef struct
 {
@@ -12,7 +11,7 @@ typedef struct
     int y;
     int width;
     int height;
-    int size;
+    size_t size;
 } rect_t;
 
 class Surface
@@ -22,13 +21,14 @@ public:
     Surface(int, int, int, int);
     void create_surface();
     rect_t get_rect();
-    int ***get_surface();
+    int *get_surface();
     void write_pixel(int, int, int *);
     void read_pixel(int, int, int *);
+    size_t ctop(int, int, int );
     ~Surface();
 private:
     // 3D array vector for x, y, color;
-    static int ***surface;
+    static int *surface;
     static rect_t rect;
 };
 
