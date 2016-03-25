@@ -1,13 +1,31 @@
 #include <stdio.h>
+#include <SDL2/SDL.h>
+
 #include <lmcp.h>
 #include <surface.h>
 
-#define MATRIX_WIDTH 96
-#define MATRIX_HEIGHT 48
+const int MATRIX_WIDTH = 96;
+const int MATRIX_HEIGHT = 48;
 
-void test_surface(char *target)
+class Graphics: public Surface
 {
-    Surface surf = Surface(31, 31);
+public:
+    Graphics(int, int);
+    Graphics(int, int, int, int);
+private:
+};
+
+Graphics::Graphics(int width, int height):Surface(width, height)
+{
+}
+
+Graphics::Graphics(int width, int height, int x, int y):Surface(width, height, x, y)
+{
+}
+
+inline void test_surface(char *target)
+{
+    Surface surf = Graphics(31, 31);
     int white[] = {0xff, 0xff, 0xff};
 
     for(int i = 0; i < 31; i++)
@@ -22,7 +40,7 @@ void test_surface(char *target)
 
 int main(int argc, char **argv)
 {
-    char target[] = "127.0.0.1";
+    char target[] = "10.42.3.12";
 
     test_surface(target);
 

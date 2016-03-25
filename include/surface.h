@@ -27,7 +27,6 @@ public:
     size_t ctop(int, int, int );
     ~Surface();
 private:
-    // 3D array vector for x, y, color;
     static int *surface;
     static rect_t rect;
 };
