@@ -7,6 +7,7 @@ Surface::Surface(int width, int height)
 {
     this->rect.width = width;
     this->rect.height = height;
+    this->rect.size = (this->rect.width * this->rect.height);
     this->create_surface();
 }
 
@@ -16,6 +17,7 @@ Surface::Surface(int width, int height, int x, int y)
     this->rect.height = height;
     this->rect.x = x;
     this->rect.y = y;
+    this->rect.size = (this->rect.width * this->rect.height);
     this->create_surface();
 };
 
@@ -48,7 +50,6 @@ void Surface::read_pixel(int x, int y, int *color)
 
 void Surface::create_surface()
 {
-    this->rect.size = (this->rect.width * this->rect.height);
     // 3 colors. depth is 3.
     this->surface = new int[this->rect.size * 3];
 }
@@ -65,5 +66,8 @@ int *Surface::get_surface()
 
 Surface::~Surface()
 {
-    delete[] this->surface;
+    if(this->surface)
+    {
+        delete[] this->surface;
+    }
 };
