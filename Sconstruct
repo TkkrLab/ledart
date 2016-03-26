@@ -6,7 +6,7 @@ src_dir = 'src/'
 lib_dir = 'libraries/'
 include_dir = 'include/'
 
-system_libs = ['SDL2']
+system_libs = []
 local_libs = []
 
 ccflags = ['-Werror']
