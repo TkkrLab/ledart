@@ -1,4 +1,5 @@
 #include "lmcp.h"
+#include <unistd.h>
 
 void Lmcp::send_command(uint8_t command, char *target)
 {
@@ -27,6 +28,9 @@ void Lmcp::send(Surface &surf, char *target)
     width = surf_rect.width;
     height = surf_rect.height;
 
+    // for debugging send clear.
+    this->send_command(this->CLEAR, target);
+
     if(size < (1024 - 5))
     {
         packet[0] = this->DRAW_IMG_RECT;
@@ -45,13 +49,48 @@ void Lmcp::send(Surface &surf, char *target)
                 point++;
             }
         }
-        // for debugging send clear.
-        this->send_command(this->CLEAR, target);
         transmit(packet, point, target);
         this->send_command(this->WRITE_BUFF, target);
     }
     else
     {
+        packet[0] = this->DRAW_IMG_RECT;
+        packet[1] = x;
+        packet[2] = y;
+        packet[3] = width;
+        packet[4] = height;
+        int surf_index;
+        int count = 0;
+        int ci = 0;
+
+        // for(int line = 0, py = 0; line < size; line += width, py++)
+        // {
+        //     for(int px = 0; px < width); px++)
+        //     {
+        //         ci = surf.ctop(px, py);
+        //         printf("px, py, ci: %d, %d, %d\n", px, py, ci);
+        //     }
+        // }
+        // int px;
+        // for(int line = 0, py = 0; line < size; line += width, py++)
+        // {
+        //     for(px = 0; px < width; px++)
+        //     {
+        //         // ci = surf.ctop(px, py);
+        //         RGBColor_t color;
+        //         surf.read_pixel(px, py, &color);
+        //         packet[px + 5] = (color.red + color.green + color.blue) / 3;
+        //     }
+        //     packet[1] = x;
+        //     packet[2] = py;
+        //     packet[3] = width;
+        //     packet[4] = 1;
+        //     printf("py: %d\n", py);
+        //     transmit(packet, width + 5, target);
+        //     usleep(30000);
+        //     this->send_command(this->WRITE_BUFF, target);
+        // }
+        
         return;
     }
 

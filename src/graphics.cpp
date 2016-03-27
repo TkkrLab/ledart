@@ -33,6 +33,7 @@ void Graphics::yLine(int x, int y1, int y2, RGBColor_t color)
     }
 }
 
+// making inner 0 and outer radius you can fill the whole circle.
 void Graphics::draw_circle(int xc, int yc, int inner, int outer, RGBColor_t color)
 {
     int xo = outer;
@@ -98,23 +99,34 @@ void Graphics::draw_line(int x0, int y0, int x1, int y1, int wd, RGBColor_t colo
    }
 }
 
+// setting thickness to 0 fills the rect.
 void Graphics::draw_rect(int x, int y, int width, int height, int thickness, RGBColor_t color)
 {
-    for(int xo = 0; xo < thickness; xo++)
+    if(thickness <= 0)
     {
-        for(int yo = 0; yo < thickness; yo++)
+        for(int yo = 0; yo < height; yo++)
         {
-            // upper line
             this->draw_line(x, y + yo, x + width - 1, y + yo, 0, color);
+        }
+    }
+    else
+    {
+        for(int xo = 0; xo < thickness; xo++)
+        {
+            for(int yo = 0; yo < thickness; yo++)
+            {
+                // upper line
+                this->draw_line(x, y + yo, x + width - 1, y + yo, 0, color);
 
-            // lower line
-            this->draw_line(x, y + height - 1 - yo, x + width - 1, y + height - 1 - yo, 0, color);
+                // lower line
+                this->draw_line(x, y + height - 1 - yo, x + width - 1, y + height - 1 - yo, 0, color);
 
-            // left line
-            this->draw_line(x + xo, y, x + xo, y + height - 1, 0, color);
+                // left line
+                this->draw_line(x + xo, y, x + xo, y + height - 1, 0, color);
 
-            // right line
-            this->draw_line(x + width - 1 - xo, y, x + width - 1 - xo, y + height - 1, 0, color);
+                // right line
+                this->draw_line(x + width - 1 - xo, y, x + width - 1 - xo, y + height - 1, 0, color);
+            }
         }
     }
 }
