@@ -9,23 +9,23 @@ const int MATRIX_HEIGHT = 48;
 
 void test_surface(char *target)
 {
-    Graphics graphics = Graphics(31, 31);
-    int white[] = {0xff, 0xff, 0xff};
+    Graphics graphics = Graphics(MATRIX_WIDTH, MATRIX_HEIGHT);
+    RGBColor_t white = {0xff, 0xff, 0xff, 0};
 
     int radius = 10;
-    // graphics.draw_circle(31/2, 31/2, radius, radius, white);
+    graphics.draw_circle(radius, radius, radius, radius, white);
 
-    // graphics.draw_line(0, 0, 31, 31, 2, white);
+    graphics.draw_line(0, 0, MATRIX_WIDTH, MATRIX_HEIGHT, 2, white);
     int x, y, width, height;
-    width = 31 / 2;
-    height = 31 / 2;
+    width = MATRIX_WIDTH / 2;
+    height = MATRIX_HEIGHT / 2;
     x = (width) - (width / 2);
     y = (height) - (height / 2);
     graphics.draw_rect(x, y, width, height, 2, white);
 
-    graphics.draw_rect(0, 0, 31, 31, 1, white);
+    graphics.draw_rect(0, 0, MATRIX_WIDTH, MATRIX_HEIGHT, 1, white);
 
-    graphics.draw_pixel(31, 31, white);
+    graphics.draw_pixel(MATRIX_WIDTH, MATRIX_HEIGHT, white);
 
     Lmcp lmcp = Lmcp();
     lmcp.send(graphics, target);

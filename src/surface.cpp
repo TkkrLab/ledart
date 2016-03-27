@@ -1,6 +1,6 @@
 #include "surface.h"
 
-int *Surface::surface;
+RGBColor_t *Surface::surface;
 rect_t Surface::rect;
 
 Surface::Surface(int width, int height)
@@ -23,35 +23,32 @@ Surface::Surface(int width, int height, int x, int y)
 
 // cordinate (x, y, z) to 1D pos
 // z == color.
-size_t Surface::ctop(int x, int y, int z)
+size_t Surface::ctop(int x, int y)
 {
-    return (x*this->rect.width*this->rect.height+y*this->rect.width+z);
+    return (y * (this->rect.width)) + x;
 }
 
-void Surface::write_pixel(int x, int y, int *color)
+void Surface::write_pixel(int x, int y, RGBColor_t color)
 {
     // get index for color.
-    int index = this->ctop(x, y, 0);
-
-    this->surface[index] = color[0];
-    this->surface[index + 1] = color[1];
-    this->surface[index + 2] = color[2];
+    int index = this->ctop(x, y);
+    this->surface[index] = color;
 }
 
-void Surface::read_pixel(int x, int y, int *color)
+void Surface::read_pixel(int x, int y, RGBColor_t *color)
 {
     // get base index.
-    int index = this->ctop(x, y, 0);
-
-    color[0] = this->surface[index];
-    color[1] = this->surface[index + 1];
-    color[2] = this->surface[index + 2];
+    int index = this->ctop(x, y);
+    color->red = this->surface[index].red;
+    color->green = this->surface[index].green;
+    color->blue = this->surface[index].blue;
+    color->alpha = this->surface[index].alpha;
 }
 
 void Surface::create_surface()
 {
     // 3 colors. depth is 3.
-    this->surface = new int[this->rect.size * 3];
+    this->surface = new RGBColor_t[this->rect.size];
 }
 
 rect_t Surface::get_rect()
@@ -59,7 +56,7 @@ rect_t Surface::get_rect()
     return this->rect;
 }
 
-int *Surface::get_surface()
+RGBColor_t *Surface::get_surface()
 {
     return this->surface;
 }

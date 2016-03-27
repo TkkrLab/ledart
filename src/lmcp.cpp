@@ -16,7 +16,7 @@ void Lmcp::send(Surface &surf, char *target)
     static int width;
     static int height;
     static int point;
-    static int color[3];
+    static RGBColor_t color;
     static uint8_t packet[MAX_UDP_PACKETSIZE];
     static rect_t surf_rect;
 
@@ -40,11 +40,13 @@ void Lmcp::send(Surface &surf, char *target)
         {
             for(int py = 0; py < height; py++)
             {
-                surf.read_pixel(py, px, color);
-                packet[point] = (color[0] + color[1] + color[2]) / 3;
+                surf.read_pixel(py, px, &color);
+                packet[point] = (color.red + color.green + color.blue) / 3;
                 point++;
             }
         }
+        // for debugging send clear.
+        this->send_command(this->CLEAR, target);
         transmit(packet, point, target);
         this->send_command(this->WRITE_BUFF, target);
     }

@@ -11,6 +11,8 @@ local_libs = []
 
 ccflags = ['-Werror']
 # ccflags.append('-std=c++11')
+# for debugging symbols.
+ccflags.append('-g')
 
 
 env = Environment(CC='gcc')

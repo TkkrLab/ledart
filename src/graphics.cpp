@@ -10,12 +10,12 @@ Graphics::Graphics(int width, int height, int x, int y)
 {
 }
 
-void Graphics::draw_pixel(int x, int y, int *color)
+void Graphics::draw_pixel(int x, int y, RGBColor_t color)
 {
     Surface::write_pixel(x, y, color);
 }
 
-void Graphics::xLine(int x1, int x2, int y, int *color)
+void Graphics::xLine(int x1, int x2, int y, RGBColor_t color)
 {
     while (x1 <= x2)
     {
@@ -24,7 +24,7 @@ void Graphics::xLine(int x1, int x2, int y, int *color)
     }
 }
 
-void Graphics::yLine(int x, int y1, int y2, int *color)
+void Graphics::yLine(int x, int y1, int y2, RGBColor_t color)
 {
     while (y1 <= y2)
     {
@@ -33,7 +33,7 @@ void Graphics::yLine(int x, int y1, int y2, int *color)
     }
 }
 
-void Graphics::draw_circle(int xc, int yc, int inner, int outer, int *color)
+void Graphics::draw_circle(int xc, int yc, int inner, int outer, RGBColor_t color)
 {
     int xo = outer;
     int xi = inner;
@@ -73,7 +73,7 @@ void Graphics::draw_circle(int xc, int yc, int inner, int outer, int *color)
     }
 }
 
-void Graphics::draw_line(int x0, int y0, int x1, int y1, int wd, int *color)
+void Graphics::draw_line(int x0, int y0, int x1, int y1, int wd, RGBColor_t color)
 {                                    /* plot an anti-aliased line of width wd */
    int dx = abs(x1-x0), sx = x0 < x1 ? 1 : -1; 
    int dy = abs(y1-y0), sy = y0 < y1 ? 1 : -1; 
@@ -98,7 +98,7 @@ void Graphics::draw_line(int x0, int y0, int x1, int y1, int wd, int *color)
    }
 }
 
-void Graphics::draw_rect(int x, int y, int width, int height, int thickness, int *color)
+void Graphics::draw_rect(int x, int y, int width, int height, int thickness, RGBColor_t color)
 {
     for(int xo = 0; xo < thickness; xo++)
     {
