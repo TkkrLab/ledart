@@ -25,13 +25,16 @@ void Network::open()
 
 void Network::transmit(uint8_t *data, size_t size, char *target)
 {
+    // this->open();
     inet_pton(AF_INET, target, &(this->addr.sin_addr));
-    int res = sendto(this->sockfd, data, size, 0, (struct sockaddr *)&addr, sizeof(addr));
+    int res = sendto(this->sockfd, data, size, MSG_DONTWAIT,
+                     (struct sockaddr *)&addr, sizeof(addr));
     if(res < 0)
     {
         printf("Unable to send to socket.\n");
         exit(0);
     }
+    // close(this->sockfd);
 }
 
 /*
@@ -55,5 +58,5 @@ uint16_t Network::get_port()
 
 Network::~Network()
 {
-    shutdown(this->sockfd, 2);
+    close(this->sockfd);
 }

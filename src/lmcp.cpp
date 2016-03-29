@@ -1,5 +1,4 @@
 #include "lmcp.h"
-#include <unistd.h>
 
 void Lmcp::send_command(uint8_t command, char *target)
 {
@@ -29,7 +28,7 @@ void Lmcp::send(Surface &surf, char *target)
     height = surf_rect.height;
 
     // for debugging send clear.
-    this->send_command(this->CLEAR, target);
+    // this->send_command(this->CLEAR, target);
 
     if(size < (1024 - 5))
     {
@@ -92,10 +91,10 @@ void Lmcp::send(Surface &surf, char *target)
 
             transmit(packet, (width * i) + 5, target);
             // printf("packet size: %d\n", (width * i) + 5);
-            this->send_command(this->WRITE_BUFF, target);
-            // printf("py: %d\n", py);
         }
         
+        this->send_command(this->WRITE_BUFF, target);
+        // printf("py: %d\n", py);
         return;
     }
 
