@@ -1,10 +1,14 @@
 from glob import glob
+import os
+import fnmatch
 
 project_name = "project"
 build_dir = 'build/'
+
 src_dir = 'src/'
-lib_dir = 'libraries/'
 include_dir = 'include/'
+
+lib_dir = 'libraries/'
 
 system_libs = []
 local_libs = []
@@ -20,13 +24,17 @@ env = Environment(CC='gcc')
 env.Append(CCFLAGS=ccflags)
 env.Append(CPPPATH=[include_dir])
 
+# add all the directories in include
+for root, dirnames, filenames in os.walk(include_dir):
+    for dirname in dirnames:
+        path = os.path.join(root, dirname)
+        env.Append(CPPPATH=[path])
+
 # run for local libs
 if len(local_libs):
     for lib in local_libs:
         env.Append(CPPPATH=[lib_dir + lib + '/' + 'include/'])
         env.Append(LIBPATH=[lib_dir + lib + '/' + 'lib/'])
-    print("cpppath: %s" % env['CPPPATH'])
-    print("libpath: %s" % env['LIBPATH'])
 
 # run for system libs
 if len(system_libs):
@@ -35,21 +43,16 @@ if len(system_libs):
         env.Append(LIBS=[lib]);
     print("libs: %s" % env['LIBS'])
 
-# sdl
-# env.Append(CCFLAGS='-L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -Wl,--no-undefined -lm -ldl -lpthread -lrt')
-# env.Append(CPPPATH=['/usr/local/include/SDL2/'])
-# env.Append(LIBS=['SDL2'])
-# env.Append(LIBPATH=['/usr/local/lib/'])
-# env.Append(CCFLAGS='-L/usr/')
-
 # collect source and make object names for them.
 obj_targets = []
-src_files = glob(src_dir + '*.cpp')
+src_files = []
+for root, dirnames, filenames in os.walk(src_dir):
+    for filename in fnmatch.filter(filenames, '*.cpp'):
+        src_files.append(os.path.join(root, filename))
+
 for src in src_files:
     target = src.replace('.cpp', '.o')
     obj_targets.append(build_dir + target)
-
-# print("obj_target: %s, src_files: %s \n" % (str(obj_targets), str(src_files)))
 
 objects = []
 for (obj_target, src_file) in zip(obj_targets, src_files):
@@ -58,3 +61,9 @@ for (obj_target, src_file) in zip(obj_targets, src_files):
 env.Program(target=build_dir+project_name, source=objects)
 
 Clean('.', build_dir)
+
+if 'CPPPATH' in env:
+    print("cpppath: %s" % env['CPPPATH'])
+if 'LIBPATH' in env:
+    print("libpath: %s" % env['LIBPATH'])
+# print("obj_target: %s, src_files: %s \n" % (str(obj_targets), str(src_files)))
