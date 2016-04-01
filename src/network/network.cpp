@@ -3,7 +3,6 @@
 Network::Network(uint16_t port)
 {
     this->port = port;
-    printf("port: %d\n", port);
     this->open();
 }
 

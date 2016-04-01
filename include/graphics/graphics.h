@@ -10,6 +10,7 @@
 class Graphics: public Surface
 {
 public:
+    Graphics();
     Graphics(int, int);
     Graphics(int, int, int, int);
 

@@ -1,0 +1,43 @@
+==27170== Memcheck, a memory error detector
+==27170== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==27170== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==27170== Command: build/project
+==27170== 
+==27170== Invalid free() / delete / delete[] / realloc()
+==27170==    at 0x4C2C5B4: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27170==    by 0x400EE2: Surface::~Surface() (surface.cpp:85)
+==27170==    by 0x400B97: Graphics::~Graphics() (graphics.h:10)
+==27170==    by 0x5708C37: __run_exit_handlers (in /usr/lib/libc-2.23.so)
+==27170==    by 0x5708C84: exit (in /usr/lib/libc-2.23.so)
+==27170==    by 0x56F3716: (below main) (in /usr/lib/libc-2.23.so)
+==27170==  Address 0x5a860c0 is 0 bytes inside a block of size 18,432 free'd
+==27170==    at 0x4C2C5B4: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27170==    by 0x400EE2: Surface::~Surface() (surface.cpp:85)
+==27170==    by 0x400B97: Graphics::~Graphics() (graphics.h:10)
+==27170==    by 0x400BBF: BouncingDot::~BouncingDot() (main.cpp:47)
+==27170==    by 0x400B6A: main (main.cpp:99)
+==27170==  Block was alloc'd at
+==27170==    at 0x4C2B77D: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27170==    by 0x400E46: Surface::create_surface() (surface.cpp:66)
+==27170==    by 0x400C6F: Surface::Surface(int, int) (surface.cpp:21)
+==27170==    by 0x400F5D: Graphics::Graphics(int, int) (graphics.cpp:12)
+==27170==    by 0x401901: __static_initialization_and_destruction_0(int, int) (GraphicsTest.cpp:7)
+==27170==    by 0x40192B: _GLOBAL__sub_I_lmcp (GraphicsTest.cpp:49)
+==27170==    by 0x401EFC: __libc_csu_init (in /home/robert/ledart/build/project)
+==27170==    by 0x56F369E: (below main) (in /usr/lib/libc-2.23.so)
+==27170== 
+==27170== 
+==27170== HEAP SUMMARY:
+==27170==     in use at exit: 72,704 bytes in 1 blocks
+==27170==   total heap usage: 3 allocs, 3 frees, 92,160 bytes allocated
+==27170== 
+==27170== LEAK SUMMARY:
+==27170==    definitely lost: 0 bytes in 0 blocks
+==27170==    indirectly lost: 0 bytes in 0 blocks
+==27170==      possibly lost: 0 bytes in 0 blocks
+==27170==    still reachable: 72,704 bytes in 1 blocks
+==27170==         suppressed: 0 bytes in 0 blocks
+==27170== Rerun with --leak-check=full to see details of leaked memory
+==27170== 
+==27170== For counts of detected and suppressed errors, rerun with: -v
+==27170== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

@@ -1,5 +1,13 @@
 #include "graphics.h"
 
+#include <stdio.h>
+
+Graphics::Graphics()
+:Surface()
+{
+  printf("hero\n");
+}
+
 Graphics::Graphics(int width, int height)
 :Surface(width, height)
 {

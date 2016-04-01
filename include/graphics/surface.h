@@ -26,14 +26,21 @@ typedef struct
 class Surface
 {
 public:
+    Surface();
     Surface(int, int);
     Surface(int, int, int, int);
     void create_surface();
+
     rect_t get_rect();
     RGBColor_t *get_surface();
+
     void write_pixel(int, int, RGBColor_t);
     void read_pixel(int, int, RGBColor_t *);
     size_t ctop(int, int);
+
+    // virtual generate for derived classes that override.
+    virtual void generate();
+
     ~Surface();
 private:
     static RGBColor_t *surface;

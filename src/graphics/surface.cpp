@@ -1,7 +1,17 @@
 #include "surface.h"
+#include <stdio.h>
 
-RGBColor_t *Surface::surface;
+RGBColor_t *Surface::surface = NULL;
 rect_t Surface::rect;
+
+Surface::Surface()
+{
+    this->rect.width = 0;
+    this->rect.height = 0;
+    this->rect.x = 0;
+    this->rect.y = 0;
+    this->rect.size = (this->rect.width * this->rect.height);
+}
 
 Surface::Surface(int width, int height)
 {
@@ -45,9 +55,14 @@ void Surface::read_pixel(int x, int y, RGBColor_t *color)
     color->alpha = this->surface[index].alpha;
 }
 
+void Surface::generate()
+{
+
+}
+
 void Surface::create_surface()
 {
-    // 3 colors. depth is 3.
+    printf("creating surface\n");
     this->surface = new RGBColor_t[this->rect.size];
 }
 
@@ -63,8 +78,9 @@ RGBColor_t *Surface::get_surface()
 
 Surface::~Surface()
 {
-    if(this->surface)
+    if(this->surface != NULL)
     {
-        delete[] this->surface;
+        printf("freeing\n");
+        delete [] this->surface;
     }
 };
