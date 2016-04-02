@@ -6,6 +6,9 @@
 #include <string.h>
 #include <new>
 
+#include <matrix.h>
+#include <colors.h>
+
 typedef struct
 {
     int x;
@@ -15,20 +18,12 @@ typedef struct
     size_t size;
 } rect_t;
 
-typedef struct 
-{
-    uint8_t red;
-    uint8_t green;
-    uint8_t blue;
-    uint8_t alpha;
-} RGBColor_t;
 
 class Surface
 {
 public:
     Surface();
-    Surface(int, int);
-    Surface(int, int, int, int);
+    Surface(rect_t);
     void create_surface();
 
     rect_t get_rect();

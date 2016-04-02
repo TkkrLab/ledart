@@ -8,13 +8,8 @@ Graphics::Graphics()
   printf("hero\n");
 }
 
-Graphics::Graphics(int width, int height)
-:Surface(width, height)
-{
-}
-
-Graphics::Graphics(int width, int height, int x, int y)
-:Surface(width, height, x, y)
+Graphics::Graphics(rect_t dims)
+:Surface(dims)
 {
 }
 

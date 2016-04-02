@@ -7,8 +7,9 @@
 class Lmcp: public Network
 {
 public:
-    void send(Surface &, char *);
-    void send_command(uint8_t, char *target);
+    Lmcp(char *target=NULL);
+    void send(Surface &);
+    void send_command(uint8_t);
 private:
     static const uint8_t WRITE_BUFF = 0x01;
     static const uint8_t CLEAR = 0x02;

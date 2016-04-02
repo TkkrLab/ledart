@@ -5,14 +5,14 @@
 */
 
 #include <surface.h>
+#include <colors.h>
 #include <math.h>
 
 class Graphics: public Surface
 {
 public:
     Graphics();
-    Graphics(int, int);
-    Graphics(int, int, int, int);
+    Graphics(rect_t);
 
     void xLine(int, int, int, RGBColor_t);
     void yLine(int, int, int, RGBColor_t);

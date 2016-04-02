@@ -3,101 +3,85 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <surface.h>
-#include <graphics.h>
-#include <network.h>
+#include <patterns.h>
+#include <BouncingDot.h>
 #include <lmcp.h>
 
-#define MATRIX_WIDTH 96
-#define MATRIX_HEIGHT 48
+char target[] = "10.42.3.12";
 
-char target[] = "127.0.0.1";
+// 20 jobs max for now.
+size_t num_patternjobs = 0;
+const size_t max_patternjobs = 20;
+Pattern patternjobs[max_patternjobs];
 
-class Pattern
+void process_patternjobs()
 {
-public:
-    static Surface *pattern;
-    static Network *network;
-
-    Pattern(Surface &, Network &);
-    void generate();
-    void sendout();
-private:
-};
-
-Surface *Pattern::pattern = NULL;
-Network *Pattern::network = NULL;
-
-Pattern::Pattern(Surface &pat, Network &net)
-{
-    this->pattern = &pat;
-    this->network = &net;
-}
-
-void Pattern::generate()
-{
-    this->pattern->generate();
-}
-
-void Pattern::sendout()
-{
-    this->network->send(*this->pattern, target);
-}
-
-class BouncingDot: public Graphics
-{
-public:
-    BouncingDot();
-    void generate();
-private:
-    static int posx, posy;
-    static int dirx, diry;
-    static RGBColor_t pixel_color;
-    static RGBColor_t background_color;
-};
-
-int BouncingDot::posx = 0;
-int BouncingDot::posy = 0;
-int BouncingDot::dirx = 0;
-int BouncingDot::diry = 0;
-RGBColor_t BouncingDot::pixel_color = {0xff, 0xff, 0xff};
-RGBColor_t BouncingDot::background_color = {0x00, 0x00, 0x00};
-
-BouncingDot::BouncingDot():
-Graphics(MATRIX_WIDTH, MATRIX_HEIGHT)
-{
-};
-
-void BouncingDot::generate()
-{
-    rect_t grect = Graphics::get_rect();
-    if(posx > (grect.width - 1) or posx <= 0)
+    // // generate a new frame
+    // pattern.generate();
+    // // send it out on the coupled network.
+    // pattern.sendout();
+    for(int job = 0; job < num_patternjobs; job++)
     {
-        dirx *= -1;
+        Pattern pat = patternjobs[job];
+        pat.generate();
+        pat.sendout();
+
+        // wait some time
+        usleep(30e3);
     }
-    if(posy > (grect.height - 1) or posy <= 0)
+}
+
+void create_pattern_test()
+{
+    // size 96x48 at pos (0, 0) and size (96 * 48)
+    const int width = 96 / 2;
+    const int height = 48 / 2;
+    rect_t ledboard_dims = {0, 0, width, height, (width * height)};
+
+    BouncingDot testdot = BouncingDot(ledboard_dims);
+    Lmcp network = Lmcp(target);
+    // creates a pattern and gives it a name (GETNAME(pattern)) and associate a
+    // network com protocol with it.
+    Pattern testpattern = Pattern(testdot, network, GETNAME(BouncingDot));
+    // run it for a bit but still exit.
+    for(int i = 0; i < (width * height) / 2; i++)
     {
-        diry *= -1;
+        testpattern.generate();
+        testpattern.sendout();
+        usleep(30e3);
     }
 
-    this->draw_pixel(0, 0, this->pixel_color);
 }
 
-void process(Pattern pattern)
+void add_pattern(Surface &pat, Network &net, const char *name)
 {
-    // generate a new frame
-    pattern.generate();
-    // send it out on the coupled network.
-    pattern.sendout();
-};
+    // check if we are at our limit.
+    if(num_patternjobs >= max_patternjobs)
+        return;
+
+    patternjobs[num_patternjobs] = Pattern(pat, net, name);
+    num_patternjobs++;
+}
 
 int main(int argc, char **argv)
 {
-    BouncingDot testdot = BouncingDot();
-    Lmcp network = Lmcp();
-    Pattern testpattern = Pattern(testdot, network);
-    
-    process(testpattern);
+    // create_pattern_test();
 
+    //create a job
+
+    rect_t dims = {0, 0, 96, 48, (96 * 48)};
+    // this works as opposed to just letting the compiler make the object.
+    // if the compiler makes the object then it doesnt called the derived class
+    // it's base constructors.
+    Surface *pattern = new BouncingDot(dims);
+    Network *lmcp = new Lmcp(target);
+    
+    add_pattern(*pattern, *lmcp, GETNAME(BouncingDot));
+
+    // run a few times
+    for(int i = 0; i < 2000; i++)
+    {
+        process_patternjobs();
+    }
     return 0;
 }

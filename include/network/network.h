@@ -15,17 +15,18 @@
 class Network
 {
 public:
-    Network(uint16_t port=1337);
+    Network(uint16_t port=1337, char *target=NULL);
     ~Network();
     void open();
-    void transmit(uint8_t *, size_t, char *);
-    virtual void send(Surface&, char *);
+    void transmit(uint8_t *, size_t);
+    virtual void send(Surface&);
     void set_port(uint16_t);
     uint16_t get_port();
 private:
     uint16_t port;
     int sockfd;
     struct sockaddr_in addr;
+    char target[20];
 };
 
 #endif

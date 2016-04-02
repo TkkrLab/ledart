@@ -1,14 +1,20 @@
 #include "lmcp.h"
 
-void Lmcp::send_command(uint8_t command, char *target)
+Lmcp::Lmcp(char *target):
+Network(1337, target)
+{
+    
+}
+
+void Lmcp::send_command(uint8_t command)
 {
     static uint8_t data[1];
 
     data[0] = command;
-    transmit(data, 1, target);
+    transmit(data, 1);
 }
 
-void Lmcp::send(Surface &surf, char *target)
+void Lmcp::send(Surface &surf)
 {
     static int size;
     static int x;
@@ -27,9 +33,15 @@ void Lmcp::send(Surface &surf, char *target)
     width = surf_rect.width;
     height = surf_rect.height;
 
-    // for debugging send clear.
-    // this->send_command(this->CLEAR, target);
+    // what have we now? a surface that has no size?
+    // exit and message about error.
+    if(!(width) || !(height) || !(size))
+    {
+        fprintf(stdout, "Passed invalid Surface, with zero dimensions.\n");
+        exit(1);
+    }
 
+    // a command to write pixel data is [writeout, x, y, width, height, data ...]
     if(size < (1024 - 5))
     {
         packet[0] = this->DRAW_IMG_RECT;
@@ -48,23 +60,24 @@ void Lmcp::send(Surface &surf, char *target)
                 point++;
             }
         }
-        transmit(packet, point, target);
-        this->send_command(this->WRITE_BUFF, target);
+        transmit(packet, point);
+        this->send_command(this->WRITE_BUFF);
     }
     else
     {
         packet[0] = this->DRAW_IMG_RECT;
 
-        // mulpl can not ever be more then MAX_UDP_PACKETSIZE == (1019)
+        // mulpl (multiplier) can not ever be more then MAX_UDP_PACKETSIZE == (1019)
         int multpl = (MAX_UDP_PACKETSIZE / width);
 
         // we want to keep some state so px and i are declared outside of the loop.
         RGBColor_t color;
         int px, i;
-        // divide and conquer. basicly chunk up the whole surface.
+        // divide and conquer. basically chunk up the whole surface.
+        // in chunks of width * multpl, where py is next y position
         for(int line = 0, py = 0; line < size; line += (width * multpl), py+=multpl)
         {
-            // then for multple of lines calculate where and how to pick color from surface.
+            // then for multiple lines calculate where and how to pick color from surface.
             // and where to put that in the packet.
             for(i = 0; i < multpl; i++)
             {
@@ -78,7 +91,6 @@ void Lmcp::send(Surface &surf, char *target)
                 {
                     surf.read_pixel(px, py + (i), &color);
                     packet[px + 5 + (width * i)] = (color.red + color.green + color.blue) / 3;
-                    // printf("px, py, py+(i), px + 5 + (width * i): %d, %d, %d, %d\n", px, py, py + i, px + 5 + (width * i));
                 }
             }
 
@@ -86,15 +98,14 @@ void Lmcp::send(Surface &surf, char *target)
             packet[2] = y + py;
             packet[3] = width;
             // this works because normaly i would be 10 but when we break it it will be 8
+            // or what ever is left.
             // and thus the packet size will work.
             packet[4] = i;
 
-            transmit(packet, (width * i) + 5, target);
-            // printf("packet size: %d\n", (width * i) + 5);
+            transmit(packet, (width * i) + 5);
         }
         
-        this->send_command(this->WRITE_BUFF, target);
-        // printf("py: %d\n", py);
+        this->send_command(this->WRITE_BUFF);
         return;
     }
 
