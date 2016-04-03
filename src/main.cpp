@@ -63,8 +63,16 @@ void add_pattern(Surface &pat, Network &net, const char *name)
     num_patternjobs++;
 }
 
+void some_general_info()
+{
+    printf("Build with gcc version: %s.\n", __VERSION__);
+    printf("Compiled at: %s.\n", __TIMESTAMP__);
+    printf("\n");
+}
+
 int main(int argc, char **argv)
 {
+    some_general_info();
     // create_pattern_test();
 
     //create a job
