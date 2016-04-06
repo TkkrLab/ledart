@@ -2,45 +2,26 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <string.h>
 
-// #include <patterns.h>
-// #include <BouncingDot.h>
-// #include <lmcp.h>
+#include <iostream>
 
-typedef struct
+#include <gflags/gflags.h>
+
+DEFINE_double(fps, 20.0, "set fps for program to run at.");
+
+void some_general_info()
 {
-    char file[100];
-    int fps;
-    bool netsilent;
-
-} opts_t;
-
-typedef struct
-{
-    char name[100];
-    char option[100];
-} opt_t;
-
-opts_t opts;
-opt_t named_options;
-
-void parse_options()
-{
-
+    printf("Build with gcc version: %s.\n", __VERSION__);
+    printf("Compiled at: %s.\n", __TIMESTAMP__);
+    printf("\n");
 }
 
 int main(int argc, char **argv)
 {
+    ::google::ParseCommandLineFlags(&argc, &argv, true);
+    std::cout << "FLAGS_fps: " << FLAGS_fps << "\n";
     some_general_info();
-    // create_pattern_test();
 
-    if(argc > 1)
-    {
-        printf("got arguments!: \n");
-        for(int i = 1; i < argc; i++)
-        {
-            printf("%s \n", argv[i]);
-        }
-    }
     return 0;
 }

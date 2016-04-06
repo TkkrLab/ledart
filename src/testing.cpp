@@ -1,3 +1,6 @@
+#include <patterns.h>
+#include <BouncingDot.h>
+#include <lmcp.h>
 
 char target[] = "10.42.3.12";
 
@@ -53,13 +56,6 @@ void add_pattern(Surface &pat, Network &net, const char *name)
 
     patternjobs[num_patternjobs] = Pattern(pat, net, name);
     num_patternjobs++;
-}
-
-void some_general_info()
-{
-    printf("Build with gcc version: %s.\n", __VERSION__);
-    printf("Compiled at: %s.\n", __TIMESTAMP__);
-    printf("\n");
 }
 
 void job_creation_test()

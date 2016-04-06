@@ -10,7 +10,11 @@ include_dir = 'include/'
 
 lib_dir = 'libraries/'
 
-system_libs = []
+# system installed libs that are needed.
+system_libs = ['gflags']
+
+# local libs are libraries inside of the project libraries folder.
+# asuming the library folder has the same name as the library folderl (lib+foldername).
 local_libs = []
 
 ccflags = ['-Werror']
@@ -38,6 +42,7 @@ if len(local_libs):
     for lib in local_libs:
         env.Append(CPPPATH=[lib_dir + lib + '/' + 'include/'])
         env.Append(LIBPATH=[lib_dir + lib + '/' + 'lib/'])
+        env.Append(LIBS=[lib])
 
 # run for system libs
 if len(system_libs):
