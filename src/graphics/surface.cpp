@@ -22,8 +22,7 @@ Surface::Surface(rect_t dims)
     this->create_surface();
 }
 
-// cordinate (x, y, z) to 1D pos
-// z == color.
+// cordinate (x, y) to 1D pos
 size_t Surface::ctop(int x, int y)
 {
     return (y * (this->rect.width)) + x;
@@ -70,6 +69,11 @@ void Surface::generate()
 void Surface::create_surface()
 {
     this->surface = new RGBColor_t[this->rect.size];
+    if(this->surface == NULL)
+    {
+        printf("couldn't create Surface::surface. \n");
+        exit(-1);
+    }
 }
 
 rect_t Surface::get_rect()
@@ -87,5 +91,6 @@ Surface::~Surface()
     if(this->surface != NULL)
     {
         delete [] this->surface;
+        this->surface = NULL;
     }
 }
