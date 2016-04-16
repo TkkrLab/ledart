@@ -15,7 +15,7 @@ public:
     Pattern(Surface &, Network &, const char *);
     char *get_name();
     void generate();
-    void sendout();
+    void process();
 private:
     static Surface *pattern;
     static Network *network;

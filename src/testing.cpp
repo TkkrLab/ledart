@@ -14,12 +14,12 @@ void process_patternjobs()
     // // generate a new frame
     // pattern.generate();
     // // send it out on the coupled network.
-    // pattern.sendout();
+    // pattern.process();
     for(int job = 0; job < num_patternjobs; job++)
     {
         Pattern pat = patternjobs[job];
         pat.generate();
-        pat.sendout();
+        pat.process();
 
         // wait some time
         usleep(30e3);
@@ -42,7 +42,7 @@ void create_pattern_test()
     for(int i = 0; i < (width * height) / 2; i++)
     {
         testpattern.generate();
-        testpattern.sendout();
+        testpattern.process();
         usleep(30e3);
     }
 

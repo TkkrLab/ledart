@@ -15,14 +15,16 @@ Pattern::Pattern(Surface &pat, Network &net, const char *name)
     strcpy(this->name, name);
 }
 
+// generate's new surface data.
 void Pattern::generate()
 {
     this->pattern->generate();
 }
 
-void Pattern::sendout()
+// sends data to network connector.
+void Pattern::process()
 {
-    this->network->send(*this->pattern);
+    this->network->process(*this->pattern);
 }
 
 char *Pattern::get_name()

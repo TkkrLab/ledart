@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <signal.h>
+#include <time.h>
 extern "C"
 {
     #include <SDL2/SDL.h>
@@ -10,30 +11,49 @@ extern "C"
 class MatrixSimulator
 {
     public:
-        MatrixSimulator(rect_t);
+        MatrixSimulator(rect_t, int pixelsize=10);
         ~MatrixSimulator();
         void process(Surface *);
         void handle_input();
-        void draw_rect(rect_t, RGBColor_t);
+        void draw_rect(rect_t, RGBColor_t, bool);
     private:
+        static int drawFps;
+        static int pixelsize;
         static rect_t dims;
+        static rect_t screen_dims;
         static rect_t pixel;
         static SDL_Window *window;
         static SDL_Surface *screen_surf;
         static SDL_Renderer *renderer;
 };
 
+int MatrixSimulator::drawFps = 30;
+int MatrixSimulator::pixelsize;
 rect_t MatrixSimulator::dims;
 rect_t MatrixSimulator::pixel;
+rect_t MatrixSimulator::screen_dims;
 SDL_Window *MatrixSimulator::window = NULL;
 SDL_Surface *MatrixSimulator::screen_surf = NULL;
 SDL_Renderer *MatrixSimulator::renderer = NULL;
 
-MatrixSimulator::MatrixSimulator(rect_t dims)
+MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
 {
+    // initialize some variables/
+    this->pixelsize = pixelsize;
     this->dims = dims;
+
+    // size of a pixel is pixelsize
+    this->pixel.width = pixelsize;
+    this->pixel.height = pixelsize;
+    
+    // screen is at 0,0 and it's width is number of pixelwidth * dim_width.
+    this->screen_dims.x = 0;
+    this->screen_dims.y = 0;
+    this->screen_dims.width = dims.width * this->pixel.width;
+    this->screen_dims.height = dims.height * this->pixel.height;
+
     // initialize sdl
-    if(SDL_Init(SDL_INIT_VIDEO) < 0)
+    if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER) < 0)
     {
         printf("SDL could not initialize SDL_Error: %s\n", SDL_GetError());
         exit(-1);
@@ -42,7 +62,7 @@ MatrixSimulator::MatrixSimulator(rect_t dims)
     this->window = SDL_CreateWindow("MatrixSim",
                                     SDL_WINDOWPOS_UNDEFINED,
                                     SDL_WINDOWPOS_UNDEFINED,
-                                    this->dims.width, this->dims.height,
+                                    this->screen_dims.width, this->screen_dims.height,
                                     SDL_WINDOW_SHOWN);
     if(this->window == NULL)
     {
@@ -66,7 +86,7 @@ MatrixSimulator::MatrixSimulator(rect_t dims)
     }
 }
 
-void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color)
+void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
 {
     SDL_Rect r = {rect.x, rect.y, rect.width, rect.height};
     SDL_SetRenderDrawColor(this->renderer, color.red, color.green, color.blue, color.alpha);
@@ -76,7 +96,6 @@ void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color)
 void MatrixSimulator::process(Surface *surf)
 {
     static rect_t surf_rect = {0, 0, 0, 0};
-    static rect_t pixel = {0, 0, 0, 0};
     static RGBColor_t color = {0, 0, 0, 0};
 
     surf_rect = surf->get_rect();
@@ -90,12 +109,10 @@ void MatrixSimulator::process(Surface *surf)
     {
         for(int x = 0; x < surf_rect.width; x++)
         {
-            pixel.x = x;
-            pixel.y = y;
-            pixel.width = 1;
-            pixel.height = 1;
+            pixel.x = x * this->pixel.width;
+            pixel.y = y * this->pixel.height;
             surf->read_pixel(x, y, &color);
-            this->draw_rect(pixel, color);
+            this->draw_rect(pixel, color, false);
         }
     }
 
@@ -141,14 +158,13 @@ int main(int argc, char **argv)
 {
     signal(SIGINT, ki_func);
 
-    rect_t matrix_dims = {0, 0, 10, 11};
+    rect_t matrix_dims = {0, 0, 800, 600};
     Surface *testsurf = new BouncingDot(matrix_dims);
-    MatrixSimulator sim = MatrixSimulator(matrix_dims);
-    for(;;)
+    MatrixSimulator *sim = new MatrixSimulator(matrix_dims, 1);
+    for(unsigned int frame = 0;frame != -1;frame++)
     {
         testsurf->generate();
-        sim.process(testsurf);
-        SDL_Delay(100);
+        sim->process(testsurf);
     }
     return 0;
 }
