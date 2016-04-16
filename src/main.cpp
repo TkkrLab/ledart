@@ -1,5 +1,9 @@
 #include <stdio.h>
-#include <SDL2/SDL.h>
+#include <signal.h>
+extern "C"
+{
+    #include <SDL2/SDL.h>
+}
 #include <surface.h>
 #include <BouncingDot.h>
 
@@ -8,7 +12,7 @@ class MatrixSimulator
     public:
         MatrixSimulator(rect_t);
         ~MatrixSimulator();
-        void display(Surface);
+        void process(Surface *);
         void handle_input();
         void draw_rect(rect_t, RGBColor_t);
     private:
@@ -69,17 +73,35 @@ void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color)
     SDL_RenderFillRect(this->renderer, &r);
 }
 
-void MatrixSimulator::display(Surface surf)
+void MatrixSimulator::process(Surface *surf)
 {
+    static rect_t surf_rect = {0, 0, 0, 0};
+    static rect_t pixel = {0, 0, 0, 0};
+    static RGBColor_t color = {0, 0, 0, 0};
+
+    surf_rect = surf->get_rect();
+
     // fill background.
-    SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 0);
+    SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
     SDL_RenderClear(this->renderer);
-    // draw pixels.
-    rect_t r = {1, 1, 1, 1, 1};
-    RGBColor_t c = {0, 0, 0xff, 0};
-    this->draw_rect(r, c);
+
+    // draw pixels
+    for(int y = 0; y < surf_rect.height; y++)
+    {
+        for(int x = 0; x < surf_rect.width; x++)
+        {
+            pixel.x = x;
+            pixel.y = y;
+            pixel.width = 1;
+            pixel.height = 1;
+            surf->read_pixel(x, y, &color);
+            this->draw_rect(pixel, color);
+        }
+    }
+
+    // actually draw contents to window/screen
+    // aka flip back buffer.
     SDL_RenderPresent(this->renderer);
-    SDL_Delay(2000);
 }
 
 void MatrixSimulator::handle_input()
@@ -107,17 +129,26 @@ MatrixSimulator::~MatrixSimulator()
     SDL_Quit();
 }
 
+volatile sig_atomic_t ki_flag = 0;
+
+void ki_func(int sig)
+{
+    printf("\nCaught keyboard interrupt.! signal: %d\n", sig);
+    exit(1);
+}
 
 int main(int argc, char **argv)
 {
-    rect_t matrix_dims = {0, 0, 10, 10, (10 * 10)};
+    signal(SIGINT, ki_func);
+
+    rect_t matrix_dims = {0, 0, 10, 11};
     Surface *testsurf = new BouncingDot(matrix_dims);
     MatrixSimulator sim = MatrixSimulator(matrix_dims);
-    sim.display(*testsurf);
-    // while(1)
-    // {
-    //     sim.display();
-    //     sim.handle_input();
-    // }
+    for(;;)
+    {
+        testsurf->generate();
+        sim.process(testsurf);
+        SDL_Delay(100);
+    }
     return 0;
 }

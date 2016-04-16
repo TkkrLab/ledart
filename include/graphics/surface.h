@@ -15,7 +15,6 @@ typedef struct
     int y;
     int width;
     int height;
-    size_t size;
 } rect_t;
 
 

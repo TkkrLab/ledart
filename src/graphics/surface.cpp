@@ -10,14 +10,12 @@ Surface::Surface()
     this->rect.height = 1;
     this->rect.x = 0;
     this->rect.y = 0;
-    this->rect.size = (this->rect.width * this->rect.height);
 }
 
 Surface::Surface(rect_t dims)
 {
     // this->rect.width = width;
     // this->rect.height = height;
-    // this->rect.size = (this->rect.width * this->rect.height);
     memcpy(&this->rect, &dims, sizeof(dims));
     this->create_surface();
 }
@@ -25,7 +23,7 @@ Surface::Surface(rect_t dims)
 // cordinate (x, y) to 1D pos
 size_t Surface::ctop(int x, int y)
 {
-    return (y * (this->rect.width)) + x;
+    return y * this->rect.width + x;
 }
 
 void Surface::write_pixel(int x, int y, RGBColor_t color)
@@ -54,7 +52,7 @@ void Surface::read_pixel(int x, int y, RGBColor_t *color)
         return;
     }
     // get base index
-    int index = this->ctop(x, y);
+    size_t index = this->ctop(x, y);
     color->red = this->surface[index].red;
     color->green = this->surface[index].green;
     color->blue = this->surface[index].blue;
@@ -63,12 +61,12 @@ void Surface::read_pixel(int x, int y, RGBColor_t *color)
 
 void Surface::generate()
 {
-
 }
 
 void Surface::create_surface()
 {
-    this->surface = new RGBColor_t[this->rect.size];
+    size_t size = this->rect.width * this->rect.height;
+    this->surface = new RGBColor_t[size];
     if(this->surface == NULL)
     {
         printf("couldn't create Surface::surface. \n");
@@ -88,6 +86,7 @@ RGBColor_t *Surface::get_surface()
 
 Surface::~Surface()
 {
+    printf("calling deconstructor: \n");
     if(this->surface != NULL)
     {
         delete [] this->surface;

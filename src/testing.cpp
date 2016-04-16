@@ -31,7 +31,7 @@ void create_pattern_test()
     // size 96x48 at pos (0, 0) and size (96 * 48)
     const int width = 96 / 2;
     const int height = 48 / 2;
-    rect_t ledboard_dims = {0, 0, width, height, (width * height)};
+    rect_t ledboard_dims = {0, 0, width, height};
 
     BouncingDot testdot = BouncingDot(ledboard_dims);
     Lmcp network = Lmcp(target);
@@ -62,7 +62,7 @@ void job_creation_test()
 {
     //create a job
 
-    rect_t dims = {0, 0, 96, 48, (96 * 48)};
+    rect_t dims = {0, 0, 96, 48};
     // this works as opposed to just letting the compiler make the object.
     // if the compiler makes the object then it doesnt called the derived class
     // it's base constructors.

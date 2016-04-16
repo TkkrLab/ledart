@@ -1,7 +1,7 @@
 #include "BouncingDot.h"
 
-int BouncingDot::posx = 10;
-int BouncingDot::posy = 16;
+int BouncingDot::posx = 0;
+int BouncingDot::posy = 0;
 int BouncingDot::dirx = 1;
 int BouncingDot::diry = 1;
 

@@ -27,7 +27,7 @@ void Lmcp::send(Surface &surf)
     static rect_t surf_rect;
 
     surf_rect = surf.get_rect();
-    size = surf_rect.size;
+    size = (surf_rect.width * surf_rect.height);
     x = surf_rect.x;
     y = surf_rect.y;
     width = surf_rect.width;

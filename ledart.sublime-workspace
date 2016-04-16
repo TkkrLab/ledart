@@ -8,10 +8,13 @@
 	"buffers":
 	[
 		{
+			"contents": "#include <stdio.h>\n#include <SDL2/SDL.h>\n#include <surface.h>\n#include <BouncingDot.h>\n\nclass MatrixSimulator\n{\n    public:\n        MatrixSimulator(rect_t);\n        ~MatrixSimulator();\n        void display(Surface);\n        void handle_input();\n        void draw_rect(rect_t, RGBColor_t);\n    private:\n        static rect_t dims;\n        static rect_t pixel;\n        static SDL_Window *window;\n        static SDL_Surface *screen_surf;\n        static SDL_Renderer *renderer;\n};\n\nrect_t MatrixSimulator::dims;\nrect_t MatrixSimulator::pixel;\nSDL_Window *MatrixSimulator::window = NULL;\nSDL_Surface *MatrixSimulator::screen_surf = NULL;\nSDL_Renderer *MatrixSimulator::renderer = NULL;\n\nMatrixSimulator::MatrixSimulator(rect_t dims)\n{\n    this->dims = dims;\n    // initialize sdl\n    if(SDL_Init(SDL_INIT_VIDEO) < 0)\n    {\n        printf(\"SDL could not initialize SDL_Error: %s\\n\", SDL_GetError());\n        exit(-1);\n    }\n\n    this->window = SDL_CreateWindow(\"MatrixSim\",\n                                    SDL_WINDOWPOS_UNDEFINED,\n                                    SDL_WINDOWPOS_UNDEFINED,\n                                    this->dims.width, this->dims.height,\n                                    SDL_WINDOW_SHOWN);\n    if(this->window == NULL)\n    {\n        printf(\"Window could not be created! SDL_Error: %s\\n\", SDL_GetError());\n        exit(-1);\n    }\n\n    this->renderer = SDL_CreateRenderer(this->window, -1,\n                                        SDL_RENDERER_ACCELERATED);\n    if(this->renderer == NULL)\n    {\n        printf(\"Renderer coudl not be created! SDL Error: %s\\n\", SDL_GetError());\n        exit(-1);\n    }\n\n    this->screen_surf = SDL_GetWindowSurface(this->window);\n    if(this->screen_surf == NULL)\n    {\n        printf(\"couldn't create surface. %s\\n\", SDL_GetError());\n        exit(-1);\n    }\n}\n\nvoid MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color)\n{\n    SDL_Rect r = {rect.x, rect.y, rect.width, rect.height};\n    SDL_SetRenderDrawColor(this->renderer, color.red, color.green, color.blue, color.alpha);\n    SDL_RenderFillRect(this->renderer, &r);\n}\n\nvoid MatrixSimulator::display(Surface surf)\n{\n    // fill background.\n    SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 0);\n    SDL_RenderClear(this->renderer);\n    \n    // draw pixels.\n    rect_t r = {1, 1, 1, 1, 1};\n    RGBColor_t c = {0, 0, 0xff, 0};\n    this->draw_rect(r, c);\n    SDL_RenderPresent(this->renderer);\n    SDL_Delay(2000);\n}\n\nvoid MatrixSimulator::handle_input()\n{\n\n}\n\nMatrixSimulator::~MatrixSimulator()\n{\n    if(this->screen_surf != NULL)\n    {\n        SDL_FreeSurface(this->screen_surf);\n        this->screen_surf = NULL;\n    }\n    if(this->renderer != NULL)\n    {\n        SDL_DestroyRenderer(this->renderer);\n        this->renderer = NULL;\n    }\n    if(this->window != NULL)\n    {\n        SDL_DestroyWindow(this->window);\n        this->renderer = NULL;\n    }\n    SDL_Quit();\n}\n\n\nint main(int argc, char **argv)\n{\n    rect_t matrix_dims = {0, 0, 10, 10, (10 * 10)};\n    Surface *testsurf = new BouncingDot(matrix_dims);\n    MatrixSimulator sim = MatrixSimulator(matrix_dims);\n    sim.display(*testsurf);\n    // while(1)\n    // {\n    //     sim.display();\n    //     sim.handle_input();\n    // }\n    return 0;\n}",
 			"file": "src/main.cpp",
+			"file_size": 3212,
+			"file_write_time": 131051562812285466,
 			"settings":
 			{
-				"buffer_size": 1794,
+				"buffer_size": 3217,
 				"line_ending": "Unix"
 			}
 		},
@@ -20,22 +23,6 @@
 			"settings":
 			{
 				"buffer_size": 2609,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/patterns/BouncingDot.cpp",
-			"settings":
-			{
-				"buffer_size": 685,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "include/patterns/BouncingDot.h",
-			"settings":
-			{
-				"buffer_size": 377,
 				"line_ending": "Unix"
 			}
 		},
@@ -255,11 +242,15 @@
 		"/home/robert/ledart/include/patterns",
 		"/home/robert/ledart/libraries",
 		"/home/robert/ledart/src",
+		"/home/robert/ledart/src/graphics",
 		"/home/robert/ledart/src/patterns"
 	],
 	"file_history":
 	[
+		"/home/robert/ledart/include/patterns/BouncingDot.h",
+		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
 		"/home/robert/ledart/src/graphics/surface.cpp",
+		"/home/robert/ledart/include/graphics/surface.h",
 		"/home/robert/ledart/src/graphics/graphics.cpp",
 		"/home/robert/ledart/src/testing.cpp",
 		"/home/robert/ledart/Sconstruct",
@@ -269,15 +260,12 @@
 		"/home/robert/ledart/libraries/cpp-optparse/Makefile",
 		"/home/robert/.config/sublime-text-3/Packages/User/Stino/Preferences.stino-settings",
 		"/home/robert/ledart/src/network/lmcp.cpp",
-		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
 		"/home/robert/ledart/src/patterns/patterns.cpp",
 		"/home/robert/ledart/include/network/lmcp.h",
 		"/home/robert/ledart/include/patterns/patterns.h",
 		"/home/robert/ledart/src/network/network.cpp",
-		"/home/robert/ledart/include/graphics/surface.h",
 		"/home/robert/ledart/include/graphics/colors.h",
 		"/home/robert/ledart/src/graphics/colors.cpp",
-		"/home/robert/ledart/include/patterns/BouncingDot.h",
 		"/home/robert/ledart/src/matrix.cpp",
 		"/home/robert/ledart/include/matrix.h",
 		"/home/robert/ledart/include/graphics/graphics.h",
@@ -559,15 +547,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1794,
+						"buffer_size": 3217,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								481,
-								481
+								2366,
+								2366
 							]
 						],
 						"settings":
@@ -577,7 +565,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 351.0,
+						"translation.y": 664.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -607,72 +595,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/patterns/BouncingDot.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 624.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "include/patterns/BouncingDot.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 377,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "Sconstruct",
 					"semi_transient": false,
 					"settings":
@@ -698,7 +628,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -53312,7 +53242,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 257.0,
 	"status_bar_visible": true,
 	"template_settings":
