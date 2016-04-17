@@ -1,12 +1,11 @@
 #ifndef __SURFACE_H__
 #define __SURFACE_H__
 
+#include <new>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <new>
 
-#include <matrix.h>
 #include <colors.h>
 
 typedef struct
