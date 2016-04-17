@@ -109,11 +109,11 @@ void MatrixSimulator::process(Surface *surf)
 {
     static uint64_t frame = 0;
 
-    frame++;
-    if(!(frame % 10000))
-    {
+    // frame++;
+    // if(!(frame % 10000))
+    // {
         this->draw(surf);
-    }
+    // }
 }
 
 void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)

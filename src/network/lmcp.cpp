@@ -14,7 +14,7 @@ void Lmcp::send_command(uint8_t command)
     transmit(data, 1);
 }
 
-void Lmcp::send(Surface &surf)
+void Lmcp::process(Surface *surf)
 {
     static int size;
     static int x;
@@ -26,7 +26,7 @@ void Lmcp::send(Surface &surf)
     static uint8_t packet[MAX_UDP_PACKETSIZE];
     static rect_t surf_rect;
 
-    surf_rect = surf.get_rect();
+    surf_rect = surf->get_rect();
     size = (surf_rect.width * surf_rect.height);
     x = surf_rect.x;
     y = surf_rect.y;
@@ -55,7 +55,7 @@ void Lmcp::send(Surface &surf)
         {
             for(int py = 0; py < height; py++)
             {
-                surf.read_pixel(py, px, &color);
+                surf->read_pixel(py, px, &color);
                 packet[point] = (color.red + color.green + color.blue) / 3;
                 point++;
             }
@@ -89,7 +89,7 @@ void Lmcp::send(Surface &surf)
                 }
                 for(px = 0; px < width; px++)
                 {
-                    surf.read_pixel(px, py + (i), &color);
+                    surf->read_pixel(px, py + (i), &color);
                     packet[px + 5 + (width * i)] = (color.red + color.green + color.blue) / 3;
                 }
             }

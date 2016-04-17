@@ -8,7 +8,7 @@ class Lmcp: public Network
 {
 public:
     Lmcp(char *target=NULL);
-    void send(Surface &);
+    void process(Surface *);
     void send_command(uint8_t);
 private:
     static const uint8_t WRITE_BUFF = 0x01;

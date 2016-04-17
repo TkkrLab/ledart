@@ -5,21 +5,27 @@
 
 #include <surface.h>
 #include <network.h>
+#include <matrixsim.h>
 
 #define GETNAME(X) #X
 
-class Pattern
+typedef struct
+{
+    Surface *surf;
+    Network *net;
+    MatrixSimulator *sim;
+} Pattern_t;
+
+class PatternJobs
 {
 public:
-    Pattern();
-    Pattern(Surface &, Network &, const char *);
-    char *get_name();
-    void generate();
+    PatternJobs();
+    ~PatternJobs();
+    void register_pattern(Pattern_t *);
     void process();
 private:
-    static Surface *pattern;
-    static Network *network;
-    static char name[100];
+    static Pattern_t *patterns;
+    static int num_patterns;
 };
 
 #endif

@@ -1,33 +1,45 @@
 #include "patterns.h"
 
-Surface *Pattern::pattern = NULL;
-Network *Pattern::network = NULL;
-char Pattern::name[100] = {0};
+Pattern_t *PatternJobs::patterns = NULL;
+int PatternJobs::num_patterns = 0;
 
-Pattern::Pattern()
+PatternJobs::PatternJobs()
 {
+    
 }
 
-Pattern::Pattern(Surface &pat, Network &net, const char *name)
+PatternJobs::~PatternJobs()
 {
-    this->pattern = &pat;
-    this->network = &net;
-    strcpy(this->name, name);
+
 }
 
-// generate's new surface data.
-void Pattern::generate()
+void PatternJobs::register_pattern(Pattern_t *pattern)
 {
-    this->pattern->generate();
+    if(patterns == NULL)
+    {
+        patterns = (Pattern_t *)malloc(sizeof(Pattern_t));
+        memcpy(patterns, pattern, sizeof(Pattern_t));
+        this->num_patterns+=1;
+    }
 }
 
-// sends data to network connector.
-void Pattern::process()
+void PatternJobs::process()
 {
-    this->network->process(*this->pattern);
-}
-
-char *Pattern::get_name()
-{
-    return this->name;
+    static Pattern_t *pattern;
+    for(int p = 0; p < num_patterns; p++)
+    {
+        pattern = &patterns[p];
+        if(pattern->surf != NULL)
+        {
+            pattern->surf->generate();
+            if(pattern->net != NULL)
+            {
+                pattern->net->process(pattern->surf);
+            }
+            if(pattern->sim != NULL)
+            {
+                pattern->sim->process(pattern->surf);
+            }
+        }
+    }
 }

@@ -12,7 +12,6 @@ extern "C"
 
 #include <eventhandler.h>
 #include <surface.h>
-#include <BouncingDot.h>
 
 class MatrixSimulator
 {

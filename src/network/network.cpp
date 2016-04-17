@@ -52,7 +52,7 @@ void Network::transmit(uint8_t *data, size_t size)
   this function is what
   you should override to implement protocol specifics.
 */
-void Network::process(Surface &surface)
+void Network::process(Surface *surface)
 {
 }
 

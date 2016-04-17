@@ -19,7 +19,7 @@ public:
     ~Network();
     void open();
     void transmit(uint8_t *, size_t);
-    virtual void process(Surface&);
+    virtual void process(Surface *);
     void set_port(uint16_t);
     uint16_t get_port();
 private:
