@@ -1,7 +1,7 @@
 #include "lmcp.h"
 
-Lmcp::Lmcp(char *target):
-Network(1337, target)
+Lmcp::Lmcp(char *target, int port):
+Network(port, target)
 {
     
 }

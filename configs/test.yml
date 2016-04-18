@@ -1,0 +1,5 @@
+patternjob:
+    matrix: {x: 0, y: 0, width: 96, height: 48}
+    matrixsim: {pixelsize: 1}
+    protocol: {type: lmcp, target: 127.0.0.1, port: 1337}
+    pattern: {job: BouncingDot}
