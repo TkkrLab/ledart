@@ -10,6 +10,8 @@ extern "C"
 #include <eventhandler.h>
 #include <patterns.h>
 
+#include <yamlcpp.h>
+
 // these are global so that other patterns could use them if they want.
 // via the extern keyword.
 EventHandler global_event_handler = EventHandler();
