@@ -10,7 +10,7 @@ extern "C"
 #include <eventhandler.h>
 #include <patterns.h>
 
-#include <yamlcpp.h>
+#include <yaml-cpp/yaml.h>
 
 // these are global so that other patterns could use them if they want.
 // via the extern keyword.

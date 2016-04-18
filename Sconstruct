@@ -11,7 +11,7 @@ include_dir = 'include/'
 lib_dir = 'libraries/'
 
 # system installed libs that are needed.
-system_libs = ['gflags', 'SDL2']
+system_libs = ['gflags', 'SDL2', 'yaml-cpp']
 
 # local libs are libraries inside of the project libraries folder.
 # asuming the library folder has the same name as the library folderl (lib+foldername).
