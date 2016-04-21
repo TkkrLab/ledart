@@ -53,6 +53,7 @@ void Surface::read_pixel(int x, int y, RGBColor_t *color)
     }
     // get base index
     size_t index = this->ctop(x, y);
+    // fill in the colors
     color->red = this->surface[index].red;
     color->green = this->surface[index].green;
     color->blue = this->surface[index].blue;

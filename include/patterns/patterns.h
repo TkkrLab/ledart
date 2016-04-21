@@ -2,6 +2,7 @@
 #define __PATTERNS_H__
 
 #include <string.h>
+#include <stdlib.h>
 
 #include <surface.h>
 #include <network.h>

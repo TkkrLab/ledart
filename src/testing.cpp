@@ -105,3 +105,116 @@
 
 // //     return 0;
 // // }
+
+
+
+
+
+
+
+    // if(config["patternjob"])
+    // {
+    //     YAML::Node patternjob = config["patternjob"].as<YAML::Node>();
+
+    //     YAML::Node matrix = patternjob["matrix"].as<YAML::Node>();
+    //     YAML::Node matrixsim = patternjob["matrixsim"].as<YAML::Node>();
+    //     YAML::Node protocol = patternjob["protocol"].as<YAML::Node>();
+    //     YAML::Node pattern = patternjob["pattern"].as<YAML::Node>();
+
+    //     if(matrix)
+    //     {
+    //         matrix_dims.x = matrix["x"].as<int>();
+    //         matrix_dims.y = matrix["y"].as<int>();
+    //         matrix_dims.width = matrix["width"].as<int>();
+    //         matrix_dims.height = matrix["height"].as<int>();
+    //         printf("x: %d, y: %d, width: %d, height: %d\n",
+    //                matrix_dims.x, matrix_dims.y,
+    //                matrix_dims.width, matrix_dims.height);
+    //     }
+    //     else
+    //     {
+    //         printf("no valid matrix dimensions found in config file!.\n");
+    //         return -1;
+    //     }
+
+    //     if(matrixsim)
+    //     {
+    //         int pixelsize = matrixsim["pixelsize"].as<int>();
+    //         MatrixSimulator *asim = new MatrixSimulator(matrix_dims, pixelsize);
+    //         sim = asim;
+    //     }
+    //     else
+    //     {
+    //         printf("no matrixsim found in config. running without.\n");
+    //     }
+
+    //     if(protocol)
+    //     {
+    //         if(protocol["type"].as<string>() == "lmcp")
+    //         {
+    //             char target[20];
+    //             for(int i = 0; protocol["target"].as<string>()[i]; i++)
+    //             {
+    //                 target[i] = protocol["target"].as<string>()[i];
+    //                 target[i+1] = 0;
+    //             }
+    //             int port = protocol["port"].as<int>();
+    //             net = new Lmcp(target, port);
+    //         }
+    //         else
+    //         {
+    //             printf("no valid type set. going for Network()!.\n");
+    //         }
+    //     }
+    //     else
+    //     {
+    //         printf("no protocol selected in config file meaning it goes no where!.\n");
+    //     }
+
+    //     if(pattern)
+    //     {
+    //         if(pattern["job"].as<string>() == "BouncingDot")
+    //         {
+    //             surf = new BouncingDot(matrix_dims);
+    //         }
+    //         else
+    //         {
+    //             printf("no know pattern selected in config!.\n");
+    //             return -1;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         printf("no pattern selected in config file!.\n");
+    //         return -1;
+    //     }
+
+        // std::cout << "patternjob: \n";
+        // YAML::Node patternjob = config["patternjob"].as<YAML::Node>();
+        // std::cout << patternjob << "\n";
+        // YAML::Node pattern = patternjob["pattern"].as<YAML::Node>();
+        // std::cout << pattern << "\n";
+        // YAML::Node job = pattern["job"].as<YAML::Node>();
+        // std::cout << job << "\n\n";
+
+        // YAML::Node protocol = patternjob["protocol"].as<YAML::Node>();
+        // std::cout << protocol << "\n";
+        // int port = 42;
+        // string target = "10.42.3.12";
+        // string protocol_type = "Network";
+        // if(protocol["port"])
+        // {
+        //     port = protocol["port"].as<int>();
+        // }
+        // if(protocol["target"])
+        // {
+        //     target = protocol["target"].as<string>();
+        // }
+        // std::cout << "target: " << target
+        //           << "port: " << port << "\n";
+
+        // for(size_t i = 0; i < config["pattern"].size(); i++)
+        // {
+        //     std::cout << config["pattern"][i] << "\n";
+        // }
+    // }

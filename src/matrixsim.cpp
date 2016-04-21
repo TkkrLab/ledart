@@ -87,7 +87,7 @@ void MatrixSimulator::draw(Surface *surf)
     SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
     SDL_RenderClear(this->renderer);
 
-    // draw pixels
+    // // draw pixels
     for(int y = 0; y < surf_rect.height; y++)
     {
         for(int x = 0; x < surf_rect.width; x++)

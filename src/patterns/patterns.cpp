@@ -10,7 +10,11 @@ PatternJobs::PatternJobs()
 
 PatternJobs::~PatternJobs()
 {
-
+    if(this->patterns != NULL)
+    {
+        free(patterns);
+        patterns = NULL;
+    }
 }
 
 void PatternJobs::register_pattern(Pattern_t *pattern)
@@ -19,7 +23,13 @@ void PatternJobs::register_pattern(Pattern_t *pattern)
     {
         patterns = (Pattern_t *)malloc(sizeof(Pattern_t));
         memcpy(patterns, pattern, sizeof(Pattern_t));
-        this->num_patterns+=1;
+        this->num_patterns += 1;
+    }
+    else
+    {
+        this->num_patterns += 1;
+        patterns = (Pattern_t *)realloc(patterns, this->num_patterns);
+        memcpy(&patterns[this->num_patterns], pattern, sizeof(Pattern_t));
     }
 }
 

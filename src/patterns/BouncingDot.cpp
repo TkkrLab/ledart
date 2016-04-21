@@ -11,6 +11,7 @@ RGBColor_t BouncingDot::background_color = BLACK;
 BouncingDot::BouncingDot(rect_t dims):
 Graphics(dims)
 {
+    this->fill(background_color);
 }
 
 void BouncingDot::generate()
