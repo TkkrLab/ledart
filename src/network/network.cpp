@@ -1,6 +1,6 @@
 #include "network.h"
 
-Network::Network(uint16_t port, char *target)
+Network::Network(const char *target, uint16_t port)
 {
     // this->target = target;
     if(this->target == NULL || target == NULL)
@@ -67,6 +67,7 @@ void Network::transmit(uint8_t *data, size_t size)
 */
 void Network::process(Surface *surface)
 {
+    UNUSED(surface);
 }
 
 void Network::set_port(uint16_t port)

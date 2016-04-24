@@ -61,12 +61,21 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
     }
 
     // set a event handler callback.
-    global_event_handler.register_handler(this->handle_input, this);
+    global_event_handler.register_handler(this->handle_input, (void *)this);
 }
 
 void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
 {
-    SDL_Rect r = {rect.x, rect.y, rect.width, rect.height};
+    static int bw;
+    if(border)
+    {
+        bw = 1;
+    }
+    else
+    {
+        bw = 0;
+    }
+    SDL_Rect r = {rect.x + bw, rect.y + bw , rect.width - (2 * bw), rect.height - (2 * bw)};
     SDL_SetRenderDrawColor(this->renderer, color.red, color.green, color.blue, color.alpha);
     SDL_RenderFillRect(this->renderer, &r);
 }
@@ -107,7 +116,7 @@ void MatrixSimulator::draw(Surface *surf)
 // this just handles any process,
 void MatrixSimulator::process(Surface *surf)
 {
-    static uint64_t frame = 0;
+    // static uint64_t frame = 0;
 
     // frame++;
     // if(!(frame % 10000))
@@ -116,7 +125,7 @@ void MatrixSimulator::process(Surface *surf)
     // }
 }
 
-void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
+void *MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
 {
     static bool c_key_isdown;
     static bool ctrl_key_isdown;
@@ -163,6 +172,8 @@ void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
     {
         exit(0);
     }
+
+    return this_instance;
 }
 
 MatrixSimulator::~MatrixSimulator()

@@ -20,7 +20,7 @@ class MatrixSimulator
         ~MatrixSimulator();
         void process(Surface *);
         void draw(Surface *);
-        static void handle_input(SDL_Event, void *);
+        static void *handle_input(SDL_Event, void *);
         void draw_rect(rect_t, RGBColor_t, bool);
     private:
         static int pixelsize;

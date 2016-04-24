@@ -6,7 +6,7 @@ extern "C"
     #include <SDL2/SDL.h>
 }
 
-typedef void(*ev_callback)(SDL_Event, void *);
+typedef void *(*ev_callback)(SDL_Event, void *);
 
 class EventHandler
 {

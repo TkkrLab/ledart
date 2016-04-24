@@ -8,7 +8,8 @@
 #include <network.h>
 #include <matrixsim.h>
 
-#define GETNAME(X) #X
+// include available patterns
+#include <BouncingDot.h>
 
 typedef struct
 {

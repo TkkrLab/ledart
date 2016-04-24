@@ -28,7 +28,7 @@ void EventHandler::process()
     static SDL_Event event;
     while(SDL_PollEvent(&event) != 0)
     {
-        for(int h = 0; h < this->num_handlers; h++)
+        for(unsigned int h = 0; h < this->num_handlers; h++)
         {
             ev_callback handler = this->handlers[h];
             void *param = this->params[h];

@@ -15,10 +15,12 @@
 
 #define MAX_UDP_PACKETSIZE 1024
 
+#define UNUSED(X) (void)(X)
+
 class Network
 {
 public:
-    Network(uint16_t port=1337, char *target=NULL);
+    Network(const char *target=NULL, uint16_t port=1337);
     ~Network();
     void open();
     void transmit(uint8_t *, size_t);

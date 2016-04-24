@@ -7,7 +7,7 @@
 class Lmcp: public Network
 {
 public:
-    Lmcp(char *target=NULL, int port=1337);
+    Lmcp(const char *target=NULL, uint16_t port=1337);
     void process(Surface *);
     void send_command(uint8_t);
 private:
