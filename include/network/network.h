@@ -11,11 +11,10 @@
 #include <unistd.h>
 #include <errno.h>
 
+#include <mtools.h>
 #include <surface.h>
 
 #define MAX_UDP_PACKETSIZE 1024
-
-#define UNUSED(X) (void)(X)
 
 class Network
 {

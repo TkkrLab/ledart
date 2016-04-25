@@ -7,8 +7,8 @@ int MatrixSimulator::pixelsize;
 rect_t MatrixSimulator::dims;
 rect_t MatrixSimulator::pixel;
 rect_t MatrixSimulator::screen_dims;
+Uint32 MatrixSimulator::window_id = 0;
 SDL_Window *MatrixSimulator::window = NULL;
-SDL_Surface *MatrixSimulator::screen_surf = NULL;
 SDL_Renderer *MatrixSimulator::renderer = NULL;
 
 MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
@@ -44,6 +44,7 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
         printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
         exit(-1);
     }
+    this->window_id = SDL_GetWindowID(this->window);
 
     this->renderer = SDL_CreateRenderer(this->window, -1,
                                         SDL_RENDERER_ACCELERATED);
@@ -53,15 +54,8 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
         exit(-1);
     }
 
-    this->screen_surf = SDL_GetWindowSurface(this->window);
-    if(this->screen_surf == NULL)
-    {
-        printf("couldn't create surface. %s\n", SDL_GetError());
-        exit(-1);
-    }
-
     // set a event handler callback.
-    global_event_handler.register_handler(this->handle_input, (void *)this);
+    global_event_handler.register_handler(this->handle_input, this);
 }
 
 void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
@@ -125,16 +119,30 @@ void MatrixSimulator::process(Surface *surf)
     // }
 }
 
-void *MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
+void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
 {
+    // static cast pointer to our object type. so we can use it.
+    UNUSED(this_instance);
+    // MatrixSimulator *ins = static_cast<MatrixSimulator *>(this_instance);
+    
+    // don't want anything to do with it if it's not for this.
+    // object.
+    // if(ins->window_id != event.window.windowID)
+    // {
+    //     return;
+    // }
+
     static bool c_key_isdown;
     static bool ctrl_key_isdown;
     static bool escape_key_isdown;
     static bool window_quit = false;
 
-    if(event.type == SDL_QUIT)
+    if(event.type == SDL_WINDOWEVENT)
     {
-        window_quit = true;
+        if(event.type == SDL_QUIT)
+        {
+            window_quit = true;
+        }
     }
     else if(event.type == SDL_KEYDOWN)
     {
@@ -142,13 +150,13 @@ void *MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
         {
             case SDLK_c:
                 c_key_isdown = true;
-            break;
+                break;
             case SDLK_LCTRL:
                 ctrl_key_isdown = true;
-            break;
+                break;
             case SDLK_ESCAPE:
                 escape_key_isdown = true;
-            break;
+                break;
         }
     }
     else if(event.type == SDL_KEYUP)
@@ -157,13 +165,13 @@ void *MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
         {
             case SDLK_c:
                 c_key_isdown = false;
-            break;
+                break;
             case SDLK_LCTRL:
                 ctrl_key_isdown = false;
-            break;
+                break;
             case SDLK_ESCAPE:
                 escape_key_isdown = false;
-            break;
+                break;
         }
     }
 
@@ -172,17 +180,10 @@ void *MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
     {
         exit(0);
     }
-
-    return this_instance;
 }
 
 MatrixSimulator::~MatrixSimulator()
 {
-    if(this->screen_surf != NULL)
-    {
-        SDL_FreeSurface(this->screen_surf);
-        this->screen_surf = NULL;
-    }
     if(this->renderer != NULL)
     {
         SDL_DestroyRenderer(this->renderer);

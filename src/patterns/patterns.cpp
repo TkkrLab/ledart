@@ -19,6 +19,7 @@ PatternJobs::~PatternJobs()
 
 void PatternJobs::register_pattern(Pattern_t *pattern)
 {
+    printf("creating pattern num: %d\n", this->num_patterns);
     if(patterns == NULL)
     {
         patterns = (Pattern_t *)malloc(sizeof(Pattern_t));
@@ -28,7 +29,7 @@ void PatternJobs::register_pattern(Pattern_t *pattern)
     else
     {
         this->num_patterns += 1;
-        patterns = (Pattern_t *)realloc(patterns, this->num_patterns);
+        patterns = (Pattern_t *)realloc(patterns, this->num_patterns * sizeof(Pattern_t));
         memcpy(&patterns[this->num_patterns], pattern, sizeof(Pattern_t));
     }
 }

@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     {
         global_event_handler.process();
         patternjobs.process();
-        // SDL_Delay(30.00);
+        SDL_Delay(50.00);
     }
     return 0;
 }
