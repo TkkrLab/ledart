@@ -24,13 +24,13 @@ class MatrixSimulator
         static void handle_input(SDL_Event, void *);
         void draw_rect(rect_t, RGBColor_t, bool);
     private:
-        static int pixelsize;
-        static rect_t dims;
-        static rect_t screen_dims;
-        static rect_t pixel;
-        static Uint32 window_id;
-        static SDL_Window *window;
-        static SDL_Renderer *renderer;
+        int pixelsize;
+        rect_t dims;
+        rect_t screen_dims;
+        rect_t pixel;
+        Uint32 window_id;
+        SDL_Window *window;
+        SDL_Renderer *renderer;
 };
 
 #endif

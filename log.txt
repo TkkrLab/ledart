@@ -1,0 +1,97 @@
+==4834== Memcheck, a memory error detector
+==4834== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4834== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4834== Command: build/project
+==4834== Parent PID: 4320
+==4834== 
+==4834== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==4834==    at 0x5F9832D: ??? (in /usr/lib/libc-2.23.so)
+==4834==    by 0x77CFDA8: ??? (in /usr/lib/libxcb.so.1.1.0)
+==4834==    by 0x77D019C: ??? (in /usr/lib/libxcb.so.1.1.0)
+==4834==    by 0x77D0224: xcb_writev (in /usr/lib/libxcb.so.1.1.0)
+==4834==    by 0x74C518D: _XSend (in /usr/lib/libX11.so.6.3.0)
+==4834==    by 0x74C5681: _XReply (in /usr/lib/libX11.so.6.3.0)
+==4834==    by 0x74B0406: XInternAtom (in /usr/lib/libX11.so.6.3.0)
+==4834==    by 0x5144EE3: SetWindowBordered (SDL_x11window.c:337)
+==4834==    by 0x5144EE3: X11_CreateWindow (SDL_x11window.c:509)
+==4834==    by 0x5131C96: SDL_CreateWindow_REAL (SDL_video.c:1442)
+==4834==    by 0x5131889: ShouldUseTextureFramebuffer (SDL_video.c:206)
+==4834==    by 0x5131889: SDL_VideoInit_REAL (SDL_video.c:525)
+==4834==    by 0x506BF76: SDL_InitSubSystem_REAL (SDL.c:173)
+==4834==    by 0x506BF76: SDL_Init_REAL (SDL.c:244)
+==4834==    by 0x40D753: MatrixSimulator::MatrixSimulator(rect_t, int) (matrixsim.cpp:31)
+==4834==  Address 0x696fa73 is 35 bytes inside a block of size 16,384 alloc'd
+==4834==    at 0x4C2C947: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4834==    by 0x74B54E1: XOpenDisplay (in /usr/lib/libX11.so.6.3.0)
+==4834==    by 0x51433CE: X11_CreateDevice (SDL_x11video.c:188)
+==4834==    by 0x5131840: SDL_VideoInit_REAL (SDL_video.c:486)
+==4834==    by 0x506BF76: SDL_InitSubSystem_REAL (SDL.c:173)
+==4834==    by 0x506BF76: SDL_Init_REAL (SDL.c:244)
+==4834==    by 0x40D753: MatrixSimulator::MatrixSimulator(rect_t, int) (matrixsim.cpp:31)
+==4834==    by 0x405E62: yaml_parse() (yaml-parse.cpp:60)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834== 
+==4834== Invalid write of size 8
+==4834==    at 0x40E3A8: PatternJobs::register_pattern(Pattern_t*) (patterns.cpp:32)
+==4834==    by 0x406CD7: yaml_parse() (yaml-parse.cpp:108)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834==  Address 0x12aac850 is 0 bytes after a block of size 48 alloc'd
+==4834==    at 0x4C2CB1D: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4834==    by 0x40E387: PatternJobs::register_pattern(Pattern_t*) (patterns.cpp:31)
+==4834==    by 0x406CD7: yaml_parse() (yaml-parse.cpp:108)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834== 
+==4834== Invalid write of size 8
+==4834==    at 0x40E3AF: PatternJobs::register_pattern(Pattern_t*) (patterns.cpp:32)
+==4834==    by 0x406CD7: yaml_parse() (yaml-parse.cpp:108)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834==  Address 0x12aac858 is 8 bytes after a block of size 48 alloc'd
+==4834==    at 0x4C2CB1D: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4834==    by 0x40E387: PatternJobs::register_pattern(Pattern_t*) (patterns.cpp:31)
+==4834==    by 0x406CD7: yaml_parse() (yaml-parse.cpp:108)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834== 
+==4834== Invalid write of size 8
+==4834==    at 0x40E3B7: PatternJobs::register_pattern(Pattern_t*) (patterns.cpp:32)
+==4834==    by 0x406CD7: yaml_parse() (yaml-parse.cpp:108)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834==  Address 0x12aac860 is 16 bytes after a block of size 48 alloc'd
+==4834==    at 0x4C2CB1D: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4834==    by 0x40E387: PatternJobs::register_pattern(Pattern_t*) (patterns.cpp:31)
+==4834==    by 0x406CD7: yaml_parse() (yaml-parse.cpp:108)
+==4834==    by 0x40D55E: main (main.cpp:47)
+==4834== 
+==4834== Conditional jump or move depends on uninitialised value(s)
+==4834==    at 0xC4A95DB: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC575C72: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC4A997E: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC4A26D9: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC4A2C68: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC6B017F: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC34E536: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC3173F3: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC2FAE3E: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC2FB435: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC2FB9C2: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834==    by 0xC302E1D: ??? (in /usr/lib/xorg/modules/dri/r300_dri.so)
+==4834== 
+==4834== Conditional jump or move depends on uninitialised value(s)
+==4834==    at 0x40E403: PatternJobs::process() (patterns.cpp:43)
+==4834==    by 0x40D576: main (main.cpp:55)
+==4834== 
+==4834== 
+==4834== HEAP SUMMARY:
+==4834==     in use at exit: 4,315,501 bytes in 16,046 blocks
+==4834==   total heap usage: 237,686 allocs, 221,640 frees, 2,074,393,152 bytes allocated
+==4834== 
+==4834== LEAK SUMMARY:
+==4834==    definitely lost: 18,904 bytes in 11 blocks
+==4834==    indirectly lost: 0 bytes in 0 blocks
+==4834==      possibly lost: 1,808,497 bytes in 10,197 blocks
+==4834==    still reachable: 2,488,100 bytes in 5,838 blocks
+==4834==         suppressed: 0 bytes in 0 blocks
+==4834== Rerun with --leak-check=full to see details of leaked memory
+==4834== 
+==4834== For counts of detected and suppressed errors, rerun with: -v
+==4834== Use --track-origins=yes to see where uninitialised values come from
+==4834== ERROR SUMMARY: 3598 errors from 6 contexts (suppressed: 0 from 0)

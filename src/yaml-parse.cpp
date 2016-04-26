@@ -101,13 +101,12 @@ int yaml_parse()
                     name);
             return -1;
         }
+        Pattern_t pat = {NULL, NULL, NULL};
+        pat.surf = surf;
+        pat.sim = sim;
+        pat.net = net;
+        patternjobs.register_pattern(&pat);
     }
-
-    Pattern_t pat = {NULL, NULL, NULL};
-    pat.surf = surf;
-    pat.sim = sim;
-    pat.net = net;
-    patternjobs.register_pattern(&pat);
 
     // so far so good! lets return 0 for that!
     return 0;

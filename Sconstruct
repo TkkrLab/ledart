@@ -21,7 +21,7 @@ ccflags = ['-Werror']
 # ccflags.append('-std=c++11')
 # for debugging symbols.
 ccflags.append('-ggdb3')
-ccflags.append('-Og')
+ccflags.append('-O0')
 ccflags.append('-ansi')
 ccflags.append('-pedantic-errors')
 ccflags.append('-Wextra')

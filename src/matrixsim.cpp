@@ -3,13 +3,13 @@
 // access to the global event handler
 extern EventHandler global_event_handler;
 
-int MatrixSimulator::pixelsize;
-rect_t MatrixSimulator::dims;
-rect_t MatrixSimulator::pixel;
-rect_t MatrixSimulator::screen_dims;
-Uint32 MatrixSimulator::window_id = 0;
-SDL_Window *MatrixSimulator::window = NULL;
-SDL_Renderer *MatrixSimulator::renderer = NULL;
+// int MatrixSimulator::pixelsize;
+// rect_t MatrixSimulator::dims;
+// rect_t MatrixSimulator::pixel;
+// rect_t MatrixSimulator::screen_dims;
+// Uint32 MatrixSimulator::window_id = 0;
+// SDL_Window *MatrixSimulator::window = NULL;
+// SDL_Renderer *MatrixSimulator::renderer = NULL;
 
 MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
 {
@@ -87,7 +87,7 @@ void MatrixSimulator::draw(Surface *surf)
     surf_rect = surf->get_rect();
 
     // fill background.
-    SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
+    // SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
     SDL_RenderClear(this->renderer);
 
     // // draw pixels

@@ -27,7 +27,7 @@ public:
     void process();
 private:
     static Pattern_t *patterns;
-    static int num_patterns;
+    static size_t num_patterns;
 };
 
 #endif
