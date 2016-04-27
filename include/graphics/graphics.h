@@ -14,8 +14,6 @@ public:
     Graphics();
     Graphics(rect_t);
 
-    void fill(RGBColor_t);
-
     void xLine(int, int, int, RGBColor_t);
     void yLine(int, int, int, RGBColor_t);
     void draw_circle(int, int, int, int, RGBColor_t);

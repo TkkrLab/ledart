@@ -16,12 +16,6 @@ Graphics::Graphics(rect_t dims)
     this->fill(bg);
 }
 
-void Graphics::fill(RGBColor_t color)
-{
-    rect_t rect = this->get_rect();
-    this->draw_rect(rect.x, rect.y, rect.width, rect.height, 0, color);
-}
-
 void Graphics::draw_pixel(int x, int y, RGBColor_t color)
 {
     Surface::write_pixel(x, y, color);

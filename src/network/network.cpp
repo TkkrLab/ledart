@@ -36,9 +36,9 @@ void Network::open()
 void Network::transmit(uint8_t *data, size_t size)
 {
     // this->open();
-    static timeval t = {0, 0};
-    static fd_set wset;
-    static int maxfdp1 = this->sockfd + 1;
+    timeval t = {0, 0};
+    fd_set wset;
+    int maxfdp1 = this->sockfd + 1;
     FD_ZERO(&wset);
     FD_SET(this->sockfd, &wset);
 

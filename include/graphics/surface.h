@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include <colors.h>
 
@@ -29,6 +30,7 @@ public:
 
     void write_pixel(int, int, RGBColor_t);
     void read_pixel(int, int, RGBColor_t *);
+    void fill(RGBColor_t);
     size_t ctop(int, int);
 
     // virtual generate for derived classes that override.
@@ -36,8 +38,8 @@ public:
 
     ~Surface();
 private:
-    static RGBColor_t *surface;
-    static rect_t rect;
+    RGBColor_t *surface;
+    rect_t rect;
 };
 
 #endif

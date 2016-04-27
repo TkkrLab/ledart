@@ -26,8 +26,8 @@ public:
     void register_pattern(Pattern_t *);
     void process();
 private:
-    static Pattern_t *patterns;
-    static size_t num_patterns;
+    Pattern_t *patterns = NULL;
+    size_t num_patterns = 0;
 };
 
 #endif

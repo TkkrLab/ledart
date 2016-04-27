@@ -16,10 +16,10 @@ class EventHandler
         void unregister_handler(ev_callback);
         void process();
     private:
-        static const int MAX_HANDLERS = 100;
-        static size_t num_handlers;
-        static void *params[MAX_HANDLERS];
-        static ev_callback handlers[MAX_HANDLERS];
+        static const size_t MAX_HANDLERS = 100;
+        size_t num_handlers = 0;
+        void *params[MAX_HANDLERS] = {NULL};
+        ev_callback handlers[MAX_HANDLERS] = {NULL};
 };
 
 #endif

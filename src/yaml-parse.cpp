@@ -57,7 +57,8 @@ int yaml_parse()
 
         if(matrixsim)
         {
-            sim = new MatrixSimulator(matrix_dims);
+            int pixelsize = matrixsim["pixelsize"].as<int>();
+            sim = new MatrixSimulator(matrix_dims, pixelsize);
         }
         else
         {

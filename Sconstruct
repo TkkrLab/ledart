@@ -2,7 +2,7 @@ from glob import glob
 import os
 import fnmatch
 
-project_name = "project"
+project_name = "main"
 build_dir = 'build/'
 
 src_dir = 'src/'

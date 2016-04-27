@@ -1,10 +1,5 @@
 #include "eventhandler.h"
 
-const int MAX_HANDLERS = 100;
-size_t EventHandler::num_handlers = 0;
-ev_callback EventHandler::handlers[MAX_HANDLERS];
-void *EventHandler::params[MAX_HANDLERS];
-
 EventHandler::EventHandler()
 {}
 

@@ -1,13 +1,5 @@
 #include "BouncingDot.h"
 
-int BouncingDot::posx = 0;
-int BouncingDot::posy = 0;
-int BouncingDot::dirx = 1;
-int BouncingDot::diry = 1;
-
-RGBColor_t BouncingDot::pixel_color = WHITE;
-RGBColor_t BouncingDot::background_color = BLACK;
-
 BouncingDot::BouncingDot(rect_t dims):
 Graphics(dims)
 {

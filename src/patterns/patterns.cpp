@@ -1,8 +1,5 @@
 #include "patterns.h"
 
-Pattern_t *PatternJobs::patterns = NULL;
-size_t PatternJobs::num_patterns = 0;
-
 PatternJobs::PatternJobs()
 {
     
@@ -34,7 +31,7 @@ void PatternJobs::register_pattern(Pattern_t *pattern)
 
 void PatternJobs::process()
 {
-    static Pattern_t *pattern;
+    Pattern_t *pattern = NULL;
     for(size_t p = 0; p < num_patterns; p++)
     {
         pattern = &patterns[p];

@@ -1,8 +1,4 @@
 #include "surface.h"
-#include <stdio.h>
-
-RGBColor_t *Surface::surface = NULL;
-rect_t Surface::rect;
 
 Surface::Surface()
 {
@@ -14,10 +10,23 @@ Surface::Surface()
 
 Surface::Surface(rect_t dims)
 {
-    // this->rect.width = width;
-    // this->rect.height = height;
     memcpy(&this->rect, &dims, sizeof(dims));
     this->create_surface();
+    // clear surface.
+    RGBColor_t color = {0, 0, 0, 0};
+    this->fill(color);
+}
+
+// fill a surface to a certain color.
+void Surface::fill(RGBColor_t color)
+{
+    for(int px = 0; px < this->rect.width; px++)
+    {
+        for(int py = 0; py < this->rect.height; py++)
+        {
+            this->write_pixel(px, py, color);
+        }
+    }
 }
 
 // cordinate (x, y) to 1D pos
