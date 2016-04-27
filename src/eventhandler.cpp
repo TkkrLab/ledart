@@ -23,6 +23,18 @@ void EventHandler::register_handler(ev_callback callback, void *param)
     this->num_handlers++;
 }
 
+void EventHandler::unregister_handler(ev_callback callback)
+{
+    for(size_t i = 0; i < this->num_handlers; i++)
+    {
+        if(this->handlers[i] == callback)
+        {
+            this->handlers[i] = NULL;
+            return;
+        }
+    }
+}
+
 void EventHandler::process()
 {
     static SDL_Event event;
@@ -31,8 +43,11 @@ void EventHandler::process()
         for(unsigned int h = 0; h < this->num_handlers; h++)
         {
             ev_callback handler = this->handlers[h];
-            void *param = this->params[h];
-            handler(event, param);
+            if(handler != NULL)
+            {
+                void *param = this->params[h];
+                handler(event, param);
+            }
         }
     }
 }

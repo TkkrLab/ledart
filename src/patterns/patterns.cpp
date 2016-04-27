@@ -19,23 +19,6 @@ PatternJobs::~PatternJobs()
 
 void PatternJobs::register_pattern(Pattern_t *pattern)
 {
-    // if(this->patterns == NULL)
-    // {
-    //     this->patterns = (Pattern_t *)malloc(sizeof(Pattern_t));
-    //     memcpy(this->patterns, pattern, sizeof(Pattern_t));
-    //     this->num_patterns += 1;
-    // }
-    // else
-    // {
-    //     this->num_patterns += 1;
-    //     this->patterns = (Pattern_t *)realloc(patterns, 0);
-    //     if(this->patterns == NULL)
-    //     {
-    //         fprintf(stderr, "couldn't reallocate for more patterns exiting.\n");
-    //         exit(-1);
-    //     }
-    //     memcpy(&this->patterns[this->num_patterns], pattern, sizeof(Pattern_t));
-    // }
     this->num_patterns += 1;
     Pattern_t *new_p = (Pattern_t *)realloc(this->patterns, sizeof(Pattern_t)*this->num_patterns);
     if(new_p == NULL)

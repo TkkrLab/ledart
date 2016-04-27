@@ -3,14 +3,6 @@
 // access to the global event handler
 extern EventHandler global_event_handler;
 
-// int MatrixSimulator::pixelsize;
-// rect_t MatrixSimulator::dims;
-// rect_t MatrixSimulator::pixel;
-// rect_t MatrixSimulator::screen_dims;
-// Uint32 MatrixSimulator::window_id = 0;
-// SDL_Window *MatrixSimulator::window = NULL;
-// SDL_Renderer *MatrixSimulator::renderer = NULL;
-
 MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
 {
     // initialize some variables/
@@ -28,7 +20,7 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
     this->screen_dims.height = dims.height * this->pixel.height;
 
     // initialize sdl
-    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0)
+    if(SDL_Init(SDL_INIT_VIDEO) < 0)
     {
         printf("SDL could not initialize SDL_Error: %s\n", SDL_GetError());
         exit(-1);
@@ -110,75 +102,81 @@ void MatrixSimulator::draw(Surface *surf)
 // this just handles any process,
 void MatrixSimulator::process(Surface *surf)
 {
-    // static uint64_t frame = 0;
+    if(!running)
+        return;
 
-    // frame++;
-    // if(!(frame % 10000))
-    // {
-        this->draw(surf);
-    // }
+    this->draw(surf);
 }
 
 void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
 {
     // static cast pointer to our object type. so we can use it.
-    UNUSED(this_instance);
-    // MatrixSimulator *ins = static_cast<MatrixSimulator *>(this_instance);
-    
-    // don't want anything to do with it if it's not for this.
-    // object.
-    // if(ins->window_id != event.window.windowID)
-    // {
-    //     return;
-    // }
+    // thins == this instance
+    // see what i did there?
+    MatrixSimulator *thins = static_cast<MatrixSimulator *>(this_instance);
 
-    static bool c_key_isdown;
-    static bool ctrl_key_isdown;
-    static bool escape_key_isdown;
-    static bool window_quit = false;
+    if(thins->window_id != event.window.windowID)
+    {
+        return;
+    }
 
     if(event.type == SDL_WINDOWEVENT)
     {
-        if(event.type == SDL_QUIT)
+        if(event.window.event == SDL_WINDOWEVENT_CLOSE)
         {
-            window_quit = true;
+            thins->window_quit = true;
         }
-    }
-    else if(event.type == SDL_KEYDOWN)
-    {
-        switch(event.key.keysym.sym)
+        else if(event.window.event == SDL_WINDOWEVENT_FOCUS_GAINED)
         {
-            case SDLK_c:
-                c_key_isdown = true;
-                break;
-            case SDLK_LCTRL:
-                ctrl_key_isdown = true;
-                break;
-            case SDLK_ESCAPE:
-                escape_key_isdown = true;
-                break;
+            thins->in_focus = true;
         }
-    }
-    else if(event.type == SDL_KEYUP)
-    {
-        switch(event.key.keysym.sym)
+        else if(event.window.event == SDL_WINDOWEVENT_FOCUS_LOST)
         {
-            case SDLK_c:
-                c_key_isdown = false;
-                break;
-            case SDLK_LCTRL:
-                ctrl_key_isdown = false;
-                break;
-            case SDLK_ESCAPE:
-                escape_key_isdown = false;
-                break;
+            thins->in_focus = false;
         }
-    }
 
-    // all reasons to quit.
-    if(window_quit || (c_key_isdown && ctrl_key_isdown) || escape_key_isdown)
+    }
+    if(thins->running && thins->in_focus)
     {
-        exit(0);
+        if(event.type == SDL_KEYDOWN)
+        {
+            switch(event.key.keysym.sym)
+            {
+                case SDLK_c:
+                    thins->c_key_isdown = true;
+                    break;
+                case SDLK_LCTRL:
+                    thins->ctrl_key_isdown = true;
+                    break;
+                case SDLK_ESCAPE:
+                    thins->escape_key_isdown = true;
+                    break;
+            }
+        }
+        else if(event.type == SDL_KEYUP)
+        {
+            switch(event.key.keysym.sym)
+            {
+                case SDLK_c:
+                    thins->c_key_isdown = false;
+                    break;
+                case SDLK_LCTRL:
+                    thins->ctrl_key_isdown = false;
+                    break;
+                case SDLK_ESCAPE:
+                    thins->escape_key_isdown = false;
+                    break;
+            }
+        }
+        // all reasons to quit.
+        if(thins->window_quit ||
+          (thins->c_key_isdown && thins->ctrl_key_isdown) ||
+          thins->escape_key_isdown)
+        {
+            thins->running = false;
+            // hide window away.
+            SDL_HideWindow(thins->window);
+        }
     }
 }
 
@@ -194,5 +192,5 @@ MatrixSimulator::~MatrixSimulator()
         SDL_DestroyWindow(this->window);
         this->renderer = NULL;
     }
-    SDL_Quit();
+    SDL_QuitSubSystem(SDL_INIT_VIDEO);
 }

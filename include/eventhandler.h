@@ -13,6 +13,7 @@ class EventHandler
     public:
         EventHandler();
         void register_handler(ev_callback, void *);
+        void unregister_handler(ev_callback);
         void process();
     private:
         static const int MAX_HANDLERS = 100;
