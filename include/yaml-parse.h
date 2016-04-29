@@ -9,6 +9,7 @@
 #include <patterns.h>
 
 extern PatternJobs patternjobs;
+extern Builder builder;
 
 int yaml_parse();
 

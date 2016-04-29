@@ -3,7 +3,6 @@
 int yaml_parse()
 {
     rect_t matrix_dims = {0, 0, 0, 0};
-    // allocate the new sim just once and assign if needed.
     MatrixSimulator *sim = NULL;
     Surface *surf = NULL;
     Network *net = NULL;
@@ -74,7 +73,7 @@ int yaml_parse()
             const char *type = protocol["type"].as<std::string>().c_str();
             const char *target = protocol["target"].as<std::string>().c_str();
             int port = protocol["port"].as<int>();
-            net = protocol_builder(type, target, port);
+            net = builder.protocol_builder(type, target, port);
             if(net == NULL)
             {
                 fprintf(stderr,
@@ -94,7 +93,7 @@ int yaml_parse()
         // after all this we are sure pattern exist.
         // because we did a test for that earlier.
         const char *name = pattern["job"].as<std::string>().c_str();
-        surf = surface_builder(name, matrix_dims);
+        surf = builder.surface_builder(name, matrix_dims);
         if(surf == NULL)
         {
             fprintf(stderr,

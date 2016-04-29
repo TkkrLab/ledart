@@ -1,6 +1,6 @@
 #include "builder.h"
 
-Surface *surface_builder(const char *name, rect_t dims)
+Surface *Builder::surface_builder(const char *name, rect_t dims)
 {
     static Surface *surf;
     surf = NULL;
@@ -12,7 +12,7 @@ Surface *surface_builder(const char *name, rect_t dims)
     return surf;
 }
 
-Network *protocol_builder(const char *name, const char *target, uint16_t port)
+Network *Builder::protocol_builder(const char *name, const char *target, uint16_t port)
 {
     static Network *net;
     net = NULL;

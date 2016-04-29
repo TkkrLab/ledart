@@ -2,7 +2,7 @@ from glob import glob
 import os
 import fnmatch
 
-project_name = "main"
+project_name = "ledart"
 build_dir = 'build/'
 
 src_dir = 'src/'
@@ -18,7 +18,6 @@ system_libs = ['gflags', 'SDL2', 'yaml-cpp']
 local_libs = []
 
 ccflags = ['-Werror']
-# ccflags.append('-std=c++11')
 # for debugging symbols.
 ccflags.append('-ggdb3')
 ccflags.append('-O0')
@@ -29,7 +28,7 @@ ccflags.append('-Wall')
 ccflags.append('--std=c++11')
 
 
-env = Environment(CC='gcc')
+env = Environment(CC='clang')
 
 env.Append(CCFLAGS=ccflags)
 env.Append(CPPPATH=[include_dir])

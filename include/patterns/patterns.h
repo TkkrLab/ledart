@@ -8,7 +8,11 @@
 #include <network.h>
 #include <matrixsim.h>
 
-// include available patterns
+// include network interfaces here.
+#include <network.h>
+#include <lmcp.h>
+
+// include available patterns also here.
 #include <BouncingDot.h>
 
 typedef struct

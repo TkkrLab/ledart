@@ -52,15 +52,10 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
 
 void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
 {
-    static int bw;
-    if(border)
-    {
-        bw = 1;
-    }
-    else
-    {
-        bw = 0;
-    }
+    int bw;
+    if(border) bw = 1;
+    else bw = 0;
+
     SDL_Rect r = {rect.x + bw, rect.y + bw , rect.width - (2 * bw), rect.height - (2 * bw)};
     SDL_SetRenderDrawColor(this->renderer, color.red, color.green, color.blue, color.alpha);
     SDL_RenderFillRect(this->renderer, &r);
@@ -71,6 +66,7 @@ void MatrixSimulator::draw(Surface *surf)
 {
     static rect_t surf_rect = {0, 0, 0, 0};
     static RGBColor_t color = {0, 0, 0, 0};
+
     if(surf == NULL)
     {
         return;
@@ -79,7 +75,7 @@ void MatrixSimulator::draw(Surface *surf)
     surf_rect = surf->get_rect();
 
     // fill background.
-    // SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
+    SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
     SDL_RenderClear(this->renderer);
 
     // // draw pixels
@@ -90,7 +86,8 @@ void MatrixSimulator::draw(Surface *surf)
             pixel.x = x * this->pixel.width;
             pixel.y = y * this->pixel.height;
             surf->read_pixel(x, y, &color);
-            this->draw_rect(pixel, color, false);
+            // draw border when pixelsize < 3
+            this->draw_rect(pixel, color, (this->pixelsize < 5) ? false:true);
         }
     }
 
@@ -169,13 +166,15 @@ void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
             }
         }
         // all reasons to quit.
-        if(thins->window_quit ||
-          (thins->c_key_isdown && thins->ctrl_key_isdown) ||
-          thins->escape_key_isdown)
+        if(thins->window_quit || thins->escape_key_isdown)
         {
             thins->running = false;
             // hide window away.
             SDL_HideWindow(thins->window);
+        }
+        else if(thins->c_key_isdown && thins->ctrl_key_isdown)
+        {
+            exit(0);
         }
     }
 }

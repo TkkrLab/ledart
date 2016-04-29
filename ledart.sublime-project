@@ -1,4 +1,19 @@
 {
+    "SublimeLinter":
+    {
+        "linters":
+        {
+            "clang": {
+                "include_dirs": [
+                    "${project_folder}/include",
+                    "${project_folder}/inlcude/graphics",
+                    "${project_folder}/include/network",
+                    "${project_folder}/include/patterns"
+
+                ]
+            }
+        }
+    },
 	"folders":
 	[
 		{
