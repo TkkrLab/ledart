@@ -3,6 +3,13 @@
 // access to the global event handler
 extern EventHandler global_event_handler;
 
+typedef struct 
+{
+    MatrixSimulator* instance;
+} handler_params_t;
+
+static handler_params_t handler_params;
+
 MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
 {
     // initialize some variables/
@@ -38,16 +45,17 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
     }
     this->window_id = SDL_GetWindowID(this->window);
 
-    this->renderer = SDL_CreateRenderer(this->window, -1,
-                                        SDL_RENDERER_ACCELERATED);
+    this->renderer = SDL_CreateRenderer(this->window, -1, 0);
     if(this->renderer == NULL)
     {
-        printf("Renderer coudl not be created! SDL Error: %s\n", SDL_GetError());
+        printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
         exit(-1);
     }
 
     // set a event handler callback.
-    global_event_handler.register_handler(this->handle_input, this);
+    // global_event_handler.register_handler(this->handle_input, this);
+    handler_params.instance = this;
+    global_event_handler.register_handler(this->handle_input, (void *)&handler_params);
 }
 
 void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
@@ -105,12 +113,21 @@ void MatrixSimulator::process(Surface *surf)
     this->draw(surf);
 }
 
-void MatrixSimulator::handle_input(SDL_Event event, void *this_instance)
+void MatrixSimulator::handle_input(SDL_Event event, void *p)
 {
-    // static cast pointer to our object type. so we can use it.
+    if(p == NULL)
+    {
+        fprintf(stderr, "got NULL parameters. exiting!\n");
+    }
+    handler_params_t *params = (handler_params_t*)p;
+    if(params->instance == NULL)
+    {
+        fprintf(stderr, "received NULL instance.\n");
+        exit(-1);
+    }
     // thins == this instance
     // see what i did there?
-    MatrixSimulator *thins = static_cast<MatrixSimulator *>(this_instance);
+    MatrixSimulator *thins = params->instance;
 
     if(thins->window_id != event.window.windowID)
     {
