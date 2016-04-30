@@ -1,13 +1,13 @@
 #include "yaml-parse.h"
 
-int yaml_parse()
+int yaml_parse(const char *config_file)
 {
     rect_t matrix_dims = {0, 0, 0, 0};
     MatrixSimulator *sim = NULL;
     Surface *surf = NULL;
     Network *net = NULL;
 
-    YAML::Node config = YAML::LoadFile("configs/test.yml");
+    YAML::Node config = YAML::LoadFile(config_file);
     if(config.size() == 0 || !(config))
     {
         fprintf(stderr,

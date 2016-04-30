@@ -11,23 +11,7 @@
 			"file": "src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 1196,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/matrixsim.cpp",
-			"settings":
-			{
-				"buffer_size": 5485,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "configs/test.yml",
-			"settings":
-			{
-				"buffer_size": 180,
+				"buffer_size": 1561,
 				"line_ending": "Unix"
 			}
 		}
@@ -35,9 +19,17 @@
 	"build_system": "Packages/User/scons.sublime-build",
 	"command_palette":
 	{
-		"height": 192.0,
+		"height": 132.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"toggle",
+				"SublimeLinter: Toggle Linter"
+			],
 			[
 				"instal",
 				"Package Control: Install Package"
@@ -49,10 +41,6 @@
 			[
 				"linter",
 				"SublimeLinter: Choose Lint Mode"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"isnta",
@@ -262,36 +250,42 @@
 	"expanded_folders":
 	[
 		"/home/robert/ledart",
-		"/home/robert/ledart/configs",
-		"/home/robert/ledart/include",
-		"/home/robert/ledart/src",
-		"/home/robert/ledart/src/graphics",
-		"/home/robert/ledart/src/patterns"
+		"/home/robert/ledart/src"
 	],
 	"file_history":
 	[
+		"/home/robert/ledart/src/TODO.md",
+		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/types.h",
+		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
+		"/home/robert/Sketchbook/sketchbook/organ_panel_GG_midi/organ_panel_GG_midi.ino",
+		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
+		"/home/robert/Sketchbook/sketchbook/organ_midi_keyboard/organ_midi_keyboard.ino",
+		"/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard/arduino-midi-keyboard.ino",
+		"/home/robert/ledart/configs/test.yml",
+		"/home/robert/ledart/include/matrixsim.h",
+		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
+		"/home/robert/ledart/src/matrixsim.cpp",
+		"/home/robert/ledart/src/yaml-parse.cpp",
+		"/home/robert/ledart/Sconstruct",
+		"/home/robert/ledart/src/main.cpp",
+		"/home/robert/ledart/src/testing.cpp",
+		"/home/robert/ledart/include/graphics/surface.h",
+		"/home/robert/ledart/ledart.sublime-project",
 		"/home/robert/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
 		"/home/robert/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
 		"/home/robert/ledart/src/eventhandler.cpp",
 		"/home/robert/ledart/src/graphics/surface.cpp",
-		"/home/robert/ledart/src/matrixsim.cpp",
 		"/home/robert/.config/sublime-text-3/Packages/User/C++.sublime-settings",
 		"/home/robert/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
-		"/home/robert/ledart/include/matrixsim.h",
 		"/home/robert/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/robert/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/robert/ledart/ledart.sublime-project",
 		"/home/robert/ledart/include/yaml-parse.h",
-		"/home/robert/ledart/src/yaml-parse.cpp",
 		"/home/robert/ledart/src/builder.cpp",
 		"/home/robert/ledart/include/eventhandler.h",
 		"/home/robert/ledart/include/patterns/patterns.h",
 		"/home/robert/ledart/include/builder.h",
 		"/home/robert/ledart/src/graphics/graphics.cpp",
 		"/home/robert/ledart/include/graphics/graphics.h",
-		"/home/robert/ledart/include/graphics/surface.h",
-		"/home/robert/ledart/Sconstruct",
 		"/home/robert/ledart/src/patterns/patterns.cpp",
 		"/home/robert/ledart/include/patterns/GraphicsTest.h",
 		"/home/robert/ledart/include/patterns/BouncingDot.h",
@@ -300,13 +294,11 @@
 		"/home/robert/ledart/include/network/network.h",
 		"/home/robert/ledart/src/network/lmcp.cpp",
 		"/home/robert/ledart/include/network/lmcp.h",
-		"/home/robert/ledart/src/testing.cpp",
 		"/home/robert/ledart/include/mtools.h",
 		"/home/robert/ledart/src/.sconsign.dblite",
 		"/home/robert/ledart/src/builder.h",
 		"/home/robert/.config/sublime-text-3/Packages/User/SublimeGDB.sublime-settings",
 		"/home/robert/.config/sublime-text-3/Packages/SublimeGDB/SublimeGDB.sublime-settings",
-		"/home/robert/ledart/configs/test.yml",
 		"/home/robert/Downloads/04_key_presses.cpp",
 		"/home/robert/ledart/src/matrix.cpp",
 		"/home/robert/ledart/src/patterns/GraphicsTest.cpp",
@@ -337,7 +329,6 @@
 		"/home/robert/ledart/README.md",
 		"/home/robert/py-ledart/Tools/Graphics/Surface.py",
 		"/home/robert/py-ledart/Lmcp.py",
-		"/home/robert/ledart/src/main.cpp",
 		"/home/robert/ledboard/controller/software/sprite_ledboard_rpi/LedBoard.h",
 		"/home/robert/ledart/src/ledart.sublime-project",
 		"/home/robert/.config/sublime-text-3/Packages/User/scons.sublime-build",
@@ -354,12 +345,8 @@
 		"/home/robert/pyforktest/py-artnet/runPatternJob.py",
 		"/home/robert/py-ledart/patterns/VideoDevCap.py",
 		"/home/robert/py-ledart/patterns/Clock.py",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/types.h",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
-		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
 		"/home/robert/Downloads/HerMIDI-1.0/Makefile",
 		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/layout.txt",
-		"/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard/arduino-midi-keyboard.ino",
 		"/home/robert/py-ledart/Tools/Controllers/SoundControllers.py",
 		"/home/robert/py-ledart/README.md",
 		"/home/robert/py-ledart/.travis.yml",
@@ -368,7 +355,6 @@
 		"/home/robert/py-ledart/ArgumentParser.py",
 		"/home/robert/py-ledart/output.mp4",
 		"/home/robert/py-ledart/patterns/DisplayImage.py",
-		"/home/robert/Sketchbook/sketchbook/organ_midi_keyboard/organ_midi_keyboard.ino",
 		"/home/robert/LinMesia/LinMesia-cpp/src/main.cpp",
 		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/MIDI.hpp",
 		"/home/robert/EspLight-firmware/EspLight-firmware.ino",
@@ -377,7 +363,6 @@
 		"/home/robert/LinMesia/LinMesia-cpp/Sconstruct",
 		"/home/robert/LinMesia/LinMesia-cpp/src/.sconsign.dblite",
 		"/home/robert/SDL2/src/video/wayland/SDL_waylanddyn.h",
-		"/home/robert/Sketchbook/sketchbook/organ_panel_GG_midi/organ_panel_GG_midi.ino",
 		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/midi_Defs.h",
 		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/MIDI.h",
 		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/examples/MIDI_Basic_IO/MIDI_Basic_IO.ino",
@@ -396,8 +381,7 @@
 		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/tools/avr/avr/include/stdio.h",
 		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/esp8266com/esp8266/libraries/esp8266/examples/CallSDKFunctions/CallSDKFunctions.ino",
 		"/home/robert/Documents/esp-projects/esp8266-firmware/app/include/user_settings.h",
-		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink/Blink.ino",
-		"/home/robert/Documents/esp-projects/esp8266-firmware/app/user/rtc.c"
+		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink/Blink.ino"
 	],
 	"find":
 	{
@@ -416,6 +400,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"previous_color",
+			"uint32_t",
+			"false",
 			"1",
 			"bw",
 			"Uint64_t",
@@ -540,10 +527,7 @@
 			"printf(",
 			"}\n",
 			"this->",
-			"int ",
-			"W",
-			"x",
-			"y"
+			"int "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -570,15 +554,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1196,
+						"buffer_size": 1561,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								430,
-								440
+								373,
+								373
 							]
 						],
 						"settings":
@@ -592,64 +576,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/matrixsim.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5485,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								838,
-								838
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 221.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "configs/test.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 180,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								92,
-								92
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -12739,6 +12665,14 @@
 		"height": 88.0
 	},
 	"output.build|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1457727997.8785863":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461956970.8605604":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461956980.0284052":
 	{
 		"height": 88.0
 	},
@@ -34812,7 +34746,7 @@
 	},
 	"output.exec":
 	{
-		"height": 155.0
+		"height": 117.0
 	},
 	"output.find_results":
 	{
@@ -41263,6 +41197,26 @@
 		"height": 88.0
 	},
 	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1457727998.8982816":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461957496.7322252":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461962282.9247532":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461962751.6878278":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461963060.171441":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461963240.6542642":
 	{
 		"height": 88.0
 	},
@@ -53250,11 +53204,15 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 501.0,
 		"selected_items":
 		[
+			[
+				"",
+				"~/ledart/ledart.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 381.0
 	},
 	"select_symbol":
 	{
@@ -53271,7 +53229,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 257.0,
 	"status_bar_visible": true,
 	"template_settings":

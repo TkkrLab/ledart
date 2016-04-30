@@ -11,6 +11,6 @@
 extern PatternJobs patternjobs;
 extern Builder builder;
 
-int yaml_parse();
+int yaml_parse(const char *);
 
 #endif

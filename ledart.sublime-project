@@ -1,24 +1,45 @@
 {
-    "SublimeLinter":
-    {
-        "linters":
-        {
-            "clang": {
-                "include_dirs": [
-                    "${project_folder}/include",
-                    "${project_folder}/inlcude/graphics",
-                    "${project_folder}/include/network",
-                    "${project_folder}/include/patterns"
-
-                ]
-            }
-        }
-    },
+	"SublimeLinter":
+	{
+		"linters":
+		{
+			"clang":
+			{
+				"include_dirs":
+				[
+					"${project_folder}/include",
+					"${project_folder}/inlcude/graphics",
+					"${project_folder}/include/network",
+					"${project_folder}/include/patterns"
+				]
+			}
+		}
+	},
 	"folders":
 	[
 		{
 			"follow_symlinks": true,
 			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/robert/Sketchbook/sketchbook/organ_midi_keyboard"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/robert/Sketchbook/sketchbook/midi-keyboard-duality"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/robert/Sketchbook/sketchbook/organ_panel_GG_midi"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/robert/Sketchbook/sketchbook/piano-keyboard-test"
 		}
 	]
 }
