@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#include <colors.h>
+#include <graphics/colors.h>
 
 typedef struct
 {

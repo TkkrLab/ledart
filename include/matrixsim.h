@@ -12,7 +12,7 @@ extern "C"
 
 #include <mtools.h>
 #include <eventhandler.h>
-#include <surface.h>
+#include <graphics/surface.h>
 
 class MatrixSimulator
 {

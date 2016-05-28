@@ -4,8 +4,8 @@
 /* 
 */
 
-#include <surface.h>
-#include <colors.h>
+#include <graphics/surface.h>
+#include <graphics/colors.h>
 #include <math.h>
 
 class Graphics: public Surface

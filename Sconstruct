@@ -2,12 +2,19 @@ from glob import glob
 import os
 import fnmatch
 
+prefix = ''
+cc = prefix + 'gcc'
+cxx = prefix + 'g++'
+ar = prefix + 'ar'
+ranlib = prefix + 'ranlib'
+
 project_name = "ledart"
 build_dir = 'build/'
 
 src_dir = 'src/'
 include_dir = 'include/'
 
+static_lib_dir = 'lib/'
 lib_dir = 'libraries/'
 
 # system installed libs that are needed.
@@ -28,10 +35,18 @@ ccflags.append('-Wall')
 ccflags.append('--std=c++11')
 
 
-env = Environment(CC='clang')
+# setup build environment
+env = Environment()
 
-env.Append(CCFLAGS=ccflags)
+env['CXX'] = cxx
+env['CC'] = cc
+env['AR'] = ar
+env['RANLIB'] = ranlib
+env['CCFLAGS'] = ccflags
+env['ENV']['PATH'] = os.environ['PATH']
 env.Append(CPPPATH=[include_dir])
+
+lib_build = ARGUMENTS.get('libbuild', 0)
 
 # add all the directories in include
 for root, dirnames, filenames in os.walk(include_dir):
@@ -58,7 +73,10 @@ obj_targets = []
 src_files = []
 for root, dirnames, filenames in os.walk(src_dir):
     for filename in fnmatch.filter(filenames, '*.cpp'):
-        src_files.append(os.path.join(root, filename))
+        if lib_build and ("main" in filename):
+            print("filename: %s" % filename)
+        else:
+            src_files.append(os.path.join(root, filename))
 
 for src in src_files:
     target = src.replace('.cpp', '.o')
@@ -68,7 +86,10 @@ objects = []
 for (obj_target, src_file) in zip(obj_targets, src_files):
     objects.append(env.Object(target=obj_target, source=src_file))
 
-env.Program(target=build_dir+project_name, source=objects)
+if lib_build:
+    env.StaticLibrary(target=static_lib_dir + project_name, source=objects)
+else:
+    env.Program(target=build_dir + project_name, source=objects)
 
 Clean('.', build_dir)
 

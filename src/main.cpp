@@ -146,7 +146,6 @@ int main(int argc, char **argv)
         patternjobs.process();
         SDL_Delay(options.fps);
     }
-
     for(;;)
     {
         global_event_handler.process();
