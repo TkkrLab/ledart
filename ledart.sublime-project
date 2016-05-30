@@ -19,27 +19,11 @@
 	[
 		{
 			"follow_symlinks": true,
+			"path": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp"
+		},
+		{
+			"follow_symlinks": true,
 			"path": "."
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/organ_midi_keyboard"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/midi-keyboard-duality"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/organ_panel_GG_midi"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/piano-keyboard-test"
 		}
 	]
 }
