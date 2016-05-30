@@ -56,6 +56,8 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
     // global_event_handler.register_handler(this->handle_input, this);
     handler_params.instance = this;
     global_event_handler.register_handler(this->handle_input, (void *)&handler_params);
+
+    this->num_instances++;
 }
 
 void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
@@ -188,6 +190,12 @@ void MatrixSimulator::handle_input(SDL_Event event, void *p)
             thins->running = false;
             // hide window away.
             SDL_HideWindow(thins->window);
+            thins->num_instances--;
+            if(!thins->num_instances)
+            {
+                printf("exiting because no simulators running.\n");
+                exit(1);
+            }
         }
         else if(thins->c_key_isdown && thins->ctrl_key_isdown)
         {

@@ -35,6 +35,8 @@ class MatrixSimulator
         rect_t dims;
         rect_t screen_dims;
         rect_t pixel;
+
+        uint32_t num_instances;
         // sdl
         Uint32 window_id;
         SDL_Window *window;
