@@ -1,5 +1,27 @@
 #include "network.h"
 
+int hostname_to_ip(const char *hostname, char *ip)
+{
+    struct hostent *he;
+    struct in_addr **addr_list;
+
+    if((he = gethostbyname(hostname)) == NULL)
+    {
+        // get host info
+        herror("gethostbyname");
+        return 1;
+    }
+
+    addr_list = (struct in_addr **)he->h_addr_list;
+    for(int i = 0; addr_list[i] != NULL; i++)
+    {
+        // return the first one
+        strcpy(ip, inet_ntoa(*addr_list[i]));
+        return 0;
+    }
+    return 1;
+}
+
 Network::Network(const char *target, uint16_t port)
 {
     // this->target = target;
@@ -9,7 +31,16 @@ Network::Network(const char *target, uint16_t port)
     }
     else
     {
-        strcpy(this->target, target);
+        // strcpy(this->target, target);
+        if(hostname_to_ip(target, this->target))
+        {
+            printf("Failed to resolve hostname! exiting.\n");
+            exit(1);
+        }
+        else
+        {
+            printf("[%s] resolved to [%s].\n", target, this->target);
+        }
     }
     this->port = port;
     printf("target: %s:%d\n", this->target, this->port);

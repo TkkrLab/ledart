@@ -8,10 +8,26 @@
 	"buffers":
 	[
 		{
-			"file": "src/matrixsim.cpp",
+			"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 5815,
+				"buffer_size": 2247,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "configs/test.yml",
+			"settings":
+			{
+				"buffer_size": 176,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
+			"settings":
+			{
+				"buffer_size": 1165,
 				"line_ending": "Unix"
 			}
 		}
@@ -249,32 +265,124 @@
 	},
 	"expanded_folders":
 	[
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src",
 		"/home/robert/ledart",
-		"/home/robert/ledart/src"
+		"/home/robert/ledart/configs"
 	],
 	"file_history":
 	[
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/include/interfaces.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/eventhandler.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/interfaces.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/matrixsim.cpp",
+		"/home/robert/ledart/src/main.cpp",
+		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
+		"/home/robert/ledart/include/patterns/BouncingDot.h",
+		"/home/robert/ledart/include/network/lmcp.h",
+		"/home/robert/ledart/src/network/lmcp.cpp",
+		"/home/robert/ledart/include/graphics/colors.h",
+		"/home/robert/ledart/configs/test.yml",
+		"/home/robert/ledart/include/matrixsim.h",
 		"/home/robert/ledart/src/matrixsim.cpp",
+		"/home/robert/py-ledart/configs/pattern_conf.py",
+		"/home/robert/py-ledart/ArgumentParser.py",
+		"/home/robert/py-ledart/ProtocolInterface.py",
+		"/home/robert/py-ledart/matrix.py",
+		"/home/robert/py-ledart/Lmcp.py",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/lmcp.cpp",
+		"/home/robert/ledboard-art/ledboard.py",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/Sconstruct",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/Sconstruct",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/Sconstruct",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/ledart.sublime-project",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/colors.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/graphics.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/surface.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/artnet.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/lmcp.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/network.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/patterns/BouncingDot.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/patterns/GraphicsTest.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/patterns/patterns.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/yaml-parse.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/builder.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/.keep",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/graphics/colors.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/graphics/graphics.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/graphics/surface.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/network/lmcp.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/network/network.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/patterns/BouncingDot.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/patterns/GraphicsTest.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/patterns/patterns.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/matrixsim.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/mtools.h",
+		"/home/robert/ledart/include/builder.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/not_main.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/include/Lmcp.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/Lmcp.cpp",
+		"/home/robert/opencv/README.md",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/not_main.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/main.cpp.nc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/framebuffer.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/gpio.h",
+		"/home/robert/Midi-Organ/Sconstruct",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/gpio.cc",
+		"/home/robert/c-testing/main.c",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/thread.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/thread.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/threaded-canvas-manipulator.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/transformer.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/bdf-font.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/graphics.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/led-matrix-c.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/led-matrix.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/transformer.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/graphics.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/led-matrix.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/thread",
+		"/home/robert/ttymidi/src/ttymidi.c",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/librgbmatrix/Sconstruct",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/rpi-rgb-led-matrix/led-image-viewer.cc",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/rpi-rgb-led-matrix/Sconstruct",
+		"/home/robert/py-ledart/patterns/Plasma.py",
+		"/home/robert/save.js",
+		"/home/robert/Midi-Organ/src/uart.c",
+		"/home/robert/Midi-Organ/src/scantimer.c",
+		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
+		"/home/robert/Midi-Organ/include/uart.h",
+		"/home/robert/Midi-Organ/src/main.c",
+		"/home/robert/Midi-Organ/src/scanner.c",
+		"/home/robert/Midi-Organ/include/scanner.h",
+		"/home/robert/Midi-Organ/include/keyboard.h",
+		"/home/robert/Midi-Organ/src/keyboard.c",
+		"/home/robert/Midi-Organ/include/scantimer.h",
+		"/home/robert/Midi-Organ/include/utils.h",
+		"/home/robert/ledart/include/mtools.h",
+		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink/Blink.ino",
+		"/home/robert/Midi-Organ/src/main.cpp",
+		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/midi_Defs.h",
+		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
+		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/tools/avr/avr/include/stdio.h",
 		"/home/robert/ledart/src/eventhandler.cpp",
 		"/home/robert/ledart/src/builder.cpp",
 		"/home/robert/ledart/Sconstruct",
 		"/home/robert/ledart/src/yaml-parse.cpp",
 		"/home/robert/ledart/include/yaml-parse.h",
 		"/home/robert/ledart/include/graphics/surface.h",
-		"/home/robert/ledart/src/main.cpp",
 		"/home/robert/ledart/src/network/artnet.cpp",
 		"/home/robert/ledart/include/network/artnet.h",
 		"/home/robert/ledart/src/network/network.cpp",
 		"/home/robert/ledart/src/TODO.md",
 		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/types.h",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
 		"/home/robert/Sketchbook/sketchbook/organ_panel_GG_midi/organ_panel_GG_midi.ino",
-		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
 		"/home/robert/Sketchbook/sketchbook/organ_midi_keyboard/organ_midi_keyboard.ino",
 		"/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard/arduino-midi-keyboard.ino",
-		"/home/robert/ledart/configs/test.yml",
-		"/home/robert/ledart/include/matrixsim.h",
-		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
 		"/home/robert/ledart/src/testing.cpp",
 		"/home/robert/ledart/ledart.sublime-project",
 		"/home/robert/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
@@ -286,102 +394,14 @@
 		"/home/robert/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/robert/ledart/include/eventhandler.h",
 		"/home/robert/ledart/include/patterns/patterns.h",
-		"/home/robert/ledart/include/builder.h",
 		"/home/robert/ledart/src/graphics/graphics.cpp",
 		"/home/robert/ledart/include/graphics/graphics.h",
 		"/home/robert/ledart/src/patterns/patterns.cpp",
 		"/home/robert/ledart/include/patterns/GraphicsTest.h",
-		"/home/robert/ledart/include/patterns/BouncingDot.h",
-		"/home/robert/ledart/include/graphics/colors.h",
 		"/home/robert/ledart/include/network/network.h",
-		"/home/robert/ledart/src/network/lmcp.cpp",
-		"/home/robert/ledart/include/network/lmcp.h",
-		"/home/robert/ledart/include/mtools.h",
 		"/home/robert/ledart/src/.sconsign.dblite",
 		"/home/robert/ledart/src/builder.h",
-		"/home/robert/.config/sublime-text-3/Packages/User/SublimeGDB.sublime-settings",
-		"/home/robert/.config/sublime-text-3/Packages/SublimeGDB/SublimeGDB.sublime-settings",
-		"/home/robert/Downloads/04_key_presses.cpp",
-		"/home/robert/ledart/src/matrix.cpp",
-		"/home/robert/ledart/src/patterns/GraphicsTest.cpp",
-		"/home/robert/ledart/src/graphics/colors.cpp",
-		"/home/robert/Documents/Espressif-sdk-esp-dev/esp-open-sdk/esp_iot_sdk_v1.4.0/tools/gen_appbin.py",
-		"/home/robert/ledart/libraries/cpp-optparse/include/OptionParser.h",
-		"/home/robert/ledart/libraries/cpp-optparse/OptionParser.cpp",
-		"/home/robert/ledart/libraries/cpp-optparse/Makefile",
-		"/home/robert/.config/sublime-text-3/Packages/User/Stino/Preferences.stino-settings",
-		"/home/robert/ledart/include/matrix.h",
-		"/home/robert/ledart/include/patterns/matrix.h",
-		"/home/robert/ledboard/simulator/simul_display.py",
-		"/home/robert/ledart/src/patterns.cpp",
-		"/home/robert/ledart/include/patterns.h",
-		"/home/robert/ledart/include/network.h",
-		"/home/robert/ledart/src/network.cpp",
-		"/home/robert/ledart/include/lmcp.h",
-		"/home/robert/ledart/src/lmcp.cpp",
-		"/home/robert/ledart/include/surface.h",
-		"/home/robert/ledart/src/surface.cpp",
-		"/home/robert/ledart/include/graphics.h",
-		"/home/robert/ledart/src/graphics.cpp",
-		"/home/robert/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/robert/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/robert/ledart/include/Surface.h",
-		"/home/robert/ledart/src/Surface.cpp",
-		"/home/robert/ledboard/controller/software/sprite_ledboard_rpi/LedBoard.cpp",
-		"/home/robert/ledart/README.md",
-		"/home/robert/py-ledart/Tools/Graphics/Surface.py",
-		"/home/robert/py-ledart/Lmcp.py",
-		"/home/robert/ledboard/controller/software/sprite_ledboard_rpi/LedBoard.h",
-		"/home/robert/ledart/src/ledart.sublime-project",
-		"/home/robert/.config/sublime-text-3/Packages/User/scons.sublime-build",
-		"/home/robert/py-ledart/ProtocolInterface.py",
-		"/home/robert/LedBoard.cpp",
-		"/home/robert/ledart/src/ledart.sublime-workspace",
-		"/home/robert/Q-ledart/Sconstruct",
-		"/home/robert/Q-ledart/src/main.cpp",
-		"/home/robert/Q-ledart/src/.sconsign.dblite",
-		"/home/robert/py-ledart/runPatternJob.py",
-		"/home/robert/py-ledart/patterns/VideoPlay.py",
-		"/home/robert/py-ledart/configs/pattern_conf.py",
-		"/home/robert/py-ledart/patterns/Patterns.py",
-		"/home/robert/pyforktest/py-artnet/runPatternJob.py",
-		"/home/robert/py-ledart/patterns/VideoDevCap.py",
-		"/home/robert/py-ledart/patterns/Clock.py",
-		"/home/robert/Downloads/HerMIDI-1.0/Makefile",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/layout.txt",
-		"/home/robert/py-ledart/Tools/Controllers/SoundControllers.py",
-		"/home/robert/py-ledart/README.md",
-		"/home/robert/py-ledart/.travis.yml",
-		"/home/robert/py-ledart/patterns/Pong/Pong.py",
-		"/home/robert/py-ledart/Tools/Controllers/PygameController.py",
-		"/home/robert/py-ledart/ArgumentParser.py",
-		"/home/robert/py-ledart/output.mp4",
-		"/home/robert/py-ledart/patterns/DisplayImage.py",
-		"/home/robert/LinMesia/LinMesia-cpp/src/main.cpp",
-		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/MIDI.hpp",
-		"/home/robert/EspLight-firmware/EspLight-firmware.ino",
-		"/home/robert/EspLight-firmware/README.md",
-		"/home/robert/LinMesia/LinMesia-cpp/src/Sconstruct",
-		"/home/robert/LinMesia/LinMesia-cpp/Sconstruct",
-		"/home/robert/LinMesia/LinMesia-cpp/src/.sconsign.dblite",
-		"/home/robert/SDL2/src/video/wayland/SDL_waylanddyn.h",
-		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/midi_Defs.h",
-		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/MIDI.h",
-		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/examples/MIDI_Basic_IO/MIDI_Basic_IO.ino",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/ota.h",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/serverprintaction.h",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/settings.h",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/settingsStore.h",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/webserver.h",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/sd-card-test-esp.ino",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/cmd.cpp",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/ota.cpp",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/serverprintaction.cpp",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/settingsStore.cpp",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/webserver.cpp",
-		"/home/robert/Sketchbook/sketchbook/sd-card-test-esp/cmd.h",
-		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/tools/avr/avr/include/stdio.h",
-		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/esp8266com/esp8266/libraries/esp8266/examples/CallSDKFunctions/CallSDKFunctions.ino"
+		"/home/robert/.config/sublime-text-3/Packages/User/SublimeGDB.sublime-settings"
 	],
 	"find":
 	{
@@ -400,6 +420,98 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"self.draw_image",
+			"96",
+			"32",
+			"&&",
+			"test_data",
+			"test",
+			"Serial.",
+			"this->",
+			"uint32_t",
+			"uint8_t",
+			"uint32_t",
+			"writeBuffer",
+			"int",
+			"goto",
+			"X_SIZE",
+			"LedBoard",
+			"LEDBOARD",
+			"LedBoard",
+			"SOURCE",
+			"MEMTYPE",
+			"-'\n",
+			" ",
+			"                     ",
+			"                    ",
+			"                   ",
+			"                  ",
+			"                 ",
+			"                ",
+			"               ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			"   ",
+			"  ",
+			"\"\n",
+			"gpio",
+			"\n#",
+			"\"\n",
+			"\"",
+			"h\"\n",
+			"\"",
+			"canvas",
+			" \"canvas",
+			"\"",
+			"PATH",
+			"cxx_",
+			"''",
+			"cxx",
+			"in",
+			"include",
+			"cxx_",
+			".cpp",
+			"time",
+			"false",
+			",",
+			"Foobar",
+			"BAUD_PRESCALLER",
+			"MYUBBR",
+			"[col]",
+			"index",
+			"i",
+			"col",
+			"__",
+			"scanned",
+			"TIMER__",
+			"NUMCOLS",
+			"(NUMROWS * NUMCOLS)",
+			"uint8_t",
+			"uint64_t",
+			"uint8_t",
+			"#define",
+			"uint8_t",
+			"col",
+			"build_target",
+			"method",
+			"atmega",
+			"atmega\\",
+			"atmega",
+			"SERIAL",
+			"Serial",
+			"Serial3",
+			"first",
+			"Serial",
+			"NUMKEYS",
 			"not",
 			"config",
 			"previous_color",
@@ -435,99 +547,7 @@
 			"cingOther:\n#     matrix: {x: 0, y: 0, width: 96, height: 48}\n#     matrixsim: {pixelsize: 5}\n#     protocol: {type: lmcp, target: 127.0.0.1, port: 1337}\n#     pattern: {job: BouncingDot}",
 			"border",
 			"pattern_job.as<std::string>().c_str()",
-			"attern_job.as<std::string>().c_str()",
-			"Node",
-			"p",
-			"job",
-			"pattern.as<std::string>()",
-			"p",
-			"it",
-			"lineup",
-			"node",
-			"printf",
-			"BLACK",
-			".",
-			"indent",
-			"brack",
-			"brace",
-			"config",
-			"pat",
-			"pattern",
-			"SDL",
-			"surf.",
-			".",
-			"->",
-			"Pattern",
-			"true",
-			"->\n",
-			"int",
-			"func",
-			"this->surf",
-			"this",
-			"surf",
-			"_time",
-			"elapsed",
-			"pixel",
-			"dims",
-			"sendout",
-			"surf.rect",
-			"size",
-			".size",
-			"weird",
-			"static ",
-			"sigint_func",
-			"index",
-			"color",
-			"surf.get_rect()",
-			"display",
-			"screensurf",
-			"MatrixSimulator sim = MatrixSimulator(10, 10);\n    // while(1)\n    // {\n    //     sim.display();\n    //     sim.handle_input();\n    // }",
-			"static",
-			" const",
-			"print",
-			"!') ",
-			"i",
-			")\")\n",
-			"OptionParser",
-			"printf",
-			"matrix",
-			"}\n",
-			"RGBColor_t",
-			"or",
-			", this->target",
-			"target",
-			", char *",
-			"\n    static int posx, posy;\n    static int dirx, diry;\n    static RGBColor_t pixel_color;\n    \n    ",
-			"&",
-			"Surface",
-			"*",
-			"print",
-			"               ",
-			"double",
-			"index",
-			"int *",
-			"color",
-			"int *",
-			"int *color",
-			"int *",
-			"return",
-			"float",
-			"image",
-			"FG_COLOR",
-			"DISPLAY_MEMORY",
-			"draw_rect",
-			"max(0,255*(abs(err-dx+dy)/ed-wd+1))",
-			"setPixelColor",
-			"float",
-			"Surface::write_pixel",
-			"uint8_t",
-			"colour",
-			"this->",
-			"setPixel",
-			"surf",
-			");",
-			"printf(",
-			"}\n"
+			"attern_job.as<std::string>().c_str()"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -545,24 +565,82 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/matrixsim.cpp",
+					"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5815,
+						"buffer_size": 2247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								215,
-								215
+								1798,
+								1798
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "configs/test.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 176,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								176,
+								176
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								522,
+								522
 							]
 						],
 						"settings":
@@ -575,7 +653,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -2515,6 +2593,10 @@
 	"output.build|/home/robert/Marlin/Marlin|1429722502.0992196":
 	{
 		"height": 100.0
+	},
+	"output.build|/home/robert/Midi-Organ|1462630117.4798317":
+	{
+		"height": 0.0
 	},
 	"output.build|/home/robert/Sketchbook/sketchbook/Galdos-firmware|1441567258.457336":
 	{
@@ -9349,6 +9431,54 @@
 		"height": 88.0
 	},
 	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1458254827.3473303":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035679.618023":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035726.9010763":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462037018.6282818":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462044891.6891506":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462044902.0032344":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462044915.5886304":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462050082.9301932":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462050420.7422454":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462050551.030412":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462052487.7473478":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462056843.0499153":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462560884.356204":
 	{
 		"height": 88.0
 	},
@@ -34888,6 +35018,10 @@
 	{
 		"height": 88.0
 	},
+	"output.upload|/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink|1462741936.1016896":
+	{
+		"height": 88.0
+	},
 	"output.upload|/home/robert/Documents/arduino-1.6.7/examples/01.Basics/Blink|1440448892.4179566":
 	{
 		"height": 88.0
@@ -35685,6 +35819,14 @@
 		"height": 88.0
 	},
 	"output.upload|/home/robert/EspLight-firmware|1454192853.2468193":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Midi-Organ/src|1462815231.6943386":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Midi-Organ/src|1462818276.608953":
 	{
 		"height": 88.0
 	},
@@ -39048,6 +39190,266 @@
 	{
 		"height": 88.0
 	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035176.3608816":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035299.0391705":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035348.5578165":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035403.1472986":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035466.7264447":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035581.732577":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035689.3535028":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035734.0940592":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462035853.171017":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462036071.8898575":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462036272.989602":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462036328.466222":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462036344.6119108":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462036514.7671275":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462037253.4736192":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462037315.2772672":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462037408.0240078":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462037414.0365524":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462037455.3371797":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462042689.7715192":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462042809.2149403":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462042920.9526472":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462042958.626918":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462043142.0136096":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462050376.967801":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462050423.2171721":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051005.990756":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051034.072428":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051191.9552407":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051209.2483013":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051234.4366949":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051295.723798":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051318.6273549":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051372.0118816":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051451.6874075":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051592.8547518":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051649.0838282":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051702.4863882":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462051995.3692932":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462052495.8291476":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462052565.293058":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462053489.8010921":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462053634.8904097":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054069.4024117":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054086.2244997":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054129.486909":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054153.6170113":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054172.6991503":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054511.853629":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054558.3648121":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054894.064684":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054908.2596729":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462054994.1331744":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462055252.2512324":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462055496.8923168":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462055642.959649":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462814325.8365":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462814340.425833":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462814373.0930963":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462814504.4239821":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462814572.0449388":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462815235.6850169":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1463494707.7353523":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1463495055.4107068":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1463495073.993208":
+	{
+		"height": 88.0
+	},
 	"output.upload|/home/robert/Sketchbook/sketchbook/mindflex-esp8266|1441990669.484483":
 	{
 		"height": 88.0
@@ -41217,6 +41619,30 @@
 		"height": 88.0
 	},
 	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461963240.6542642":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462024526.5446322":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462024946.937331":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462025082.312242":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462025108.4021444":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462025313.972132":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462025892.937556":
 	{
 		"height": 88.0
 	},

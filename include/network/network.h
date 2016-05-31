@@ -7,6 +7,7 @@
 #include <sys/select.h>
 #include <sys/time.h>
 #include <arpa/inet.h>
+#include <netdb.h>
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
