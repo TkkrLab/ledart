@@ -48,12 +48,6 @@ env.Append(CPPPATH=[include_dir])
 
 lib_build = ARGUMENTS.get('libbuild', 0)
 
-# add all the directories in include
-for root, dirnames, filenames in os.walk(include_dir):
-    for dirname in dirnames:
-        path = os.path.join(root, dirname)
-        env.Append(CPPPATH=[path])
-
 # run for local libs
 if len(local_libs):
     for lib in local_libs:
