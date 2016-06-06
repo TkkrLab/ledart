@@ -1,4 +1,4 @@
-#include "BouncingDot.h"
+#include "patterns/BouncingDot.h"
 
 BouncingDot::BouncingDot(rect_t dims):
 Graphics(dims)

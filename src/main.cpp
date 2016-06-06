@@ -61,9 +61,10 @@ extern "C"
     #include <SDL2/SDL.h>
 }
 #include <yaml-parse.h>
-// my includes. <made with the project>
+
+// project includes
 #include <eventhandler.h>
-#include <patterns.h>
+#include <patterns/patterns.h>
 
 #include <gflags/gflags.h>
 

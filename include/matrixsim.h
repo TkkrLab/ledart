@@ -17,7 +17,7 @@ extern "C"
 class MatrixSimulator
 {
     public:
-        MatrixSimulator(rect_t, int pixelsize=10);
+        MatrixSimulator(rect_t, int pixelsize=10, bool go_fullscreen=false);
         ~MatrixSimulator();
         void process(Surface *);
         void draw(Surface *);

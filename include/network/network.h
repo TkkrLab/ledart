@@ -13,7 +13,7 @@
 #include <errno.h>
 
 #include <mtools.h>
-#include <surface.h>
+#include <graphics/surface.h>
 
 #define MAX_UDP_PACKETSIZE 1024
 

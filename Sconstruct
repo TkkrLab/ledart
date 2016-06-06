@@ -8,7 +8,7 @@ cxx = prefix + 'g++'
 ar = prefix + 'ar'
 ranlib = prefix + 'ranlib'
 
-project_name = "ledart"
+project_name = 'ledart'
 build_dir = 'build/'
 
 src_dir = 'src/'
@@ -36,14 +36,13 @@ ccflags.append('--std=c++11')
 
 
 # setup build environment
-env = Environment()
+env = Environment(ENV = os.environ)
 
 env['CXX'] = cxx
 env['CC'] = cc
 env['AR'] = ar
 env['RANLIB'] = ranlib
 env['CCFLAGS'] = ccflags
-env['ENV']['PATH'] = os.environ['PATH']
 env.Append(CPPPATH=[include_dir])
 
 lib_build = ARGUMENTS.get('libbuild', 0)

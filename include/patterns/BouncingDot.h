@@ -2,9 +2,9 @@
 #define __BOUNCINGDOT_H__
 
 #include <string.h>
-#include <patterns.h>
-#include <graphics.h>
-#include <colors.h>
+#include <patterns/patterns.h>
+#include <graphics/graphics.h>
+#include <graphics/colors.h>
 
 Surface *build_BouncingDot();
 
