@@ -1,12 +1,12 @@
 #ifndef __YAML_PARSE_H__
 #define __YAML_PARSE_H__
 
-#include <surface.h>
+#include <graphics/surface.h>
 #include <matrixsim.h>
-#include <network.h>
+#include <network/network.h>
 #include <yaml-cpp/yaml.h>
 #include <builder.h>
-#include <patterns.h>
+#include <patterns/patterns.h>
 
 extern PatternJobs patternjobs;
 extern Builder builder;

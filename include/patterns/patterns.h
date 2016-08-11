@@ -4,16 +4,15 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <surface.h>
-#include <network.h>
+#include <graphics/surface.h>
 #include <matrixsim.h>
 
 // include network interfaces here.
-#include <network.h>
-#include <lmcp.h>
+#include <network/network.h>
+#include <network/lmcp.h>
 
 // include available patterns also here.
-#include <BouncingDot.h>
+#include <patterns/BouncingDot.h>
 
 typedef struct
 {

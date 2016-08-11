@@ -1,4 +1,4 @@
-#include "lmcp.h"
+#include "network/lmcp.h"
 
 Lmcp::Lmcp(const char *target, uint16_t port):
 Network(target, port)

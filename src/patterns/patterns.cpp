@@ -1,4 +1,4 @@
-#include "patterns.h"
+#include "patterns/patterns.h"
 
 PatternJobs::PatternJobs()
 {

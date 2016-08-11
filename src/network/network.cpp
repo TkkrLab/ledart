@@ -1,4 +1,4 @@
-#include "network.h"
+#include "network/network.h"
 
 int hostname_to_ip(const char *hostname, char *ip)
 {

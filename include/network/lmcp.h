@@ -1,8 +1,8 @@
 #ifndef __LMCP_H__
 #define __LMCP_H__
 
-#include <surface.h>
-#include <network.h>
+#include <graphics/surface.h>
+#include <network/network.h>
 
 class Lmcp: public Network
 {

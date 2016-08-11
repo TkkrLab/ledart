@@ -10,34 +10,63 @@ typedef struct
 
 static handler_params_t handler_params;
 
-MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
+MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
 {
-    // initialize some variables/
-    this->pixelsize = pixelsize;
-    this->dims = dims;
-
-    // size of a pixel is pixelsize
-    this->pixel.width = pixelsize;
-    this->pixel.height = pixelsize;
-    
-    // screen is at 0,0 and it's width is number of pixelwidth * dim_width.
-    this->screen_dims.x = 0;
-    this->screen_dims.y = 0;
-    this->screen_dims.width = dims.width * this->pixel.width;
-    this->screen_dims.height = dims.height * this->pixel.height;
 
     // initialize sdl
     if(SDL_Init(SDL_INIT_VIDEO) < 0)
     {
-        printf("SDL could not initialize SDL_Error: %s\n", SDL_GetError());
+        fprintf(stderr, "SDL could not initialize SDL_Error: %s\n", SDL_GetError());
         exit(-1);
+    }
+
+    uint32_t flags = SDL_WINDOW_SHOWN;
+
+    // initialize some variables/
+    if(go_fullscreen)
+    {
+
+        static SDL_DisplayMode current;
+        printf("possible configurations: %d\n", SDL_GetNumVideoDisplays());
+        if(SDL_GetDisplayMode(0, 0, &current) != 0)
+        {
+            fprintf(stderr, "couldn't get display mode\n");
+            exit(1);
+        }
+
+        this->screen_dims.x = 0;
+        this->screen_dims.y = 0;
+        this->screen_dims.width = current.w;
+        this->screen_dims.height = current.h;
+
+        this->pixel.width = current.w / dims.width;
+        this->pixel.height = current.h / dims.height;
+        this->pixelsize = this->pixel.width * this->pixel.height;
+
+        this->dims = dims;
+        flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
+    }
+    else
+    {
+        this->pixelsize = pixelsize;
+        this->dims = dims;
+
+        // size of a pixel is pixelsize
+        this->pixel.width = pixelsize;
+        this->pixel.height = pixelsize;
+        
+        // screen is at 0,0 and it's width is number of pixelwidth * dim_width.
+        this->screen_dims.x = 0;
+        this->screen_dims.y = 0;
+        this->screen_dims.width = dims.width * this->pixel.width;
+        this->screen_dims.height = dims.height * this->pixel.height;
     }
 
     this->window = SDL_CreateWindow("MatrixSim",
                                     SDL_WINDOWPOS_UNDEFINED,
                                     SDL_WINDOWPOS_UNDEFINED,
                                     this->screen_dims.width, this->screen_dims.height,
-                                    SDL_WINDOW_SHOWN);
+                                    flags);
     if(this->window == NULL)
     {
         printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
@@ -53,10 +82,8 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize)
     }
 
     // set a event handler callback.
-    // global_event_handler.register_handler(this->handle_input, this);
     handler_params.instance = this;
     global_event_handler.register_handler(this->handle_input, (void *)&handler_params);
-
     this->num_instances++;
 }
 

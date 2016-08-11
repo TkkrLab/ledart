@@ -1,4 +1,4 @@
-#include "GraphicsTest.h"
+#include "patterns/GraphicsTest.h"
 
 // const int MATRIX_WIDTH = 96;
 // const int MATRIX_HEIGHT = 48;

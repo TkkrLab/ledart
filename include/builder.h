@@ -2,8 +2,8 @@
 #define __BUILDER_H__
 
 #include <mtools.h>
-#include <surface.h>
-#include <patterns.h>
+#include <graphics/surface.h>
+#include <patterns/patterns.h>
 
 typedef void(*build_handler)(const char *, rect_t);
 
