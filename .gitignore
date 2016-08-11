@@ -1,4 +1,4 @@
 build/
 .sconsign.dblite
 
-ledart.sublime*
+*.sublime*

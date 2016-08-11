@@ -92,6 +92,7 @@ else:
     env.Program(target=build_dir + project_name, source=objects)
 
 Clean('.', build_dir)
+Clean('.', static_lib_dir)
 
 if 'CPPPATH' in env:
     print("cpppath: %s" % env['CPPPATH'])

@@ -8,26 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
+			"file": "/home/robert/configparse/src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 2247,
+				"buffer_size": 2707,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "configs/test.yml",
+			"file": "/home/robert/configparse/Sconstruct",
 			"settings":
 			{
-				"buffer_size": 176,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
-			"settings":
-			{
-				"buffer_size": 1165,
+				"buffer_size": 2628,
 				"line_ending": "Unix"
 			}
 		}
@@ -35,12 +27,20 @@
 	"build_system": "Packages/User/scons.sublime-build",
 	"command_palette":
 	{
-		"height": 132.0,
+		"height": 393.0,
 		"selected_items":
 		[
 			[
+				"syntax",
+				"Set Syntax: C++11"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"gitgutter",
+				"GitGutter: Compare Against Branch"
 			],
 			[
 				"toggle",
@@ -77,10 +77,6 @@
 			[
 				"install ",
 				"Package Control: Install Package"
-			],
-			[
-				"syntax",
-				"Set Syntax: C++"
 			],
 			[
 				"gdb",
@@ -265,18 +261,120 @@
 	},
 	"expanded_folders":
 	[
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src",
-		"/home/robert/ledart",
-		"/home/robert/ledart/configs"
+		"/home/robert/py-ledart",
+		"/home/robert/configparse",
+		"/home/robert/configparse/src"
 	],
 	"file_history":
 	[
+		"/home/robert/py-ledart/patterns/VideoPlay.py",
+		"/home/robert/py-ledart/configs/pattern_conf.py",
+		"/home/robert/py-ledart/patterns/Patterns.py",
+		"/home/robert/configparse/include/enumclass.h",
+		"/home/robert/kernelmodule-sdio-bitbang/libraries/wiringPi/examples/servo.c",
+		"/home/robert/kernelmodule-sdio-bitbang/libraries/wiringPi/examples/serialTest.c",
+		"/home/robert/ledart/src/yaml-parse.cpp",
+		"/home/robert/kernelmodule-sdio-bitbang/libraries/wiringPi/COPYING.LESSER",
+		"/home/robert/lmcp-simulator/libraries/ledart/configs/test.yml",
+		"/home/robert/aur-programs/repetier-host/src/RepetierHost/SetBaudrate.cpp",
+		"/home/robert/py-ledart/MatrixSim/MatrixScreen.py",
+		"/home/robert/py-ledart/MatrixSim/Interfaces/PygameInterface.py",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/Makefile",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/stop.c",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/start.c",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-5.c",
+		"/home/robert/ledboard-art/ledboard.py",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-2.c",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-3.c",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-1.c",
+		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-4.c",
+		"/home/robert/kernelmodule-sdio-bitbang/src/main.c",
+		"/home/robert/kernelmodule-sdio-bitbang/Sconstruct",
+		"/home/robert/kernelmodule-sdio-bitbang/src/makefile",
+		"/home/robert/Documents/lmcp/Sconstruct",
+		"/home/robert/Documents/lmcp/include/lmcp.h",
+		"/home/robert/Documents/lmcp/src/lmcp.cpp",
+		"/home/robert/Documents/lmcp/src/test.cpp",
+		"/home/robert/Documents/lmcp/RFC133742.txt",
+		"/home/robert/RFC133743.txt",
+		"/home/robert/projects/avr-dobbelsteen/src/main.c",
+		"/home/robert/projects/avr-dobbelsteen/Sconstruct",
+		"/home/robert/projects/avr-asm/testbuild/main2.asm",
+		"/home/robert/projects/avr-asm/testbuild/main1.asm",
+		"/home/robert/ledart/Sconstruct",
+		"/home/robert/testc/mmalloc.c",
+		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/types.h",
+		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
+		"/home/robert/Documents/lmcp/include/font7x5.h",
+		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
+		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/arduino/avr/cores/arduino/Print.h",
+		"/home/robert/py-ledart/matrix.py",
+		"/home/robert/py-ledart/patterns/DisplayImage.py",
+		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/header-layout.txt",
+		"/home/robert/keyindexes.c",
+		"/home/robert/newtimes.c",
+		"/home/robert/newnotes.c",
+		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/song.h",
+		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/notes.h",
+		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation/modulation.ino",
+		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/song.ino",
+		"/home/robert/py-ledart/patterns/GraphicsTests.py",
+		"/home/robert/py-ledart/Lmcp.py",
+		"/home/robert/noderedjavascript.js",
+		"/home/robert/lmcp-simulator/src/main.cpp",
+		"/home/robert/lmcp-simulator/libraries/lmcp/src/lmcp.cpp",
+		"/home/robert/py-ledart/patterns/PixelLife.py",
+		"/home/robert/py-ledart/Gui/written-code/PixelLife.py",
+		"/home/robert/py-ledart/Gui/Gui.py",
+		"/home/robert/[key:value, ...]",
+		"/home/robert/py-ledart/Gui/2015-04-05-231354_1022x628_scrot.png",
+		"/home/robert/lmcp-simulator/libraries/ledart/include/matrixsim.h",
+		"/home/robert/lmcp-simulator/libraries/ledart/src/matrixsim.cpp",
+		"/home/robert/lmcp-simulator/libraries/lmcp/include/lmcp.h",
+		"/home/robert/lmcp-simulator/libraries/ledart/include/graphics/surface.h",
+		"/home/robert/lmcp-simulator/src/interfaces.cpp",
+		"/home/robert/lmcp-simulator/libraries/ledart/include/graphics/graphics.h",
+		"/home/robert/lmcp-simulator/libraries/ledart/src/main.cpp",
+		"/home/robert/rgbledmatrix-lmcp/src/rpiRgbLmcpServer.cpp",
+		"/home/robert/rgbledmatrix-lmcp/include/rpiRgbLmcpServer.h",
+		"/home/robert/rgbledmatrix-lmcp/src/main.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/lmcp/include/lmcp.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/lmcp/src/lmcp.cpp",
+		"/home/robert/rpi-rgb-led-matrix/lmcp.cc",
+		"/home/robert/rgbledmatrix-lmcp/Sconstruct",
+		"/home/robert/rgbledmatrix-lmcp/include/interfaces.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/lmcp/Sconstruct",
+		"/home/robert/rgbledmatrix-lmcp/libraries/rgbmatrix/Sconstruct",
+		"/home/robert/lmcp-simulator/libraries/ledart/include/eventhandler.h",
+		"/home/robert/lmcp-simulator/include/interfaces.h",
+		"/home/robert/lmcp-simulator/Sconstruct",
+		"/home/robert/rgbledmatrix-lmcp/README.md",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/patterns/GraphicsTest.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/main.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/Sconstruct",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/network/lmcp.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/network/network.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/patterns/BouncingDot.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/graphics/colors.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/graphics/graphics.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/graphics/surface.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/network/artnet.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/network/lmcp.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/network/network.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/patterns/BouncingDot.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/patterns/GraphicsTest.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/patterns/patterns.cpp",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/yaml-parse.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/builder.h",
+		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/patterns/patterns.h",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/Sconstruct",
+		"/home/robert/ledart/include/network/network.h",
+		"/home/robert/ledart/src/network/network.cpp",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
+		"/home/robert/ledart/configs/test.yml",
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/include/interfaces.h",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/eventhandler.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/interfaces.cpp",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/matrixsim.cpp",
 		"/home/robert/ledart/src/main.cpp",
@@ -285,123 +383,18 @@
 		"/home/robert/ledart/include/network/lmcp.h",
 		"/home/robert/ledart/src/network/lmcp.cpp",
 		"/home/robert/ledart/include/graphics/colors.h",
-		"/home/robert/ledart/configs/test.yml",
 		"/home/robert/ledart/include/matrixsim.h",
 		"/home/robert/ledart/src/matrixsim.cpp",
-		"/home/robert/py-ledart/configs/pattern_conf.py",
 		"/home/robert/py-ledart/ArgumentParser.py",
 		"/home/robert/py-ledart/ProtocolInterface.py",
-		"/home/robert/py-ledart/matrix.py",
-		"/home/robert/py-ledart/Lmcp.py",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/lmcp.cpp",
-		"/home/robert/ledboard-art/ledboard.py",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/Sconstruct",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/Sconstruct",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/Sconstruct",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/ledart.sublime-project",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/colors.cpp",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/graphics.cpp",
 		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/surface.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/artnet.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/lmcp.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/network.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/patterns/BouncingDot.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/patterns/GraphicsTest.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/patterns/patterns.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/yaml-parse.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/builder.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/.keep",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/graphics/colors.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/graphics/graphics.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/graphics/surface.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/network/lmcp.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/network/network.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/patterns/BouncingDot.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/patterns/GraphicsTest.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/patterns/patterns.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/matrixsim.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/mtools.h",
-		"/home/robert/ledart/include/builder.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/not_main.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/include/Lmcp.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/Lmcp.cpp",
-		"/home/robert/opencv/README.md",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/not_main.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/main.cpp.nc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/framebuffer.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/gpio.h",
-		"/home/robert/Midi-Organ/Sconstruct",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/gpio.cc",
-		"/home/robert/c-testing/main.c",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/thread.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/thread.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/threaded-canvas-manipulator.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/transformer.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/bdf-font.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/graphics.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/led-matrix-c.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/led-matrix.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/src/transformer.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/graphics.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/led-matrix.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/include/thread",
-		"/home/robert/ttymidi/src/ttymidi.c",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/librgbmatrix/Sconstruct",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/rpi-rgb-led-matrix/led-image-viewer.cc",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/rpi-rgb-led-matrix/Sconstruct",
-		"/home/robert/py-ledart/patterns/Plasma.py",
-		"/home/robert/save.js",
-		"/home/robert/Midi-Organ/src/uart.c",
-		"/home/robert/Midi-Organ/src/scantimer.c",
-		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
-		"/home/robert/Midi-Organ/include/uart.h",
-		"/home/robert/Midi-Organ/src/main.c",
-		"/home/robert/Midi-Organ/src/scanner.c",
-		"/home/robert/Midi-Organ/include/scanner.h",
-		"/home/robert/Midi-Organ/include/keyboard.h",
-		"/home/robert/Midi-Organ/src/keyboard.c",
-		"/home/robert/Midi-Organ/include/scantimer.h",
-		"/home/robert/Midi-Organ/include/utils.h",
-		"/home/robert/ledart/include/mtools.h",
-		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink/Blink.ino",
-		"/home/robert/Midi-Organ/src/main.cpp",
-		"/home/robert/Sketchbook/sketchbook/libraries/MIDI/midi_Defs.h",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
-		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/tools/avr/avr/include/stdio.h",
-		"/home/robert/ledart/src/eventhandler.cpp",
-		"/home/robert/ledart/src/builder.cpp",
-		"/home/robert/ledart/Sconstruct",
-		"/home/robert/ledart/src/yaml-parse.cpp",
-		"/home/robert/ledart/include/yaml-parse.h",
-		"/home/robert/ledart/include/graphics/surface.h",
-		"/home/robert/ledart/src/network/artnet.cpp",
-		"/home/robert/ledart/include/network/artnet.h",
-		"/home/robert/ledart/src/network/network.cpp",
-		"/home/robert/ledart/src/TODO.md",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/types.h",
-		"/home/robert/Sketchbook/sketchbook/organ_panel_GG_midi/organ_panel_GG_midi.ino",
-		"/home/robert/Sketchbook/sketchbook/organ_midi_keyboard/organ_midi_keyboard.ino",
-		"/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard/arduino-midi-keyboard.ino",
-		"/home/robert/ledart/src/testing.cpp",
-		"/home/robert/ledart/ledart.sublime-project",
-		"/home/robert/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
-		"/home/robert/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/home/robert/ledart/src/graphics/surface.cpp",
-		"/home/robert/.config/sublime-text-3/Packages/User/C++.sublime-settings",
-		"/home/robert/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
-		"/home/robert/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/robert/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/robert/ledart/include/eventhandler.h",
-		"/home/robert/ledart/include/patterns/patterns.h",
-		"/home/robert/ledart/src/graphics/graphics.cpp",
-		"/home/robert/ledart/include/graphics/graphics.h",
-		"/home/robert/ledart/src/patterns/patterns.cpp",
-		"/home/robert/ledart/include/patterns/GraphicsTest.h",
-		"/home/robert/ledart/include/network/network.h",
-		"/home/robert/ledart/src/.sconsign.dblite",
-		"/home/robert/ledart/src/builder.h",
-		"/home/robert/.config/sublime-text-3/Packages/User/SublimeGDB.sublime-settings"
+		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/artnet.cpp"
 	],
 	"find":
 	{
@@ -420,6 +413,86 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Token_t",
+			"TOKEN",
+			"filestream",
+			"#",
+			"fstream",
+			"<>",
+			"vector",
+			"abs",
+			"KERNINFO",
+			"cpp",
+			"1024 * 3",
+			"lmcp",
+			"memcmp",
+			"1024",
+			"uint16_t",
+			"uint16_t len",
+			"size_t",
+			"uin32_t",
+			"uint16_t",
+			"uint8_t",
+			"uint16_t",
+			"uint8_t",
+			"data",
+			"[lmcp]",
+			"packet_len",
+			"offset",
+			"packet_len",
+			"rand",
+			"time",
+			"2000",
+			"-D",
+			"testdata",
+			"static",
+			"data",
+			"printf",
+			"\" PRIu16 \"",
+			"char",
+			" %u",
+			"valid_header",
+			"printf",
+			" & 0xFF00",
+			"packet_pos",
+			"pt",
+			"data",
+			"be",
+			"\n    uint8_t testmagick[4] = {'L', 'M', 'C', 'P'};\n    memcpy(data+1000-4, testmagick, 4);\n    lmcp.processPacket(data, 1000);\n\n    memset(data, 0, 1000);\n    lmcp.processPacket(data, 1000);\n\n    // -----------------------------------------[ver]-[ c-sum  ]\n    uint8_t testdata[20] = {'L', 'M', 'C', 'P', 0x00, 0x00, 0x19,\n                            0x11, 0x02, 0x00, 0x02, 0x00, 0x04};\n    // c-sum should be 25",
+			"testmagick",
+			");\n",
+			"sum",
+			"i",
+			"packet_pos",
+			" 0,",
+			"pianokeys[i].",
+			"uint16_t",
+			"millis",
+			"micros",
+			"millis",
+			"uint32_t",
+			"micros",
+			"millis",
+			"mapped",
+			"uint64_t",
+			"mapped",
+			"        \n",
+			"NUMKEYS",
+			"note = notes[index]",
+			"note:",
+			",",
+			"send_packets",
+			"SendPacketWidget",
+			"->",
+			"mode",
+			"compat_color",
+			"MATRIX_WIDTH",
+			"uint8_t ",
+			"128",
+			"lib_dir + lib",
+			"Interface",
+			"eventhandler",
+			"\"",
 			"self.draw_image",
 			"96",
 			"32",
@@ -467,87 +540,7 @@
 			"\n#",
 			"\"\n",
 			"\"",
-			"h\"\n",
-			"\"",
-			"canvas",
-			" \"canvas",
-			"\"",
-			"PATH",
-			"cxx_",
-			"''",
-			"cxx",
-			"in",
-			"include",
-			"cxx_",
-			".cpp",
-			"time",
-			"false",
-			",",
-			"Foobar",
-			"BAUD_PRESCALLER",
-			"MYUBBR",
-			"[col]",
-			"index",
-			"i",
-			"col",
-			"__",
-			"scanned",
-			"TIMER__",
-			"NUMCOLS",
-			"(NUMROWS * NUMCOLS)",
-			"uint8_t",
-			"uint64_t",
-			"uint8_t",
-			"#define",
-			"uint8_t",
-			"col",
-			"build_target",
-			"method",
-			"atmega",
-			"atmega\\",
-			"atmega",
-			"SERIAL",
-			"Serial",
-			"Serial3",
-			"first",
-			"Serial",
-			"NUMKEYS",
-			"not",
-			"config",
-			"previous_color",
-			"uint32_t",
-			"false",
-			"1",
-			"bw",
-			"Uint64_t",
-			"steady_clock",
-			"Pattern_t",
-			"size_t",
-			"static ",
-			" static ",
-			"static ",
-			"static fd_set",
-			"static ",
-			"num_instances",
-			"bool",
-			"static ",
-			"ins",
-			"running",
-			"this->patterns",
-			"patterns",
-			"static",
-			"static ",
-			"static SDL_Window",
-			"static ",
-			"static rect_t",
-			"static ",
-			"rect_t",
-			"static rect_t",
-			"static ",
-			"cingOther:\n#     matrix: {x: 0, y: 0, width: 96, height: 48}\n#     matrixsim: {pixelsize: 5}\n#     protocol: {type: lmcp, target: 127.0.0.1, port: 1337}\n#     pattern: {job: BouncingDot}",
-			"border",
-			"pattern_job.as<std::string>().c_str()",
-			"attern_job.as<std::string>().c_str()"
+			"h\"\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -570,29 +563,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
+					"file": "/home/robert/configparse/src/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2247,
+						"buffer_size": 2707,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1798,
-								1798
+								1530,
+								1530
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++11/C++11.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 702.0,
+						"translation.y": 830.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -600,60 +591,32 @@
 				},
 				{
 					"buffer": 1,
-					"file": "configs/test.yml",
+					"file": "/home/robert/configparse/Sconstruct",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 176,
+						"buffer_size": 2628,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								176,
-								176
+								747,
+								747
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/YAML/YAML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								522,
-								522
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 117.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1371,6 +1334,10 @@
 		"height": 88.0
 	},
 	"output.build|/home/robert/Documents/arduino-1.6.7/libraries/Servo/examples/Sweep|1441575641.3949459":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Documents/lmcp/src|1465935785.63543":
 	{
 		"height": 88.0
 	},
@@ -7806,6 +7773,22 @@
 	{
 		"height": 88.0
 	},
+	"output.build|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465749240.3965054":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465759934.7687104":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760041.0132217":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760073.9140418":
+	{
+		"height": 88.0
+	},
 	"output.build|/home/robert/Sketchbook/sketchbook/libraries/ws2812|1435084722.8853965":
 	{
 		"height": 88.0
@@ -9479,6 +9462,266 @@
 		"height": 88.0
 	},
 	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1462560884.356204":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768775.0154436":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768795.2343888":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768805.5879734":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769017.1726296":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771917.5963967":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771931.5942607":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771944.0160682":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771953.9378946":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771964.0179386":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771970.8546884":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772000.480398":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772073.5192795":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772098.8091235":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772143.0286956":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772151.0391102":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772288.1441607":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772313.0072167":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772617.0315704":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772623.178595":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772889.7176793":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772903.226294":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772930.3887725":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772938.9075184":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772942.4130664":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772945.7780638":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772987.1633196":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773041.5127032":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773088.7687314":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773108.950289":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773129.5884614":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773134.6118999":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773189.7729023":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773272.5968285":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773471.7065752":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773860.091964":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774005.4865534":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774230.523782":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774660.8139112":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774702.9341993":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776252.4213114":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776446.9341018":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465833471.1872866":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465834525.8124363":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465834701.920357":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465849687.1701458":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465849743.7608237":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465849894.7103338":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850120.3980637":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850431.4026763":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850440.1227856":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850515.907957":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465851960.6452878":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852549.4235115":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852564.5507858":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852692.4076397":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852859.1762793":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465853229.9346116":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465853683.808076":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465854180.4526823":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465854185.2864494":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465855974.807318":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856161.5756726":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856438.4019666":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465861140.5434418":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465861147.0361733":
 	{
 		"height": 88.0
 	},
@@ -12803,6 +13046,10 @@
 		"height": 88.0
 	},
 	"output.build|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1461956980.0284052":
+	{
+		"height": 88.0
+	},
+	"output.build|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1465917901.2787077":
 	{
 		"height": 88.0
 	},
@@ -35194,6 +35441,294 @@
 	{
 		"height": 88.0
 	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015001.166797":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015001.6378813":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015001.8288882":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015001.9681048":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015002.1743479":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015002.6778433":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015002.7138896":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015002.7887979":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015002.8679452":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015002.981817":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.0966733":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.2506588":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.318741":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.415714":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.540406":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.634247":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.7484708":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015003.9943852":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015004.2001197":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015004.2484775":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015004.456235":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015004.6186125":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015004.8357277":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015004.9181118":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015005.1254838":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015005.2924433":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015005.4488175":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015005.6152668":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015005.7522917":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015005.9454415":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015006.4453075":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015006.5466855":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015006.6130457":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015006.7202077":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015006.845229":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015006.962009":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.115292":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.2803087":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.4187574":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.4952047":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.7117856":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.784879":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015007.932548":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015008.1704342":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015008.3160007":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015008.4461732":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015008.6013796":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015008.6650736":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015008.9507415":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.0983758":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.2294395":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.3843844":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.516846":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.666673":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.7435603":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015009.9485657":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015010.2314675":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015010.321156":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015010.6139743":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015010.751222":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015010.8992252":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015011.1877592":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015011.379769":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015011.5512948":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015011.6950517":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015012.0312264":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015012.1658683":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015012.4677532":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015012.6984081":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015012.801891":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015013.0288548":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/lmcp/src|1466015013.271538":
+	{
+		"height": 88.0
+	},
 	"output.upload|/home/robert/EspLight-firmware|1447264212.8521748":
 	{
 		"height": 88.0
@@ -37610,6 +38145,254 @@
 	{
 		"height": 88.0
 	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761408.3572712":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761452.6379044":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761462.2735887":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761475.9823966":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761501.1165485":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761507.5801697":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761515.605056":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761523.9526784":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761537.9602914":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761552.8841774":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation|1465761561.188491":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465750826.884331":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465751623.951346":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465751649.9953346":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760091.0082166":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760102.9902298":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760118.7198098":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760152.11705":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760168.9522855":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760290.375324":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760348.4270864":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760458.6733954":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760471.5371697":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760586.731865":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760599.371268":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760608.2210622":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760667.5764992":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760678.6843064":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760688.6131158":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760696.1197653":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760713.8407493":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760749.2050023":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760769.2901115":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760792.0132194":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760798.3802533":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760807.0603309":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760839.1574268":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760846.5641944":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760855.3574991":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760862.016999":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760872.5732384":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760883.257984":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760890.1615498":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760901.009181":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760908.2679863":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760915.6174514":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760923.8410785":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760930.8956296":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760943.333883":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760945.5618622":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760956.4614573":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760966.3377264":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760975.8386035":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760987.673817":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465760998.4428704":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761007.483238":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761018.022988":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761024.5142033":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761038.529944":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761055.2578022":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761068.579743":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song|1465761076.5230994":
+	{
+		"height": 88.0
+	},
 	"output.upload|/home/robert/Sketchbook/sketchbook/lightpaper-wifi-control|1442937456.9236777":
 	{
 		"height": 88.0
@@ -39447,6 +40230,802 @@
 		"height": 88.0
 	},
 	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1463495073.993208":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765259.7548993":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765273.6417613":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765385.9112673":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765422.2428722":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765563.6055508":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765663.552898":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765703.0504925":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765738.1304893":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765832.3082805":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765866.6463056":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465765915.1090946":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465766031.118171":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465766294.7604427":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465766433.8765798":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465766708.089647":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465767569.888994":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465767993.2502124":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768141.6884649":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768400.0684016":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768490.767573":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768597.4398646":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465768983.1817749":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769031.2912326":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769144.5225573":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769237.4318092":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769299.1992695":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769335.5004108":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769501.6953833":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769620.3792257":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769638.297789":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769677.3012576":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769731.8629482":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769741.039278":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465769919.188262":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770031.2769964":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770087.37211":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770093.7923553":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770133.466593":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770228.6829352":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770251.5145414":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770278.7891726":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770330.2623734":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770388.1878269":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770517.6282485":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770556.9884286":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770715.0439463":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770789.5922434":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770833.610058":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770885.828728":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770943.6798477":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770961.6150208":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465770991.2650423":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771026.1823437":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771047.5901837":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771093.8562627":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771116.707469":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771130.7424173":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771175.3625271":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771194.3910778":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771255.797337":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771283.5773916":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771307.7231753":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771521.2736654":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771570.3914623":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771693.4032192":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465771719.400047":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772912.3203135":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465772947.8232265":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773136.687239":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773204.9792902":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773273.9828722":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773338.734817":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773472.885137":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773524.9207892":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773669.1911244":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773867.8789504":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465773987.6853464":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774009.14186":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774056.9333098":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774234.585954":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774288.724276":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774452.5629504":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774487.5534675":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774666.197607":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774704.0779815":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774807.6248708":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465774884.2276506":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775104.1896029":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775170.4382634":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775209.378124":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775258.760703":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775284.8411152":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775328.9559817":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775361.530794":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775468.938021":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775492.831612":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775626.4030032":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775645.9666097":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775759.4382038":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775847.8098598":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775882.5227664":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775933.6324449":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465775957.300368":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776068.7937007":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776237.5785835":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776254.5764203":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776451.0804274":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465776462.0277116":
+	{
+		"height": 0.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829213.1997378":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829284.5849912":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829328.9792852":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829435.432586":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829502.2240813":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829609.2176034":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829789.6922915":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829874.875619":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465829941.0452673":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831028.7597404":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831037.8622677":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831228.746076":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831269.861359":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831310.9805086":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831362.820542":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831430.9590368":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831553.3316183":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465831819.2536368":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465833383.2595515":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465834550.714977":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465834711.2558768":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465834761.6912382":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835012.5149705":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835066.5829194":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835102.5082238":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835128.087802":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835180.01334":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835318.266559":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835388.3147933":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835411.343361":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835462.6549823":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835567.7592278":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835615.530813":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835698.092774":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835772.3027477":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835798.1892269":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835853.7479184":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465835914.9365034":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465836053.3550737":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465836155.835702":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465847806.2247353":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465848089.7492974":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465848102.3597665":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465848256.2973506":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465849747.2694945":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465849863.9591815":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465849921.252944":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850122.2776005":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850397.1203744":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850517.1669288":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465850583.414851":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465851126.5750504":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465851586.5360494":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465851678.4240372":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465851695.7689273":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465851978.2526436":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852021.3750467":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852396.008171":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852567.6775513":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852634.838621":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852732.0133696":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852783.9994628":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852831.7826765":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465852948.368849":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465853114.56623":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465853237.6960146":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465853442.9106069":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465853689.9680912":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465854154.3300517":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465854195.0811293":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465855668.2081592":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465855722.8792243":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465855979.474345":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856167.4787772":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856463.276557":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856528.3643174":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856874.830512":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856928.9140606":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465856975.980958":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857151.4950607":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857157.1872017":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857288.7891297":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857348.6814723":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857598.074438":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857658.5581925":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857743.8944662":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857912.373939":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465857956.8015203":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465858008.6316838":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465861131.5079343":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/midi-keyboard-duality|1465861148.9899037":
 	{
 		"height": 88.0
 	},
@@ -41643,6 +43222,14 @@
 		"height": 88.0
 	},
 	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1462025892.937556":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1465918072.9947069":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Sketchbook/sketchbook/piano-keyboard-test|1465918159.4010677":
 	{
 		"height": 88.0
 	},
@@ -53655,7 +55242,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 257.0,
 	"status_bar_visible": true,
 	"template_settings":
