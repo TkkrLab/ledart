@@ -2,18 +2,17 @@ from glob import glob
 import os
 import fnmatch
 
+project_name = 'ledart'
+
 prefix = ''
 cc = prefix + 'gcc'
 cxx = prefix + 'g++'
 ar = prefix + 'ar'
 ranlib = prefix + 'ranlib'
 
-project_name = 'ledart'
 build_dir = 'build/'
-
 src_dir = 'src/'
 include_dir = 'include/'
-
 static_lib_dir = 'lib/'
 lib_dir = 'libraries/'
 
@@ -24,28 +23,54 @@ system_libs = ['gflags', 'SDL2', 'yaml-cpp']
 # asuming the library folder has the same name as the library folderl (lib+foldername).
 local_libs = []
 
-ccflags = ['-Werror']
-# for debugging symbols.
-ccflags.append('-ggdb3')
-ccflags.append('-O0')
+
+# compiler flags for when doing development.
+cc_dev_flags = []
+cc_dev_flags.append('-ggdb3')
+cc_dev_flags.append('-O0')
+cc_dev_flags.append('-fdiagnostics-color=always')
+
+# compiler flags for when building a library.
+cc_lib_flags = []
+cc_lib_flags.append('-fPIC')
+
+
+# default compiler flags. always included.
+ccflags = []
+ccflags.append('-O2')
 ccflags.append('-ansi')
 ccflags.append('-pedantic-errors')
 ccflags.append('-Wextra')
 ccflags.append('-Wall')
 ccflags.append('--std=c++11')
 
+# in a release build no flags are added.
+if 'libbuild' in COMMAND_LINE_TARGETS:
+    ccflags += cc_lib_flags
+elif 'devbuild' in COMMAND_LINE_TARGETS:
+    # remove optimization from default flags.
+    ccflags.remove('-O2')
+    ccflags += cc_dev_flags
+
 
 # setup build environment
-env = Environment(ENV = os.environ)
+env = Environment()
 
 env['CXX'] = cxx
 env['CC'] = cc
 env['AR'] = ar
 env['RANLIB'] = ranlib
 env['CCFLAGS'] = ccflags
+env['ENV']['PATH'] = os.environ['PATH']
 env.Append(CPPPATH=[include_dir])
 
-lib_build = ARGUMENTS.get('libbuild', 0)
+# lib_build = ARGUMENTS.get('libbuild', 0)
+
+# add all the directories in include
+for root, dirnames, filenames in os.walk(include_dir):
+    for dirname in dirnames:
+        path = os.path.join(root, dirname)
+        env.Append(CPPPATH=[path])
 
 # run for local libs
 if len(local_libs):
@@ -66,7 +91,7 @@ obj_targets = []
 src_files = []
 for root, dirnames, filenames in os.walk(src_dir):
     for filename in fnmatch.filter(filenames, '*.cpp'):
-        if lib_build and ("main" in filename):
+        if ('libbuild' in COMMAND_LINE_TARGETS) and ("main" in filename):
             print("filename: %s" % filename)
         else:
             src_files.append(os.path.join(root, filename))
@@ -79,16 +104,23 @@ objects = []
 for (obj_target, src_file) in zip(obj_targets, src_files):
     objects.append(env.Object(target=obj_target, source=src_file))
 
-if lib_build:
-    env.StaticLibrary(target=static_lib_dir + project_name, source=objects)
-else:
-    env.Program(target=build_dir + project_name, source=objects)
+program = env.Program(target=build_dir + project_name, source=objects)
+static = env.StaticLibrary(target=static_lib_dir + project_name, source=objects)
 
-Clean('.', build_dir)
-Clean('.', static_lib_dir)
+
+env.Alias('libbuild', static)
+env.Alias('devbuild', program)
+env.Default(program)
+
+# this removes both build dir and static dir
+# if they exist.
+env.Clean(program, build_dir)
+env.Clean(program, static_lib_dir)
+env.Clean(static, static_lib_dir)
 
 if 'CPPPATH' in env:
     print("cpppath: %s" % env['CPPPATH'])
 if 'LIBPATH' in env:
     print("libpath: %s" % env['LIBPATH'])
-# print("obj_target: %s, src_files: %s \n" % (str(obj_targets), str(src_files)))
+
+print("DEF_TARG:%s" % (map(str, DEFAULT_TARGETS)))

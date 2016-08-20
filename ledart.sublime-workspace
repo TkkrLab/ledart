@@ -8,18 +8,26 @@
 	"buffers":
 	[
 		{
-			"file": "/home/robert/configparse/src/main.cpp",
+			"file": "/home/robert/Interactive-Life/src/main.cpp",
 			"settings":
 			{
-				"buffer_size": 2707,
+				"buffer_size": 4151,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/robert/configparse/Sconstruct",
+			"file": "/home/robert/Interactive-Life/src/life.cpp",
 			"settings":
 			{
-				"buffer_size": 2628,
+				"buffer_size": 2969,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/robert/Interactive-Life/include/life.h",
+			"settings":
+			{
+				"buffer_size": 887,
 				"line_ending": "Unix"
 			}
 		}
@@ -261,15 +269,90 @@
 	},
 	"expanded_folders":
 	[
-		"/home/robert/py-ledart",
-		"/home/robert/configparse",
-		"/home/robert/configparse/src"
+		"/home/robert/Interactive-Life",
+		"/home/robert/Interactive-Life/src"
 	],
 	"file_history":
 	[
-		"/home/robert/py-ledart/patterns/VideoPlay.py",
+		"/home/robert/Midi-Organ-sliders/include/uart.h",
+		"/home/robert/Midi-Organ-sliders/src/adc.c",
+		"/home/robert/Midi-Organ-sliders/include/adc.h",
+		"/home/robert/Midi-Organ-sliders/Sconstruct",
+		"/home/robert/Midi-Organ-sliders/src/main.c",
+		"/home/robert/Midi-Organ-sliders/src/uart.c",
+		"/home/robert/py-ledart/Ledart/configs/pattern_conf.py",
+		"/home/robert/py-ledart/Ledart/Patterns/VideoPlay.py",
+		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink/Blink.ino",
+		"/home/robert/py-ledart/Ledart/runPatternJob.py",
+		"/home/robert/py-ledart/Ledart/configs/default_conf.py",
+		"/home/robert/py-ledart/Ledart/Filter.py",
+		"/home/robert/py-ledart/Ledart/Tools/Graphics/Surface.py",
+		"/home/robert/py-ledart/Ledart/Artnet.py",
+		"/home/robert/py-ledart/Ledart/DeviceInterfaces.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Patterns.py",
+		"/home/robert/py-ledart/Ledart/Lmcp.py",
+		"/home/robert/py-ledart/Ledart/matrix.py",
+		"/home/robert/py-ledart/Ledart/Tools/Graphics/Graphics.py",
+		"/home/robert/py-ledart/Ledart/Tools/Graphics/Colors.py",
+		"/home/robert/py-ledart/Ledart/Patterns/DisplayImage.py",
+		"/home/robert/py-ledart/Ledart/__init__.py",
+		"/home/robert/py-ledart/Ledart/Patterns/PixelLife.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Life/life.py",
+		"/home/robert/py-ledart/Ledart/ProtocolInterface.py",
+		"/home/robert/py-ledart/release.sh",
+		"/home/robert/py-ledart/setup.py",
+		"/home/robert/py-ledart/Ledart/Patterns/RainPattern.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Plasma.py",
+		"/home/robert/py-ledart/Ledart/Patterns/GraphicsTests.py",
+		"/home/robert/py-ledart/Ledart/Patterns/sven.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Water.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Tron.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Snake.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Fire.py",
+		"/home/robert/py-ledart/Ledart/Patterns/FillTest.py",
+		"/home/robert/py-ledart/Ledart/Patterns/Pong/Pong.py",
+		"/home/robert/py-ledart/Ledart/Patterns/SuperPixelBros/SuperPixelBros.py",
+		"/home/robert/py-ledart/Ledart/Tools/Controllers/PygameController.py",
+		"/home/robert/py-ledart/Ledart/MatrixSim/MatrixScreen.py",
+		"/home/robert/py-ledart/Ledart/configs/byob_conf.py",
+		"/home/robert/py-ledart/Ledart/MatrixSim/__init__.py",
+		"/home/robert/py-ledart/Ledart/Tools/Controllers/__init__.py",
+		"/home/robert/py-ledart/Ledart/Tools/NumberSegmentBitMap.py",
+		"/home/robert/py-ledart/Ledart/Tools/__init__.py",
+		"/home/robert/py-ledart/Ledart/configs/__init__.py",
+		"/home/robert/py-ledart/Ledart/MatrixSim/Interfaces/__init__.py",
+		"/home/robert/py-ledart/Ledart/requirements.txt",
+		"/home/robert/py-ledart/Ledart/Tools/Graphics/__init__.py",
+		"/home/robert/py-ledart/Ledart/Tools/Graphics/Surface.py_old",
+		"/home/robert/testcode/test_sample.py",
+		"/home/robert/testcode/module.py",
+		"/home/robert/py-ledart/Ledart/ArgumentParser.py",
+		"/home/robert/py-ledart/Ledart/Tools/Controllers/SoundControllers.py",
+		"/home/robert/py-ledart/Ledart/__main__.py",
+		"/home/robert/py-ledart/Lmcp.py",
+		"/home/robert/py-ledart/ProtocolInterface.py",
+		"/home/robert/py-ledart/runPatternJob.py",
+		"/home/robert/py-ledart/post_setup.py",
+		"/home/robert/py-ledart/py-ledart/LICENSE",
+		"/home/robert/py-ledart/__main__.py",
 		"/home/robert/py-ledart/configs/pattern_conf.py",
+		"/home/robert/py-ledart/patterns/PixelLife.py",
+		"/home/robert/py-ledart/patterns/VideoPlay.py",
+		"/home/robert/py-ledart/patterns/Life/life.py",
+		"/home/robert/py-ledart/Tools/Graphics/Surface.py",
+		"/home/robert/py-ledart/Tools/Graphics/Imaged.py",
+		"/home/robert/py-ledart/matrix.py",
+		"/home/robert/py-ledart/patterns/Fire.py",
+		"/home/robert/py-ledart/patterns/DisplayImage.py",
 		"/home/robert/py-ledart/patterns/Patterns.py",
+		"/home/robert/py-ledart/Tools/Graphics/ConvertColors.py",
+		"/home/robert/py-ledart/Tools/Graphics/Colors.py",
+		"/home/robert/py-ledart/Tools/Graphics/RGBColorTools.py",
+		"/home/robert/py-ledart/Tools/Graphics/HSVColorTools.py",
+		"/home/robert/py-ledart/Tools/Graphics/HSLColorTools.py",
+		"/home/robert/py-ledart/Tools/Graphics/Graphics.py",
+		"/home/robert/configparse/src/main.cpp",
+		"/home/robert/configparse/Sconstruct",
 		"/home/robert/configparse/include/enumclass.h",
 		"/home/robert/kernelmodule-sdio-bitbang/libraries/wiringPi/examples/servo.c",
 		"/home/robert/kernelmodule-sdio-bitbang/libraries/wiringPi/examples/serialTest.c",
@@ -308,8 +391,6 @@
 		"/home/robert/Documents/lmcp/include/font7x5.h",
 		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
 		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/arduino/avr/cores/arduino/Print.h",
-		"/home/robert/py-ledart/matrix.py",
-		"/home/robert/py-ledart/patterns/DisplayImage.py",
 		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/header-layout.txt",
 		"/home/robert/keyindexes.c",
 		"/home/robert/newtimes.c",
@@ -319,82 +400,8 @@
 		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation/modulation.ino",
 		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/song.ino",
 		"/home/robert/py-ledart/patterns/GraphicsTests.py",
-		"/home/robert/py-ledart/Lmcp.py",
 		"/home/robert/noderedjavascript.js",
-		"/home/robert/lmcp-simulator/src/main.cpp",
-		"/home/robert/lmcp-simulator/libraries/lmcp/src/lmcp.cpp",
-		"/home/robert/py-ledart/patterns/PixelLife.py",
-		"/home/robert/py-ledart/Gui/written-code/PixelLife.py",
-		"/home/robert/py-ledart/Gui/Gui.py",
-		"/home/robert/[key:value, ...]",
-		"/home/robert/py-ledart/Gui/2015-04-05-231354_1022x628_scrot.png",
-		"/home/robert/lmcp-simulator/libraries/ledart/include/matrixsim.h",
-		"/home/robert/lmcp-simulator/libraries/ledart/src/matrixsim.cpp",
-		"/home/robert/lmcp-simulator/libraries/lmcp/include/lmcp.h",
-		"/home/robert/lmcp-simulator/libraries/ledart/include/graphics/surface.h",
-		"/home/robert/lmcp-simulator/src/interfaces.cpp",
-		"/home/robert/lmcp-simulator/libraries/ledart/include/graphics/graphics.h",
-		"/home/robert/lmcp-simulator/libraries/ledart/src/main.cpp",
-		"/home/robert/rgbledmatrix-lmcp/src/rpiRgbLmcpServer.cpp",
-		"/home/robert/rgbledmatrix-lmcp/include/rpiRgbLmcpServer.h",
-		"/home/robert/rgbledmatrix-lmcp/src/main.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/lmcp/include/lmcp.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/lmcp/src/lmcp.cpp",
-		"/home/robert/rpi-rgb-led-matrix/lmcp.cc",
-		"/home/robert/rgbledmatrix-lmcp/Sconstruct",
-		"/home/robert/rgbledmatrix-lmcp/include/interfaces.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/lmcp/Sconstruct",
-		"/home/robert/rgbledmatrix-lmcp/libraries/rgbmatrix/Sconstruct",
-		"/home/robert/lmcp-simulator/libraries/ledart/include/eventhandler.h",
-		"/home/robert/lmcp-simulator/include/interfaces.h",
-		"/home/robert/lmcp-simulator/Sconstruct",
-		"/home/robert/rgbledmatrix-lmcp/README.md",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/patterns/GraphicsTest.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/main.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/Sconstruct",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/network/lmcp.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/network/network.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/patterns/BouncingDot.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/graphics/colors.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/graphics/graphics.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/graphics/surface.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/network/artnet.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/network/lmcp.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/network/network.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/patterns/BouncingDot.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/patterns/GraphicsTest.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/src/patterns/patterns.cpp",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/yaml-parse.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/builder.h",
-		"/home/robert/rgbledmatrix-lmcp/libraries/ledart/include/patterns/patterns.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/Sconstruct",
-		"/home/robert/ledart/include/network/network.h",
-		"/home/robert/ledart/src/network/network.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/eventhandler.cpp",
-		"/home/robert/ledart/configs/test.yml",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/main.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/include/interfaces.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/include/eventhandler.h",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/src/interfaces.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/matrixsim.cpp",
-		"/home/robert/ledart/src/main.cpp",
-		"/home/robert/ledart/src/patterns/BouncingDot.cpp",
-		"/home/robert/ledart/include/patterns/BouncingDot.h",
-		"/home/robert/ledart/include/network/lmcp.h",
-		"/home/robert/ledart/src/network/lmcp.cpp",
-		"/home/robert/ledart/include/graphics/colors.h",
-		"/home/robert/ledart/include/matrixsim.h",
-		"/home/robert/ledart/src/matrixsim.cpp",
-		"/home/robert/py-ledart/ArgumentParser.py",
-		"/home/robert/py-ledart/ProtocolInterface.py",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/src/lmcp.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/rgbmatrix/Sconstruct",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/lmcp/Sconstruct",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/ledart.sublime-project",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/colors.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/graphics.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/graphics/surface.cpp",
-		"/home/robert/Documents/raspberrypi-cross/code/rgbledmatrix-lmcp/libraries/ledart/src/network/artnet.cpp"
+		"/home/robert/lmcp-simulator/src/main.cpp"
 	],
 	"find":
 	{
@@ -413,6 +420,73 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"r.height",
+			"r.width",
+			"cell_height",
+			"window_width",
+			"bool",
+			"this->cell_size",
+			"size_t",
+			"int",
+			"var",
+			"Program.board",
+			"Program.width",
+			"Program.height",
+			"Program.",
+			"hei",
+			"wid",
+			"int",
+			"field_width",
+			"field_height",
+			"unsigned",
+			"this->field_width",
+			"this->field_height",
+			"0",
+			".",
+			"bool",
+			"field",
+			"uint8_t",
+			"self",
+			"uint8_t",
+			"field",
+			"self",
+			"y",
+			"height",
+			"y",
+			"int",
+			"y",
+			"uart_buf",
+			"tuple",
+			"cleanup",
+			"\":\n",
+			"ip",
+			"UdpSocke",
+			"Interface",
+			"ip",
+			"manipulator",
+			"l",
+			"grayscaling",
+			"mode",
+			"self.compress",
+			"args, ",
+			"args=None",
+			"self.args.",
+			" $",
+			"echo ",
+			"fd",
+			"setup",
+			" +",
+			"sys.exit",
+			"\"",
+			"sys.exit(",
+			"signal_handler",
+			"currentTime",
+			"signal_handler",
+			"data.width",
+			"Videos",
+			"('/home/robert/Videos",
+			"/home/robert/",
+			"tuple",
 			"Token_t",
 			"TOKEN",
 			"filestream",
@@ -473,74 +547,7 @@
 			"uint32_t",
 			"micros",
 			"millis",
-			"mapped",
-			"uint64_t",
-			"mapped",
-			"        \n",
-			"NUMKEYS",
-			"note = notes[index]",
-			"note:",
-			",",
-			"send_packets",
-			"SendPacketWidget",
-			"->",
-			"mode",
-			"compat_color",
-			"MATRIX_WIDTH",
-			"uint8_t ",
-			"128",
-			"lib_dir + lib",
-			"Interface",
-			"eventhandler",
-			"\"",
-			"self.draw_image",
-			"96",
-			"32",
-			"&&",
-			"test_data",
-			"test",
-			"Serial.",
-			"this->",
-			"uint32_t",
-			"uint8_t",
-			"uint32_t",
-			"writeBuffer",
-			"int",
-			"goto",
-			"X_SIZE",
-			"LedBoard",
-			"LEDBOARD",
-			"LedBoard",
-			"SOURCE",
-			"MEMTYPE",
-			"-'\n",
-			" ",
-			"                     ",
-			"                    ",
-			"                   ",
-			"                  ",
-			"                 ",
-			"                ",
-			"               ",
-			"              ",
-			"             ",
-			"            ",
-			"           ",
-			"          ",
-			"         ",
-			"        ",
-			"       ",
-			"      ",
-			"     ",
-			"    ",
-			"   ",
-			"  ",
-			"\"\n",
-			"gpio",
-			"\n#",
-			"\"\n",
-			"\"",
-			"h\"\n"
+			"mapped"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -558,65 +565,91 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/robert/configparse/src/main.cpp",
+					"file": "/home/robert/Interactive-Life/src/main.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2707,
+						"buffer_size": 4151,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1530,
-								1530
+								4061,
+								4061
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
+							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 830.0,
+						"translation.y": 1716.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/robert/Interactive-Life/src/life.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								709,
+								709
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/home/robert/configparse/Sconstruct",
+					"buffer": 2,
+					"file": "/home/robert/Interactive-Life/include/life.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2628,
+						"buffer_size": 887,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								747,
-								747
+								788,
+								788
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 117.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -35266,6 +35299,10 @@
 		"height": 88.0
 	},
 	"output.upload|/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink|1462741936.1016896":
+	{
+		"height": 88.0
+	},
+	"output.upload|/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink|1470848773.43159":
 	{
 		"height": 88.0
 	},
