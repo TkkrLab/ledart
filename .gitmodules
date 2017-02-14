@@ -1,0 +1,6 @@
+[submodule "libraries/gflags"]
+	path = libraries/gflags
+	url = https://github.com/gflags/gflags
+[submodule "libraries/yaml-cpp"]
+	path = libraries/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp

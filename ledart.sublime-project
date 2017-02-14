@@ -18,72 +18,7 @@
 	"folders":
 	[
 		{
-			"follow_symlinks": true,
 			"path": "."
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/rgbledmatrix-lmcp"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/py-ledart"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/ledboard-art"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/lmcp-simulator"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/piano-keyboard-test"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/midi-keyboard-duality"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Documents/lmcp"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/arduino-midi-keyboard"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Sketchbook/sketchbook/organ_midi_keyboard"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/kernelmodule-sdio-bitbang"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/configparse"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Documents/Arduino-Ide/arduino-1.6.7/examples/01.Basics/Blink"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Midi-Organ-sliders"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/robert/Interactive-Life"
 		}
 	]
 }
