@@ -17,11 +17,11 @@ static_lib_dir = 'lib/'
 lib_dir = 'libraries/'
 
 # system installed libs that are needed.
-system_libs = ['gflags', 'SDL2', 'yaml-cpp']
+system_libs = ['pthread', 'SDL2']
 
 # local libs are libraries inside of the project libraries folder.
 # asuming the library folder has the same name as the library folderl (lib+foldername).
-local_libs = []
+local_libs = ['gflags', 'yaml-cpp']
 
 
 # compiler flags for when doing development.
@@ -32,7 +32,7 @@ cc_dev_flags.append('-fdiagnostics-color=always')
 
 # compiler flags for when building a library.
 cc_lib_flags = []
-cc_lib_flags.append('-fPIC')
+cc_lib_flags.append('-fPIC') 
 
 
 # default compiler flags. always included.
@@ -84,7 +84,7 @@ if len(system_libs):
     # run for system installed libs
     for lib in system_libs:
         env.Append(LIBS=[lib]);
-    print("libs: %s" % env['LIBS'])
+    print("env['LIBS']: %s" % env['LIBS'])
 
 # collect source and make object names for them.
 obj_targets = []
