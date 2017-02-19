@@ -8,34 +8,33 @@
 	"buffers":
 	[
 		{
-			"file": "/home/robert/Interactive-Life/src/main.cpp",
+			"file": "Sconstruct",
 			"settings":
 			{
-				"buffer_size": 4151,
+				"buffer_size": 3358,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/robert/Interactive-Life/src/life.cpp",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2969,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/robert/Interactive-Life/include/life.h",
-			"settings":
-			{
-				"buffer_size": 887,
+				"buffer_size": 149,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/User/scons.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 393.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -269,11 +268,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/robert/Interactive-Life",
-		"/home/robert/Interactive-Life/src"
+		"/home/duality/Documents/projects/ledart"
 	],
 	"file_history":
 	[
+		"/home/duality/Documents/projects/ledart/Sconstruct.sec",
+		"/home/robert/Interactive-Life/include/life.h",
+		"/home/robert/Interactive-Life/src/life.cpp",
+		"/home/robert/Interactive-Life/src/main.cpp",
 		"/home/robert/Midi-Organ-sliders/include/uart.h",
 		"/home/robert/Midi-Organ-sliders/src/adc.c",
 		"/home/robert/Midi-Organ-sliders/include/adc.h",
@@ -397,11 +399,7 @@
 		"/home/robert/newnotes.c",
 		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/song.h",
 		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/notes.h",
-		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation/modulation.ino",
-		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/song.ino",
-		"/home/robert/py-ledart/patterns/GraphicsTests.py",
-		"/home/robert/noderedjavascript.js",
-		"/home/robert/lmcp-simulator/src/main.cpp"
+		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation/modulation.ino"
 	],
 	"find":
 	{
@@ -565,91 +563,65 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/robert/Interactive-Life/src/main.cpp",
+					"file": "Sconstruct",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4151,
+						"buffer_size": 3358,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4061,
-								4061
+								1287,
+								1287
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1716.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/robert/Interactive-Life/src/life.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2969,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								709,
-								709
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 78.0,
+						"translation.y": 573.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/robert/Interactive-Life/include/life.h",
+					"buffer": 1,
+					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 887,
+						"buffer_size": 149,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								788,
-								788
+								132,
+								138
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage"
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 78.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -55238,6 +55210,7 @@
 	{
 		"height": 100.0
 	},
+	"pinned_build_system": "Packages/User/scons.sublime-build",
 	"project": "ledart.sublime-project",
 	"replace":
 	{
@@ -55247,6 +55220,7 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -55255,6 +55229,7 @@
 	"select_project":
 	{
 		"height": 501.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -55267,6 +55242,7 @@
 	"select_symbol":
 	{
 		"height": 393.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -55279,7 +55255,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 257.0,
 	"status_bar_visible": true,
 	"template_settings":

@@ -1,23 +1,3 @@
-/* 
-    Copyright
-
-    This file is part of Foobar.
-
-    Foobar is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    Foobar is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
-
-*/
-    
 /*
     author: Duality4y (Robert)
 
@@ -30,21 +10,21 @@
     ledboards.
 
     mainly it is in 3 parts. plus some extra support classes.
-    anything that can be drawn to inherets from surface.
-    if you want any graphical draw function you inheret from Grahics,
+    anything that can be drawn to inherits from surface.
+    if you want any graphical draw function you inherit from Graphics,
     which inherits from surface.
 
-    the main processing loop calls the surface's that are load by config file.
+    the main processing loop calls the surface's that are load by the config file.
     thier overridden function generate() makes sure that everything for you pattern
-    is update and done. all of this is done in the PatterJob object. it has a list of surfaces.
+    is updated and done. all of this is done in the PatternJob object. it has a list of surfaces.
     calls each surface its generate function. then passes that surface to the associated network
-    object. surfaces are pared with network objects so that each pattern can be send to a different
+    object. surfaces are paired with network objects so that each pattern can be send to a different
     ledboard if needed.
 
     and third part is the network interface.
     any class/object that wants to connect to a networked ledboard inherits from
-    Network class. in mainly implements some low level socket things.
-    your inetrface class overrides it's send function.
+    Network class. it mainly implements some low level socket things.
+    your interface class overrides it's send function.
     that is where you implement protocol details.
     Network::transmit() is called to send the actual data.
 
@@ -86,9 +66,9 @@ options_t options;
 
 // search for it with extern if you want to register a event handler.
 EventHandler global_event_handler = EventHandler();
-
+// pattern handler
 PatternJobs patternjobs = PatternJobs();
-
+// this build objects that are known from name.
 Builder builder = Builder();
 
 void cleanup()
@@ -146,6 +126,7 @@ int main(int argc, char **argv)
         global_event_handler.process();
         patternjobs.process();
         SDL_Delay(options.fps);
+        return 0;
     }
     for(;;)
     {
