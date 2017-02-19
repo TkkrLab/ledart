@@ -4,6 +4,7 @@ Surface *Builder::surface_builder(const char *name, rect_t dims)
 {
     static Surface *surf;
     surf = NULL;
+    // there has to be a beter way then checking hardcoded names.
     if(strcmp(GETNAME(BouncingDot), name) == 0)
     {
         surf = new BouncingDot(dims);

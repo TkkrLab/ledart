@@ -4,3 +4,6 @@
 [submodule "libraries/yaml-cpp"]
 	path = libraries/yaml-cpp
 	url = https://github.com/jbeder/yaml-cpp
+[submodule "libraries/LinkedList"]
+	path = libraries/LinkedList
+	url = https://github.com/Duality4Y/LinkedList

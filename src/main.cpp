@@ -60,7 +60,8 @@ typedef struct {
     double fps = 0;
     bool showFps = false;
     bool run_once = false;
-
+    bool list = false;
+    bool debug = false;
     // serves as prefix.
     char config_file[40] = "configs/";
 } options_t;
@@ -99,7 +100,6 @@ void arg_parse(int argc, char **argv)
     options.fps = 1 / (FLAGS_fps / 1000);
     options.run_once = FLAGS_n;
     options.showFps = FLAGS_showFps;
-    printf("showFps: %s \n", options.showFps ? "true" : "false");
 
     // options.config_file = FLAGS_config_file.c_str();
     size_t prefix_offset = strlen(options.config_file);

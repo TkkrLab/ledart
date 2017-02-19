@@ -4,14 +4,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <linkedlist.h>
+
 #include <graphics/surface.h>
 #include <matrixsim.h>
-
-// include network interfaces here.
 #include <network/network.h>
 #include <network/lmcp.h>
 
-// include available patterns also here.
+// include available patterns here.
 #include <patterns/BouncingDot.h>
 
 typedef struct
@@ -29,8 +29,8 @@ public:
     void register_pattern(Pattern_t *);
     void process();
 private:
-    Pattern_t *patterns = NULL;
-    size_t num_patterns = 0;
+    Pattern_t *patterns;
+    size_t num_patterns;
 };
 
 #endif

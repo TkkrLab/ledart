@@ -2,7 +2,7 @@
 
 int yaml_parse(const char *config_file)
 {
-    rect_t matrix_dims = {0, 0, 0, 0};
+    rect_t matrix_rect = {0, 0, 0, 0};
     MatrixSimulator *sim = NULL;
     Surface *surf = NULL;
     Network *net = NULL;
@@ -39,10 +39,10 @@ int yaml_parse(const char *config_file)
 
         if(matrix)
         {
-            matrix_dims.x = matrix["x"].as<int>();
-            matrix_dims.y = matrix["y"].as<int>();
-            matrix_dims.width = matrix["width"].as<int>();
-            matrix_dims.height = matrix["height"].as<int>();
+            matrix_rect.x = matrix["x"].as<int>();
+            matrix_rect.y = matrix["y"].as<int>();
+            matrix_rect.width = matrix["width"].as<int>();
+            matrix_rect.height = matrix["height"].as<int>();
         }
         else
         {
@@ -57,7 +57,7 @@ int yaml_parse(const char *config_file)
         if(matrixsim)
         {
             int pixelsize = matrixsim["pixelsize"].as<int>();
-            sim = new MatrixSimulator(matrix_dims, pixelsize);
+            sim = new MatrixSimulator(matrix_rect, pixelsize);
         }
         else
         {
@@ -93,7 +93,7 @@ int yaml_parse(const char *config_file)
         // after all this we are sure pattern exist.
         // because we did a test for that earlier.
         const char *name = pattern["job"].as<std::string>().c_str();
-        surf = builder.surface_builder(name, matrix_dims);
+        surf = builder.surface_builder(name, matrix_rect);
         if(surf == NULL)
         {
             fprintf(stderr,

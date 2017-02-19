@@ -2,7 +2,8 @@
 
 PatternJobs::PatternJobs()
 {
-    
+    this->num_patterns = 0;
+    this->patterns = NULL;
 }
 
 PatternJobs::~PatternJobs()

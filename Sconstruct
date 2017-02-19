@@ -21,7 +21,7 @@ system_libs = ['pthread', 'SDL2']
 
 # local libs are libraries inside of the project libraries folder.
 # asuming the library folder has the same name as the library folderl (lib+foldername).
-local_libs = ['gflags', 'yaml-cpp']
+local_libs = ['gflags', 'yaml-cpp', 'LinkedList']
 
 
 # compiler flags for when doing development.
