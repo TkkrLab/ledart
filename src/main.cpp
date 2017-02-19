@@ -52,12 +52,15 @@ extern "C"
 using namespace google;
 
 DEFINE_double(fps, 20.0, "Set Fps for program.");
+DEFINE_bool(showFps, false, "enable fps printing.");
 DEFINE_bool(n, false, "run program once.");
 DEFINE_string(config_file, "test.yml", "run with selected config_file.");
 
 typedef struct {
     double fps = 0;
+    bool showFps = false;
     bool run_once = false;
+
     // serves as prefix.
     char config_file[40] = "configs/";
 } options_t;
@@ -93,8 +96,11 @@ void general_info()
 void arg_parse(int argc, char **argv)
 {
     ParseCommandLineFlags(&argc, &argv, true);
-    options.fps = 1000 / FLAGS_fps;
+    options.fps = 1 / (FLAGS_fps / 1000);
     options.run_once = FLAGS_n;
+    options.showFps = FLAGS_showFps;
+    printf("showFps: %s \n", options.showFps ? "true" : "false");
+
     // options.config_file = FLAGS_config_file.c_str();
     size_t prefix_offset = strlen(options.config_file);
     
@@ -118,21 +124,25 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    uint64_t frame = 0;
-    UNUSED(frame);
+    uint32_t fps_previous = SDL_GetTicks();
 
-    if(options.run_once)
-    {
-        global_event_handler.process();
-        patternjobs.process();
-        SDL_Delay(options.fps);
-        return 0;
-    }
     for(;;)
     {
         global_event_handler.process();
         patternjobs.process();
-        SDL_Delay(options.fps);
+
+        if(options.showFps)
+        {
+            printf("time passed: %d         \r", SDL_GetTicks() - fps_previous);
+            fflush(stdout);
+            fps_previous = SDL_GetTicks();
+        }
+        
+        if(options.fps)
+            SDL_Delay(options.fps);
+        
+        if(options.run_once)
+            break;
     }
     return 0;
 }

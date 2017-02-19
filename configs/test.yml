@@ -3,3 +3,8 @@ minimatrix:
     pattern: {job: BouncingDot}
     matrixsim: {pixelsize: 10}
     # protocol: {type: Lmcp, target: minimatrix, port: 1337}
+# megamatrix:
+#     matrix: {x: 0, y: 0, width: 64, height: 32}
+#     pattern: {job: BouncingDot}
+#     matrixsim: {pixelsize: 10}
+#     protocol: {type: Lmcp, target: megamatrix, port: 1337}
