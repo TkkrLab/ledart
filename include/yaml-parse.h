@@ -3,10 +3,14 @@
 
 #include <graphics/surface.h>
 #include <matrixsim.h>
+
 #include <network/network.h>
-#include <yaml-cpp/yaml.h>
-#include <builder.h>
 #include <patterns/patterns.h>
+
+#include <builder.h>
+
+#include <yaml-cpp/yaml.h>
+#include <memory>
 
 extern PatternJobs patternjobs;
 extern Builder builder;

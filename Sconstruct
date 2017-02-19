@@ -43,6 +43,7 @@ ccflags.append('-pedantic-errors')
 ccflags.append('-Wextra')
 ccflags.append('-Wall')
 ccflags.append('--std=c++11')
+ccflags.append('-Wfatal-errors')
 
 # in a release build no flags are added.
 if 'libbuild' in COMMAND_LINE_TARGETS:

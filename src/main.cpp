@@ -77,7 +77,7 @@ Builder builder = Builder();
 
 void cleanup()
 {
-    printf("cleanup needed\n");
+    printf("\ncleanup needed\n");
 }
 
 // called when keyboard intterup comes

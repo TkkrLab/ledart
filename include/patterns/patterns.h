@@ -4,10 +4,12 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <linkedlist.h>
+#include <memory>
 
 #include <graphics/surface.h>
 #include <matrixsim.h>
+
+// include network interfaces here.
 #include <network/network.h>
 #include <network/lmcp.h>
 
@@ -26,7 +28,7 @@ class PatternJobs
 public:
     PatternJobs();
     ~PatternJobs();
-    void register_pattern(Pattern_t *);
+    void register_pattern(std::unique_ptr<Pattern_t> &);
     void process();
 private:
     Pattern_t *patterns;

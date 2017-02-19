@@ -101,11 +101,11 @@ int yaml_parse(const char *config_file)
                     name);
             return -1;
         }
-        Pattern_t pat = {NULL, NULL, NULL};
-        pat.surf = surf;
-        pat.sim = sim;
-        pat.net = net;
-        patternjobs.register_pattern(&pat);
+        std::unique_ptr<Pattern_t> pat = std::unique_ptr<Pattern_t>(new Pattern_t());
+        pat->surf = surf;
+        pat->sim = sim;
+        pat->net = net;
+        patternjobs.register_pattern(pat);
     }
 
     // so far so good! lets return 0 for that!
