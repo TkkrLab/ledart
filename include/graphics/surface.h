@@ -2,6 +2,7 @@
 #define __SURFACE_H__
 
 #include <new>
+#include <memory>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,7 +18,6 @@ typedef struct
     int height;
 } rect_t;
 
-
 class Surface
 {
 public:
@@ -29,7 +29,7 @@ public:
     RGBColor_t *get_surface();
 
     void write_pixel(int, int, RGBColor_t);
-    void read_pixel(int, int, RGBColor_t *);
+    void read_pixel(int, int, RGBColor_t &);
     void fill(RGBColor_t);
     size_t ctop(int, int);
 
@@ -41,5 +41,7 @@ private:
     RGBColor_t *surface;
     rect_t rect;
 };
+
+typedef std::shared_ptr<Surface> surface_ptr;
 
 #endif

@@ -22,24 +22,24 @@ int hostname_to_ip(const char *hostname, char *ip)
     return 1;
 }
 
-Network::Network(const char *target, uint16_t port)
+Network::Network(std::string target, uint16_t port)
 {
     // this->target = target;
-    if(this->target == NULL || target == NULL)
+    if(this->target == NULL || target.empty())
     {
         strcpy(this->target, "127.0.0.1");
     }
     else
     {
         // strcpy(this->target, target);
-        if(hostname_to_ip(target, this->target))
+        if(hostname_to_ip(target.c_str(), this->target))
         {
             printf("Failed to resolve hostname! exiting.\n");
             exit(1);
         }
         else
         {
-            printf("[%s] resolved to [%s].\n", target, this->target);
+            printf("[%s] resolved to [%s].\n", target.c_str(), this->target);
         }
     }
     this->port = port;
@@ -96,7 +96,7 @@ void Network::transmit(uint8_t *data, size_t size)
   this function is what
   you should override to implement protocol specifics.
 */
-void Network::process(Surface *surface)
+void Network::process(surface_ptr surface)
 {
     UNUSED(surface);
 }

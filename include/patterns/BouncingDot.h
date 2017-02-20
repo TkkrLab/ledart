@@ -6,7 +6,7 @@
 #include <graphics/graphics.h>
 #include <graphics/colors.h>
 
-Surface *build_BouncingDot();
+surface_ptr build_BouncingDot();
 
 class BouncingDot: public Graphics
 {

@@ -1,10 +1,10 @@
 #ifndef __PATTERNS_H__
 #define __PATTERNS_H__
 
-#include <string.h>
-#include <stdlib.h>
 
 #include <memory>
+#include <string.h>
+#include <stdlib.h>
 
 #include <linkedlist.h>
 
@@ -20,9 +20,9 @@
 
 typedef struct
 {
-    Surface *surf;
-    Network *net;
-    MatrixSimulator *sim;
+    surface_ptr surf;
+    network_ptr net;
+    simulator_ptr sim;
 } Pattern_t;
 
 typedef std::shared_ptr<Pattern_t> pattern_ptr;

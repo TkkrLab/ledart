@@ -7,8 +7,8 @@
 class Lmcp: public Network
 {
 public:
-    Lmcp(const char *target=NULL, uint16_t port=1337);
-    void process(Surface *);
+    Lmcp(std::string target="", uint16_t port=1337);
+    void process(surface_ptr);
     void send_command(uint8_t);
 private:
     static const uint8_t WRITE_BUFF = 0x01;

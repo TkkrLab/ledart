@@ -19,8 +19,8 @@ class MatrixSimulator
     public:
         MatrixSimulator(rect_t, int pixelsize=10, bool go_fullscreen=false);
         ~MatrixSimulator();
-        void process(Surface *);
-        void draw(Surface *);
+        void process(surface_ptr);
+        void draw(surface_ptr);
         static void handle_input(SDL_Event, void *);
         void draw_rect(rect_t, RGBColor_t, bool);
     private:
@@ -42,5 +42,7 @@ class MatrixSimulator
         SDL_Window *window;
         SDL_Renderer *renderer;
 };
+
+typedef std::shared_ptr<MatrixSimulator> simulator_ptr;
 
 #endif

@@ -1,6 +1,6 @@
 #include "network/lmcp.h"
 
-Lmcp::Lmcp(const char *target, uint16_t port):
+Lmcp::Lmcp(std::string target, uint16_t port):
 Network(target, port)
 {
     
@@ -14,7 +14,7 @@ void Lmcp::send_command(uint8_t command)
     transmit(data, 1);
 }
 
-void Lmcp::process(Surface *surf)
+void Lmcp::process(surface_ptr surf)
 {
     int size;
     int x;
@@ -44,7 +44,7 @@ void Lmcp::process(Surface *surf)
     int multpl = (MAX_UDP_PACKETSIZE / width);
 
     // we want to keep some state so px and i are declared outside of the loop.
-    RGBColor_t color;
+    static RGBColor_t color = {0, 0, 0, 0};
     int px, i;
     // divide and conquer. basically chunk up the whole surface.
     // in chunks of width * multpl, where py is next y position
@@ -62,7 +62,7 @@ void Lmcp::process(Surface *surf)
             }
             for(px = 0; px < width; px++)
             {
-                surf->read_pixel(px, py + (i), &color);
+                surf->read_pixel(px, py + (i), color);
                 packet[px + 5 + (width * i)] = (color.red + color.green + color.blue) / 3;
             }
         }

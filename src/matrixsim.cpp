@@ -5,6 +5,8 @@ extern EventHandler global_event_handler;
 
 typedef struct 
 {
+    // i'll allow this pointera and not wrap it in a smart pointer.
+    // since it's just a reference nothing more.
     MatrixSimulator* instance;
 } handler_params_t;
 
@@ -99,7 +101,7 @@ void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
 }
 
 // draws everything to the windows/screen.
-void MatrixSimulator::draw(Surface *surf)
+void MatrixSimulator::draw(surface_ptr surf)
 {
     static rect_t surf_rect = {0, 0, 0, 0};
     static RGBColor_t color = {0, 0, 0, 0};
@@ -122,7 +124,7 @@ void MatrixSimulator::draw(Surface *surf)
         {
             pixel.x = x * this->pixel.width;
             pixel.y = y * this->pixel.height;
-            surf->read_pixel(x, y, &color);
+            surf->read_pixel(x, y, color);
             // draw border when pixelsize < 3
             this->draw_rect(pixel, color, (this->pixelsize < 5) ? false:true);
         }
@@ -134,7 +136,7 @@ void MatrixSimulator::draw(Surface *surf)
 }
 
 // this just handles any process,
-void MatrixSimulator::process(Surface *surf)
+void MatrixSimulator::process(surface_ptr surf)
 {
     if(!running)
         return;

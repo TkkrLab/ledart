@@ -10,8 +10,8 @@ typedef void(*build_handler)(const char *, rect_t);
 class Builder
 {
 public:
-    Surface *surface_builder(const char *, rect_t);
-    Network *protocol_builder(const char *, const char *, uint16_t);
+    surface_ptr surface_builder(std::string, rect_t);
+    network_ptr protocol_builder(std::string, std::string, uint16_t);
     void register_builder(build_handler);
 private:
 

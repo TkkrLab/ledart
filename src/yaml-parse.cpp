@@ -1,32 +1,33 @@
 #include "yaml-parse.h"
 
-int yaml_parse(const char *config_file)
+int yaml_parse(std::string config_file)
 {
     rect_t matrix_rect = {0, 0, 0, 0};
-    MatrixSimulator *sim = NULL;
-    Surface *surf = NULL;
-    Network *net = NULL;
+
+    simulator_ptr sim = NULL;
+    surface_ptr surf = NULL;
+    network_ptr net = NULL;
 
     YAML::Node config = YAML::LoadFile(config_file);
     if(config.size() == 0 || !(config))
     {
         fprintf(stderr,
-                "config file incomplete or empyt!. exiting\n");
+                "config file incomplete or empty!. exiting\n");
         return -1;
     }
     for(YAML::const_iterator j = config.begin();j != config.end(); ++j) {
-        YAML::Node pattern_job = config[j->first.as<std::string>()];
-        YAML::Node matrix = pattern_job["matrix"].as<YAML::Node>();
-        YAML::Node matrixsim = pattern_job["matrixsim"].as<YAML::Node>();
-        YAML::Node protocol = pattern_job["protocol"].as<YAML::Node>();
-        YAML::Node pattern = pattern_job["pattern"].as<YAML::Node>();
+        YAML::Node pattern_node = config[j->first.as<std::string>()];
+        YAML::Node matrix = pattern_node["matrix"].as<YAML::Node>();
+        YAML::Node matrixsim = pattern_node["matrixsim"].as<YAML::Node>();
+        YAML::Node protocol = pattern_node["protocol"].as<YAML::Node>();
+        YAML::Node pattern = pattern_node["pattern"].as<YAML::Node>();
         
         // a first test to see if pattern exist nothing else matters if it doesn't
         // exist.
-        const char *pname;
+        std::string pname;
         if(pattern)
         {
-            pname = pattern["job"].as<std::string>().c_str();
+            pname = pattern["job"].as<std::string>();
         }
         else
         {
@@ -49,7 +50,7 @@ int yaml_parse(const char *config_file)
             fprintf(stderr,
                     "%s: no valid dimensions found. exiting.\n"
                     "config-node: %s\n",
-                    pname,
+                    pname.c_str(),
                     j->first.as<std::string>().c_str());
             return -1;
         }
@@ -57,28 +58,28 @@ int yaml_parse(const char *config_file)
         if(matrixsim)
         {
             int pixelsize = matrixsim["pixelsize"].as<int>();
-            sim = new MatrixSimulator(matrix_rect, pixelsize);
+            sim = simulator_ptr(new MatrixSimulator(matrix_rect, pixelsize));
         }
         else
         {
             fprintf(stderr,
                     "%s: running pattern without simulator.\n"
                     "config-node: %s\n",
-                    pname,
+                    pname.c_str(),
                     j->first.as<std::string>().c_str());
         }
 
         if(protocol)
         {
-            const char *type = protocol["type"].as<std::string>().c_str();
-            const char *target = protocol["target"].as<std::string>().c_str();
+            std::string type = protocol["type"].as<std::string>();
+            std::string target = protocol["target"].as<std::string>();
             int port = protocol["port"].as<int>();
             net = builder.protocol_builder(type, target, port);
             if(net == NULL)
             {
                 fprintf(stderr,
                         "%s couldn't be created. not sending.\n",
-                        type);
+                        type.c_str());
             }
         }
         else
@@ -86,7 +87,7 @@ int yaml_parse(const char *config_file)
             fprintf(stderr,
                     "%s: no protocol found. not sending.\n"
                     "config-node: %s\n",
-                    pname,
+                    pname.c_str(),
                     j->first.as<std::string>().c_str());
         }
 

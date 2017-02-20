@@ -50,7 +50,7 @@ void Surface::write_pixel(int x, int y, RGBColor_t color)
     this->surface[index] = color;
 }
 
-void Surface::read_pixel(int x, int y, RGBColor_t *color)
+void Surface::read_pixel(int x, int y, RGBColor_t &color)
 {
     if(x > (this->rect.width - 1) || x < 0)
     {
@@ -63,10 +63,10 @@ void Surface::read_pixel(int x, int y, RGBColor_t *color)
     // get base index
     size_t index = this->ctop(x, y);
     // fill in the colors
-    color->red = this->surface[index].red;
-    color->green = this->surface[index].green;
-    color->blue = this->surface[index].blue;
-    color->alpha = this->surface[index].alpha;
+    color.red = this->surface[index].red;
+    color.green = this->surface[index].green;
+    color.blue = this->surface[index].blue;
+    color.alpha = this->surface[index].alpha;
 }
 
 void Surface::generate()
@@ -96,7 +96,6 @@ RGBColor_t *Surface::get_surface()
 
 Surface::~Surface()
 {
-    printf("calling deconstructor: \n");
     if(this->surface != NULL)
     {
         delete [] this->surface;

@@ -1,6 +1,7 @@
 #ifndef __NETWORK_H__
 #define __NETWORK_H__
 
+#include <memory>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
@@ -20,11 +21,11 @@
 class Network
 {
 public:
-    Network(const char *target=NULL, uint16_t port=1337);
+    Network(std::string target="", uint16_t port=1337);
     ~Network();
     void open();
     void transmit(uint8_t *, size_t);
-    virtual void process(Surface *);
+    virtual void process(surface_ptr);
     void set_port(uint16_t);
     uint16_t get_port();
 private:
@@ -33,5 +34,7 @@ private:
     struct sockaddr_in addr;
     char target[20];
 };
+
+typedef std::shared_ptr<Network> network_ptr;
 
 #endif
