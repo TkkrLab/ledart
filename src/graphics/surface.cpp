@@ -69,10 +69,6 @@ void Surface::read_pixel(int x, int y, RGBColor_t &color)
     color.alpha = this->surface[index].alpha;
 }
 
-void Surface::generate()
-{
-}
-
 void Surface::create_surface()
 {
     size_t size = this->rect.width * this->rect.height;

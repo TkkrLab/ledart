@@ -34,7 +34,7 @@ public:
     size_t ctop(int, int);
 
     // virtual generate for derived classes that override.
-    virtual void generate();
+    virtual void generate(){};
 
     ~Surface();
 private:
