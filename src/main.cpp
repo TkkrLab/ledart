@@ -63,7 +63,7 @@ typedef struct {
     bool list = false;
     bool debug = false;
     // serves as prefix.
-    char config_file[40] = "configs/";
+    std::string config_file = "configs/";
 } options_t;
 
 options_t options;
@@ -100,13 +100,7 @@ void arg_parse(int argc, char **argv)
     options.fps = 1 / (FLAGS_fps / 1000);
     options.run_once = FLAGS_n;
     options.showFps = FLAGS_showFps;
-
-    // options.config_file = FLAGS_config_file.c_str();
-    size_t prefix_offset = strlen(options.config_file);
-    
-    strncpy((options.config_file + prefix_offset),
-            FLAGS_config_file.c_str(),
-            strlen(FLAGS_config_file.c_str()));
+    options.config_file += std::string(FLAGS_config_file);
 }
 
 int main(int argc, char **argv)
@@ -125,7 +119,7 @@ int main(int argc, char **argv)
 
     // parse yaml config_file.
     // if return less then 0 things went wrong.
-    printf("using config_file: %s\n", options.config_file);
+    printf("using config_file: %s\n", options.config_file.c_str());
     if(yaml_parse(options.config_file) < 0)
     {
         return -1;

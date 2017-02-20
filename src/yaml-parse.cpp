@@ -58,6 +58,7 @@ int yaml_parse(std::string config_file)
         if(matrixsim)
         {
             int pixelsize = matrixsim["pixelsize"].as<int>();
+            /* there is a small leak here, probably due to SDL */
             sim = simulator_ptr(new MatrixSimulator(matrix_rect, pixelsize));
         }
         else
@@ -93,13 +94,13 @@ int yaml_parse(std::string config_file)
 
         // after all this we are sure pattern exist.
         // because we did a test for that earlier.
-        const char *name = pattern["job"].as<std::string>().c_str();
+        std::string name = pattern["job"].as<std::string>().c_str();
         surf = builder.surface_builder(name, matrix_rect);
         if(surf == NULL)
         {
             fprintf(stderr,
                     "%s couldn't be created. exiting. \n",
-                    name);
+                    name.c_str());
             return -1;
         }
         pattern_ptr pat = pattern_ptr(new Pattern_t());

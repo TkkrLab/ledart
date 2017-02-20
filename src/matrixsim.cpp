@@ -246,4 +246,5 @@ MatrixSimulator::~MatrixSimulator()
         this->renderer = NULL;
     }
     SDL_QuitSubSystem(SDL_INIT_VIDEO);
+    SDL_Quit();
 }
