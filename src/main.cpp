@@ -111,6 +111,13 @@ void arg_parse(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
+    uint32_t current_ticks = 0;
+    uint32_t previous_ticks = 0;
+    uint32_t interval = 1000;
+
+    uint64_t previous_frames = 0;
+    uint64_t frames = 0;
+
     atexit(cleanup);
     signal(SIGINT, ki_func);
     general_info();
@@ -124,25 +131,37 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    uint32_t fps_previous = SDL_GetTicks();
-
     for(;;)
     {
+        // handle user input and any other event.s
         global_event_handler.process();
-        patternjobs.process();
+        // process all the patterns.
+        // patternjobs.process();
 
+        // print fps information.
         if(options.showFps)
         {
-            printf("time passed: %d         \r", SDL_GetTicks() - fps_previous);
-            fflush(stdout);
-            fps_previous = SDL_GetTicks();
+            current_ticks = SDL_GetTicks();
+            if((current_ticks - previous_ticks) >= interval)
+            {
+                previous_ticks = SDL_GetTicks();
+                // the values for (frames - previous_frames) won't get ridiculously high
+                printf("Fps: %d          \r", (int)(frames - previous_frames));
+                fflush(stdout);
+                previous_frames = frames;
+            }
         }
         
-        if(options.fps)
+        // if fps > 0 then it's applied. else we go for it as fast as possible.
+        if(options.fps > 0)
             SDL_Delay(options.fps);
         
+        // single run we break early or right after the first itteration.
         if(options.run_once)
             break;
+
+        // keep track of how many frames we have ran.
+        frames += 1;
     }
     return 0;
 }

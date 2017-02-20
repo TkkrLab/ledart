@@ -6,6 +6,8 @@
 
 #include <memory>
 
+#include <linkedlist.h>
+
 #include <graphics/surface.h>
 #include <matrixsim.h>
 
@@ -26,13 +28,10 @@ typedef struct
 class PatternJobs
 {
 public:
-    PatternJobs();
-    ~PatternJobs();
-    void register_pattern(std::unique_ptr<Pattern_t> &);
+    void register_pattern(std::shared_ptr<Pattern_t>);
     void process();
 private:
-    Pattern_t *patterns;
-    size_t num_patterns;
+    LinkedList<std::shared_ptr<Pattern_t>> patterns;
 };
 
 #endif

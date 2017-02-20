@@ -29,6 +29,7 @@ cc_dev_flags = []
 cc_dev_flags.append('-ggdb3')
 cc_dev_flags.append('-O0')
 cc_dev_flags.append('-fdiagnostics-color=always')
+cc_dev_flags.append('-fno-omit-frame-pointer')
 
 # compiler flags for when building a library.
 cc_lib_flags = []
