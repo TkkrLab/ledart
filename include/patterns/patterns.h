@@ -25,13 +25,15 @@ typedef struct
     MatrixSimulator *sim;
 } Pattern_t;
 
+typedef std::shared_ptr<Pattern_t> pattern_ptr;
+
 class PatternJobs
 {
 public:
-    void register_pattern(std::shared_ptr<Pattern_t>);
+    void register_pattern(pattern_ptr);
     void process();
 private:
-    LinkedList<std::shared_ptr<Pattern_t>> patterns;
+    LinkedList<pattern_ptr> patterns;
 };
 
 #endif

@@ -51,7 +51,7 @@ extern "C"
 // gflags name space
 using namespace google;
 
-DEFINE_double(fps, 20.0, "Set Fps for program.");
+DEFINE_double(fps, 0, "Set Fps for program.");
 DEFINE_bool(showFps, false, "enable fps printing.");
 DEFINE_bool(n, false, "run program once.");
 DEFINE_string(config_file, "test.yml", "run with selected config_file.");
@@ -136,7 +136,7 @@ int main(int argc, char **argv)
         // handle user input and any other event.s
         global_event_handler.process();
         // process all the patterns.
-        // patternjobs.process();
+        patternjobs.process();
 
         // print fps information.
         if(options.showFps)

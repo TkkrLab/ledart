@@ -1,6 +1,6 @@
 #include "patterns/patterns.h"
 
-void PatternJobs::register_pattern(std::shared_ptr<Pattern_t> pattern)
+void PatternJobs::register_pattern(pattern_ptr pattern)
 {
     this->patterns.append(pattern);
 }
@@ -9,7 +9,7 @@ void PatternJobs::process()
 {
     for(int i = 0; i < this->patterns.length(); i++)
     {
-        std::shared_ptr<Pattern_t> pattern = this->patterns[i];
+        pattern_ptr pattern = this->patterns[i];
         if(pattern->surf)
         {
             pattern->surf->generate();

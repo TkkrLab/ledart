@@ -101,7 +101,7 @@ int yaml_parse(const char *config_file)
                     name);
             return -1;
         }
-        std::shared_ptr<Pattern_t> pat = std::shared_ptr<Pattern_t>(new Pattern_t());
+        pattern_ptr pat = pattern_ptr(new Pattern_t());
         pat->surf = surf;
         pat->sim = sim;
         pat->net = net;
