@@ -32,7 +32,7 @@ private:
     uint16_t port;
     int sockfd;
     struct sockaddr_in addr;
-    char target[20];
+    std::string target = "";
 };
 
 typedef std::shared_ptr<Network> network_ptr;

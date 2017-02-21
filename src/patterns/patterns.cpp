@@ -2,12 +2,13 @@
 
 void PatternJobs::register_pattern(pattern_ptr pattern)
 {
-    this->patterns.append(pattern);
+    this->patterns.reserve(sizeof(pattern));
+    this->patterns.push_back(pattern);
 }
 
 void PatternJobs::process()
 {
-    for(int i = 0; i < this->patterns.length(); i++)
+    for(int i = 0; i < this->patterns.size(); i++)
     {
         pattern_ptr pattern = this->patterns[i];
         if(pattern->surf)

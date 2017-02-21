@@ -9,6 +9,11 @@ surface_ptr Builder::surface_builder(std::string name, rect_t dims)
         surf = surface_ptr(new BouncingDot(dims));
         return surf;
     }
+    if(name == GETNAME(GraphicsTest))
+    {
+        surf = surface_ptr(new GraphicsTest(dims));
+        return surf;
+    }
     return surf;
 }
 

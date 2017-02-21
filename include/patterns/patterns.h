@@ -3,10 +3,9 @@
 
 
 #include <memory>
+#include <vector>
 #include <string.h>
 #include <stdlib.h>
-
-#include <linkedlist.h>
 
 #include <graphics/surface.h>
 #include <matrixsim.h>
@@ -17,6 +16,7 @@
 
 // include available patterns here.
 #include <patterns/BouncingDot.h>
+#include <patterns/GraphicsTest.h>
 
 typedef struct
 {
@@ -33,7 +33,7 @@ public:
     void register_pattern(pattern_ptr);
     void process();
 private:
-    LinkedList<pattern_ptr> patterns;
+    std::vector<pattern_ptr> patterns;
 };
 
 #endif

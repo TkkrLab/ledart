@@ -110,16 +110,12 @@ void MatrixSimulator::draw(surface_ptr surf)
     static RGBColor_t color = {0, 0, 0, 0};
     static RGBColor_t previous_color = {0, 0, 0, 0};
 
-    if(surf == NULL)
+    if(!surf)
     {
         return;
     }
 
     surf_rect = surf->get_rect();
-
-    // fill background.
-    // SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
-    // SDL_RenderClear(this->renderer);
 
     // // draw pixels
     for(int y = 0; y < surf_rect.height; y++)
@@ -132,8 +128,8 @@ void MatrixSimulator::draw(surface_ptr surf)
             this->last_surf->read_pixel(x, y, previous_color);
             if(color != previous_color)
             {
-                // draw border when pixelsize < 5
-                this->draw_rect(pixel, color, (this->pixelsize < 5) ? false:true);
+                // draw border when pixelsize > 5
+                this->draw_rect(pixel, color, (this->pixelsize > 5) ? true:false);
                 this->last_surf->write_pixel(x, y, color);
             }
         }
@@ -150,7 +146,12 @@ void MatrixSimulator::process(surface_ptr surf)
     if(!running)
         return;
 
-    this->draw(surf);
+    // only draw x times a second.
+    if((SDL_GetTicks() - this->pre_tick) >= this->interval)
+    {
+        this->pre_tick = SDL_GetTicks();
+        this->draw(surf);
+    }
 }
 
 void MatrixSimulator::handle_input(SDL_Event event, void *p)

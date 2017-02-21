@@ -8,19 +8,81 @@
 	"buffers":
 	[
 		{
-			"file": "Sconstruct",
+			"file": "src/yaml-parse.cpp",
 			"settings":
 			{
-				"buffer_size": 3358,
+				"buffer_size": 3777,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "README.md",
+			"file": "src/matrixsim.cpp",
 			"settings":
 			{
-				"buffer_size": 149,
+				"buffer_size": 7142,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/patterns/BouncingDot.cpp",
+			"settings":
+			{
+				"buffer_size": 521,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "configs/test.yml",
+			"settings":
+			{
+				"buffer_size": 377,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/graphics/colors.h",
+			"settings":
+			{
+				"buffer_size": 1480,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Sconstruct",
+			"settings":
+			{
+				"buffer_size": 3452,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/graphics/surface.cpp",
+			"settings":
+			{
+				"buffer_size": 1986,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/graphics/surface.h",
+			"settings":
+			{
+				"buffer_size": 772,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/matrixsim.h",
+			"settings":
+			{
+				"buffer_size": 1094,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -268,10 +330,49 @@
 	},
 	"expanded_folders":
 	[
-		"/home/duality/Documents/projects/ledart"
+		"/home/duality/Documents/projects/ledart",
+		"/home/duality/Documents/projects/ledart/configs",
+		"/home/duality/Documents/projects/ledart/include",
+		"/home/duality/Documents/projects/ledart/include/graphics",
+		"/home/duality/Documents/projects/ledart/src",
+		"/home/duality/Documents/projects/ledart/src/graphics",
+		"/home/duality/Documents/projects/ledart/src/patterns"
 	],
 	"file_history":
 	[
+		"/home/duality/Documents/projects/ledart/src/main.cpp",
+		"/home/duality/Documents/projects/ledart/include/graphics/colors.h",
+		"/home/duality/Documents/projects/ledart/src/graphics/surface.cpp",
+		"/home/duality/Documents/projects/ledart/include/graphics/surface.h",
+		"/home/duality/Documents/projects/ledart/src/network/lmcp.cpp",
+		"/home/duality/Documents/projects/ledart/include/matrixsim.h",
+		"/home/duality/Documents/projects/ledart/src/yaml-parse.cpp",
+		"/home/duality/Documents/projects/ledart/src/matrixsim.cpp",
+		"/home/duality/Documents/projects/ledart/src/network/network.cpp",
+		"/home/duality/Documents/projects/ledart/include/builder.h",
+		"/home/duality/Documents/projects/ledart/src/eventhandler.cpp",
+		"/home/duality/Documents/projects/ledart/src/builder.cpp",
+		"/home/duality/Documents/projects/ledart/include/graphics/graphics.h",
+		"/home/duality/Documents/projects/ledart/src/graphics/graphics.cpp",
+		"/home/duality/Documents/projects/ledart/include/patterns/patterns.h",
+		"/home/duality/Documents/projects/ledart/include/yaml-parse.h",
+		"/home/duality/Documents/projects/ledart/include/network/network.h",
+		"/home/duality/Documents/projects/ledart/include/network/lmcp.h",
+		"/home/duality/Documents/projects/ledart/include/patterns/GraphicsTest.h",
+		"/home/duality/Documents/projects/ledart/include/patterns/BouncingDot.h",
+		"/home/duality/Documents/projects/ledart/configs/test.yml",
+		"/home/duality/Documents/projects/ledart/src/testing.cpp",
+		"/home/duality/Documents/projects/ledart/src/patterns/patterns.cpp",
+		"/home/duality/Documents/projects/ledart/valgrindlog.txt",
+		"/home/duality/Documents/projects/ledart/libraries/LinkedList/include/linkedlist.h",
+		"/home/duality/Documents/projects/ledart/libraries/LinkedList/src/linkedlist.tcc",
+		"/home/duality/Documents/projects/ledart/libraries/LinkedList/src/main.cpp",
+		"/home/duality/Documents/projects/ledart/Sconstruct",
+		"/home/duality/Documents/projects/LinkedList/Sconstruct",
+		"/home/duality/Documents/projects/ledart/include/mtools.h",
+		"/home/duality/Documents/projects/ledart/README.md",
+		"/home/duality/Documents/projects/ledart/src/patterns/BouncingDot.cpp",
+		"/home/duality/Documents/projects/ledart/src/patterns/GraphicsTest.cpp",
 		"/home/duality/Documents/projects/ledart/Sconstruct.sec",
 		"/home/robert/Interactive-Life/include/life.h",
 		"/home/robert/Interactive-Life/src/life.cpp",
@@ -366,44 +467,11 @@
 		"/home/robert/py-ledart/MatrixSim/Interfaces/PygameInterface.py",
 		"/home/robert/kernelmodule-sdio-bitbang/testing/Makefile",
 		"/home/robert/kernelmodule-sdio-bitbang/testing/stop.c",
-		"/home/robert/kernelmodule-sdio-bitbang/testing/start.c",
-		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-5.c",
-		"/home/robert/ledboard-art/ledboard.py",
-		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-2.c",
-		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-3.c",
-		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-1.c",
-		"/home/robert/kernelmodule-sdio-bitbang/testing/hello-4.c",
-		"/home/robert/kernelmodule-sdio-bitbang/src/main.c",
-		"/home/robert/kernelmodule-sdio-bitbang/Sconstruct",
-		"/home/robert/kernelmodule-sdio-bitbang/src/makefile",
-		"/home/robert/Documents/lmcp/Sconstruct",
-		"/home/robert/Documents/lmcp/include/lmcp.h",
-		"/home/robert/Documents/lmcp/src/lmcp.cpp",
-		"/home/robert/Documents/lmcp/src/test.cpp",
-		"/home/robert/Documents/lmcp/RFC133742.txt",
-		"/home/robert/RFC133743.txt",
-		"/home/robert/projects/avr-dobbelsteen/src/main.c",
-		"/home/robert/projects/avr-dobbelsteen/Sconstruct",
-		"/home/robert/projects/avr-asm/testbuild/main2.asm",
-		"/home/robert/projects/avr-asm/testbuild/main1.asm",
-		"/home/robert/ledart/Sconstruct",
-		"/home/robert/testc/mmalloc.c",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/types.h",
-		"/home/robert/Sketchbook/sketchbook/piano-keyboard-test/piano-keyboard-test.ino",
-		"/home/robert/Documents/lmcp/include/font7x5.h",
-		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/midi-keyboard-duality.ino",
-		"/home/robert/Documents/Arduino-Ide/arduino-1.6.7/hardware/arduino/avr/cores/arduino/Print.h",
-		"/home/robert/Sketchbook/sketchbook/midi-keyboard-duality/header-layout.txt",
-		"/home/robert/keyindexes.c",
-		"/home/robert/newtimes.c",
-		"/home/robert/newnotes.c",
-		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/song.h",
-		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/song/notes.h",
-		"/home/robert/Sketchbook/sketchbook/libraries/the_synth/examples/modulation/modulation.ino"
+		"/home/robert/kernelmodule-sdio-bitbang/testing/start.c"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -418,6 +486,43 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"other->",
+			"->",
+			"get_surface",
+			"color",
+			"->",
+			"blue",
+			"->",
+			".",
+			"alpha",
+			"c.",
+			"color",
+			"_surface",
+			"surface",
+			"pname",
+			".",
+			"RGBColor_t *",
+			"Surface",
+			"RGBColor_t *Surface",
+			"RGBColor_t *",
+			"const char *",
+			"Surface *",
+			"*);\n",
+			"Surface *);",
+			"Surface *",
+			"pattern_job",
+			"pat",
+			"std::shared_ptr<Pattern_t>",
+			"pat",
+			"unique_ptr",
+			".",
+			"Pattern_t",
+			"pattern_t",
+			"Pattern_t",
+			"Pattern_t *",
+			"matrix_dims",
+			"everything",
+			"inheret",
 			"r.height",
 			"r.width",
 			"cell_height",
@@ -508,44 +613,7 @@
 			"uint16_t",
 			"uint8_t",
 			"data",
-			"[lmcp]",
-			"packet_len",
-			"offset",
-			"packet_len",
-			"rand",
-			"time",
-			"2000",
-			"-D",
-			"testdata",
-			"static",
-			"data",
-			"printf",
-			"\" PRIu16 \"",
-			"char",
-			" %u",
-			"valid_header",
-			"printf",
-			" & 0xFF00",
-			"packet_pos",
-			"pt",
-			"data",
-			"be",
-			"\n    uint8_t testmagick[4] = {'L', 'M', 'C', 'P'};\n    memcpy(data+1000-4, testmagick, 4);\n    lmcp.processPacket(data, 1000);\n\n    memset(data, 0, 1000);\n    lmcp.processPacket(data, 1000);\n\n    // -----------------------------------------[ver]-[ c-sum  ]\n    uint8_t testdata[20] = {'L', 'M', 'C', 'P', 0x00, 0x00, 0x19,\n                            0x11, 0x02, 0x00, 0x02, 0x00, 0x04};\n    // c-sum should be 25",
-			"testmagick",
-			");\n",
-			"sum",
-			"i",
-			"packet_pos",
-			" 0,",
-			"pianokeys[i].",
-			"uint16_t",
-			"millis",
-			"micros",
-			"millis",
-			"uint32_t",
-			"micros",
-			"millis",
-			"mapped"
+			"[lmcp]"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -563,24 +631,170 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Sconstruct",
+					"file": "src/yaml-parse.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3358,
+						"buffer_size": 3777,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1287,
-								1287
+								2021,
+								2021
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 609.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/matrixsim.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4042,
+								4042
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1209.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/patterns/BouncingDot.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 521,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								165,
+								518
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "configs/test.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								123
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "include/graphics/colors.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								687,
+								687
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Sconstruct",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								956,
+								956
 							]
 						],
 						"settings":
@@ -590,38 +804,100 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 573.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "README.md",
+					"buffer": 6,
+					"file": "src/graphics/surface.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 149,
+						"buffer_size": 1986,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								132,
-								138
+								1876,
+								1876
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 712.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "include/graphics/surface.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "include/matrixsim.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1014,
+								1014
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -35128,7 +35404,7 @@
 	},
 	"output.exec":
 	{
-		"height": 117.0
+		"height": 155.0
 	},
 	"output.find_results":
 	{

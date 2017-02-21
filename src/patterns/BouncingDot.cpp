@@ -3,14 +3,15 @@
 BouncingDot::BouncingDot(rect_t dims):
 Graphics(dims)
 {
-    this->fill(background_color);
+    this->fill(BLACK);
 }
 
 void BouncingDot::generate()
 {
+    // this->fill(BLACK);
     rect_t grect = this->get_rect();
 
-    this->draw_pixel(this->posx, this->posy, this->pixel_color);
+    this->draw_pixel(this->posx, this->posy, WHITE);
 
     this->posx += this->dirx;
     this->posy += this->diry;

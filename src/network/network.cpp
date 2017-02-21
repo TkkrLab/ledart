@@ -24,26 +24,27 @@ int hostname_to_ip(const char *hostname, char *ip)
 
 Network::Network(std::string target, uint16_t port)
 {
-    // this->target = target;
-    if(this->target == NULL || target.empty())
+    char temp_target[20];
+    
+    if(this->target.empty() && target.empty())
     {
-        strcpy(this->target, "127.0.0.1");
+        this->target = "127.0.0.1";
     }
     else
     {
-        // strcpy(this->target, target);
-        if(hostname_to_ip(target.c_str(), this->target))
+        if(hostname_to_ip(target.c_str(), temp_target))
         {
             printf("Failed to resolve hostname! exiting.\n");
             exit(1);
         }
         else
         {
-            printf("[%s] resolved to [%s].\n", target.c_str(), this->target);
+            this->target = temp_target;
+            printf("[%s] resolved to [%s].\n", target.c_str(), this->target.c_str());
         }
     }
     this->port = port;
-    printf("target: %s:%d\n", this->target, this->port);
+    printf("target: %s:%d\n", this->target.c_str(), this->port);
     this->open();
 }
 
@@ -60,7 +61,7 @@ void Network::open()
     // fill with non changing data.
     this->addr.sin_family = AF_INET;
     this->addr.sin_port = htons(this->port);
-    inet_pton(AF_INET, this->target, &(this->addr.sin_addr));
+    inet_pton(AF_INET, this->target.c_str(), &(this->addr.sin_addr));
 }
 
 

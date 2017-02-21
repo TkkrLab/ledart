@@ -36,6 +36,9 @@ class MatrixSimulator
         rect_t screen_dims;
         rect_t pixel;
 
+        uint32_t interval = 1000 / 25;
+        uint32_t pre_tick = 0;
+
         uint32_t num_instances;
         // sdl
         Uint32 window_id;

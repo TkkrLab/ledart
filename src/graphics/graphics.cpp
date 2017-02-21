@@ -136,3 +136,8 @@ void Graphics::draw_rect(int x, int y, int width, int height, int thickness, RGB
         }
     }
 }
+
+
+void Graphics::draw_elipse(int x0, int y0, int x1, int y1, RGBColor_t color)
+{
+}

@@ -75,11 +75,6 @@ PatternJobs patternjobs = PatternJobs();
 // this build objects that are known from name.
 Builder builder = Builder();
 
-void cleanup()
-{
-    printf("\ncleanup needed\n");
-}
-
 // called when keyboard intterup comes
 void ki_func(int sig)
 {
@@ -111,8 +106,7 @@ int main(int argc, char **argv)
 
     uint64_t previous_frames = 0;
     uint64_t frames = 0;
-
-    atexit(cleanup);
+    
     signal(SIGINT, ki_func);
     general_info();
     arg_parse(argc, argv);

@@ -1,6 +1,7 @@
 minimatrix:
-    matrix: {x: 0, y: 0, width: 64, height: 32}
-    pattern: {job: BouncingDot}
+    matrix: {x: 0, y: 0, width: 128, height: 64}
+    # pattern: {job: BouncingDot}
+    pattern: {job: GraphicsTest}
     # protocol: {type: Lmcp, target: minimatrix, port: 1337}
     matrixsim: {pixelsize: 10}
 # megamatrix:

@@ -21,13 +21,13 @@ system_libs = ['pthread', 'SDL2']
 
 # local libs are libraries inside of the project libraries folder.
 # asuming the library folder has the same name as the library folderl (lib+foldername).
-local_libs = ['gflags', 'yaml-cpp', 'LinkedList']
+local_libs = ['gflags', 'yaml-cpp']
 
 
 # compiler flags for when doing development.
 cc_dev_flags = []
 cc_dev_flags.append('-ggdb3')
-cc_dev_flags.append('-Og')
+cc_dev_flags.append('-O0')
 cc_dev_flags.append('-fdiagnostics-color=always')
 cc_dev_flags.append('-fno-omit-frame-pointer')
 
