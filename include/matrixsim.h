@@ -41,6 +41,8 @@ class MatrixSimulator
         Uint32 window_id;
         SDL_Window *window;
         SDL_Renderer *renderer;
+
+        surface_ptr last_surf;
 };
 
 typedef std::shared_ptr<MatrixSimulator> simulator_ptr;

@@ -12,6 +12,20 @@ typedef struct RGBColor_t
     RGBColor_t(uint8_t r, uint8_t g, uint8_t b, uint8_t a):
     red(r), green(g), blue(b), alpha(a){}
     
+    bool operator==(const RGBColor_t &other) const
+    {
+        bool condition = ((this->red == other.red) &&
+                          (this->green == other.green) &&
+                          (this->blue == other.blue) &&
+                          (this->alpha == other.alpha));
+        return condition;
+    }
+
+    bool operator!=(const RGBColor_t &other) const
+    {
+        return !(*this == other);
+    }
+
     uint8_t red;
     uint8_t green;
     uint8_t blue;

@@ -83,6 +83,9 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
         exit(-1);
     }
 
+    // for keeping previous state
+    this->last_surf = surface_ptr(new Surface(dims));
+
     // set a event handler callback.
     handler_params.instance = this;
     global_event_handler.register_handler(this->handle_input, (void *)&handler_params);
@@ -105,6 +108,7 @@ void MatrixSimulator::draw(surface_ptr surf)
 {
     static rect_t surf_rect = {0, 0, 0, 0};
     static RGBColor_t color = {0, 0, 0, 0};
+    static RGBColor_t previous_color = {0, 0, 0, 0};
 
     if(surf == NULL)
     {
@@ -114,8 +118,8 @@ void MatrixSimulator::draw(surface_ptr surf)
     surf_rect = surf->get_rect();
 
     // fill background.
-    SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
-    SDL_RenderClear(this->renderer);
+    // SDL_SetRenderDrawColor(this->renderer, 0x00, 0x00, 0x00, 0x00);
+    // SDL_RenderClear(this->renderer);
 
     // // draw pixels
     for(int y = 0; y < surf_rect.height; y++)
@@ -125,8 +129,13 @@ void MatrixSimulator::draw(surface_ptr surf)
             pixel.x = x * this->pixel.width;
             pixel.y = y * this->pixel.height;
             surf->read_pixel(x, y, color);
-            // draw border when pixelsize < 3
-            this->draw_rect(pixel, color, (this->pixelsize < 5) ? false:true);
+            this->last_surf->read_pixel(x, y, previous_color);
+            if(color != previous_color)
+            {
+                // draw border when pixelsize < 5
+                this->draw_rect(pixel, color, (this->pixelsize < 5) ? false:true);
+                this->last_surf->write_pixel(x, y, color);
+            }
         }
     }
 
