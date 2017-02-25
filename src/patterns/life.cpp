@@ -18,6 +18,8 @@ Graphics(rect)
 
 void Life::swap_buffers()
 {
+    // get and set surface deal with references.
+    // so we swap the references to the surfaces.
     source_ptr temp = this->get_surface();
     this->set_surface(this->buffer->get_surface());
     this->buffer->set_surface(temp);
@@ -32,37 +34,27 @@ void Life::process()
     {
         for(int y = 0; y < this->get_rect().height; y++)
         {
-            around = this->cells_around(x, y);
             this->read_pixel(x, y, color);
-            if(color == this->color_alive)
-            {
-                if(around == this->surviveAbility)
-                {
-                    this->buffer->write_pixel(x, y, this->color_alive);
-                }
-                else if(around == this->surviveAbility + 1)
-                {
-                    this->buffer->write_pixel(x, y, this->color_alive);
-                }
-                else
-                {
-                    this->buffer->write_pixel(x, y, this->color_dead);
-                }
-            }
-            else
-            {
-                if(around == this->reproductiveNumber)
-                {
-                    this->buffer->write_pixel(x, y, this->color_alive);
-                }
-                else
-                {
-                    this->buffer->write_pixel(x, y, this->color_dead);
-                }
-            }
+
+            around = this->cells_around(x, y);
+            color = this->new_state(color, around);
+            this->buffer->write_pixel(x, y, color);
         }
     }
     this->swap_buffers();
+}
+
+RGBColor_t Life::new_state(RGBColor_t current, int neighbors)
+{
+    if(current == this->color_alive && (neighbors < 2 || neighbors > 3))
+    {
+        return this->color_dead;
+    }
+    if(current == this->color_dead && neighbors == 3)
+    {
+        return this->color_alive;
+    }
+    return current;
 }
 
 int Life::cells_around(int x, int y)
