@@ -6,8 +6,8 @@
 */
 
 #include <memory>
-
 #include <math.h>
+
 #include <mtools.h>
 #include <graphics/surface.h>
 #include <graphics/colors.h>
@@ -17,6 +17,7 @@ class Graphics: public Surface
 public:
     Graphics();
     Graphics(rect_t);
+    Graphics(rect_t, YAML::Node);
 
     void draw_pixel(int, int, RGBColor_t);
     void xLine(int, int, int, RGBColor_t);

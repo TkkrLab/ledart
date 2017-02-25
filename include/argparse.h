@@ -6,13 +6,14 @@
     and for parsing config files.
 */
 
+#include <string>
+
 #include <yaml-cpp/yaml.h>
 #include <gflags/gflags.h>
 
 #include <eventhandler.h>
 #include <patterns/patterns.h>
 
-#include <string>
 #include <builder.h>
 #include <matrixsim.h>
 #include <network/network.h>
@@ -27,9 +28,6 @@ typedef struct {
     // serves as prefix.
     std::string config_file = "configs/";
 } options_t;
-
-extern PatternJobs patternjobs;
-extern Builder builder;
 
 int parse_yaml(std::string);
 options_t arg_parse(int, char**);

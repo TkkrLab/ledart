@@ -1,6 +1,7 @@
 #ifndef __COLORS_H__
 #define __COLORS_H__
 
+#include <map>
 #include <memory>
 #include <stdint.h>
 
@@ -50,5 +51,32 @@ typedef std::shared_ptr<RGBColor_t> RGBColor_ptr;
 #define BLUE        RGBColor_t({0x00, 0x00, 0xff, 0x00})
 #define PURPLE      RGBColor_t({0x80, 0x00, 0x80, 0x00})
 #define FUCHSIA     RGBColor_t({0xff, 0x00, 0xff, 0x00})
+
+std::map<std::string, RGBColor_t> colors;
+colors["WHITE"] = WHITE;
+colors["BLACK"] = BLACK;
+colors["GRAY"] = GRAY;
+colors["SILVER"] = SILVER;
+colors["MAROON"] = MAROON;
+colors["RED"] = RED;
+colors["OLIVE"] = OLIVE;
+colors["YELLOW"] = YELLOW;
+colors["GREEN"] = GREEN;
+colors["LIME"] = LIME;
+colors["TEAL"] = TEAL;
+colors["AQUA"] = AQUA;
+colors["NAVY"] = NAVY;
+colors["BLUE"] = BLUE;
+colors["PURPLE"] = PURPLE;
+colors["FUCHSIA"] = FUCHSIA;
+
+
+RGBColor_t parse_color(std::string colorstr)
+{
+    if(colorstr.startswith("(") || colorstr.startswith("["))
+    {}
+    else
+    {}
+}
 
 #endif

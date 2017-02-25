@@ -2,6 +2,9 @@
 
 using namespace google;
 
+extern PatternJobs patternjobs;
+extern Builder builder;
+
 DEFINE_double(fps, 0, "Set Fps for program.");
 DEFINE_bool(showFps, false, "enable fps printing.");
 DEFINE_bool(n, false, "run program once.");
@@ -105,7 +108,7 @@ int parse_yaml(std::string config_file)
         // after all this we are sure pattern exist.
         // because we did a test for that earlier.
         std::string name = pattern["job"].as<std::string>().c_str();
-        surf = builder.surface_builder(name, matrix_rect);
+        surf = builder.surface_builder(name, matrix_rect, pattern);
         if(surf == NULL)
         {
             fprintf(stderr,

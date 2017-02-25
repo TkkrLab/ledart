@@ -34,15 +34,17 @@
     * more on surface object construction?
 */
 
-#include <iostream>
 #include <stdio.h>
+#include <iostream>
+
 extern "C"
 {
     #include <SDL2/SDL.h>
 }
 
-#include <argparse.h>
+#include <timer.h>
 #include <builder.h>
+#include <argparse.h>
 #include <eventhandler.h>
 #include <patterns/patterns.h>
 
@@ -53,13 +55,6 @@ PatternJobs patternjobs = PatternJobs();
 // this build objects that are known from name.
 Builder builder = Builder();
 
-// called when keyboard intterup comes
-void ki_func(int sig)
-{
-    printf("\nCaught keyboard interrupt.! signal: %d\n", sig);
-    exit(0);
-}
-
 void general_info()
 {
     printf("Build with gcc version: %s.\n", __VERSION__);
@@ -69,14 +64,11 @@ void general_info()
 
 int main(int argc, char **argv)
 {
-    uint32_t current_ticks = 0;
-    uint32_t previous_ticks = 0;
-    uint32_t interval = 1000;
-
     uint64_t previous_frames = 0;
     uint64_t frames = 0;
-    
-    signal(SIGINT, ki_func);
+
+    Timer fps_timer = Timer(1000);
+
     general_info();
 
     options_t options = arg_parse(argc, argv);
@@ -86,6 +78,7 @@ int main(int argc, char **argv)
     printf("using config_file: %s\n", options.config_file.c_str());
     if(parse_yaml(options.config_file) < 0)
     {
+        fprintf(stderr, "couldn't parse config: %s\n", options.config_file.c_str());
         return -1;
     }
 
@@ -97,17 +90,11 @@ int main(int argc, char **argv)
         patternjobs.process();
 
         // print fps information.
-        if(options.showFps)
+        if(options.showFps && fps_timer.valid())
         {
-            current_ticks = SDL_GetTicks();
-            if((current_ticks - previous_ticks) >= interval)
-            {
-                previous_ticks = SDL_GetTicks();
-                // the values for (frames - previous_frames) won't get ridiculously high
-                printf("Fps: %d          \r", (int)(frames - previous_frames));
-                fflush(stdout);
-                previous_frames = frames;
-            }
+            printf("Fps: %d          \r", (int)(frames - previous_frames));
+            fflush(stdout);
+            previous_frames = frames;
         }
         
         // if fps > 0 then it's applied. else we go for it as fast as possible.

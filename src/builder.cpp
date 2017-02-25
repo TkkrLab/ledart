@@ -1,12 +1,12 @@
 #include "builder.h"
 
-surface_ptr Builder::surface_builder(std::string name, rect_t dims)
+surface_ptr Builder::surface_builder(std::string name, rect_t dims, YAML::Node args)
 {
     surface_ptr surf;
     // there has to be a beter way then checking hardcoded names.
     if(name == GETNAME(BouncingDot))
     {
-        surf = surface_ptr(new BouncingDot(dims));
+        surf = surface_ptr(new BouncingDot(dims, args));
         return surf;
     }
     if(name == GETNAME(GraphicsTest))

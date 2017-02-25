@@ -17,6 +17,12 @@ Surface::Surface(rect_t dims)
     this->fill(color);
 }
 
+Surface::Surface(rect_t dims, YAML::Node args):
+Surface(dims)
+{
+    this->args = args;
+}
+
 // fill a surface to a certain color.
 void Surface::fill(RGBColor_t color)
 {
@@ -77,6 +83,11 @@ void Surface::create_surface()
         printf("couldn't create Surface::surface. \n");
         exit(-1);
     }
+}
+
+YAML::Node Surface::get_args()
+{
+    return this->args;
 }
 
 rect_t Surface::get_rect()

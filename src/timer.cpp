@@ -1,5 +1,10 @@
 #include "timer.h"
 
+extern "C"
+{
+    #include <SDL2/SDL.h>
+}
+
 Timer::Timer()
 {}
 

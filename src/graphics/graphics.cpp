@@ -16,6 +16,12 @@ Graphics::Graphics(rect_t dims)
     this->fill(bg);
 }
 
+Graphics::Graphics(rect_t dims, YAML::Node args)
+:Surface(dims, args)
+{
+    this->fill(bg);
+}
+
 void Graphics::draw_pixel(int x, int y, RGBColor_t color)
 {
     Surface::write_pixel(x, y, color);

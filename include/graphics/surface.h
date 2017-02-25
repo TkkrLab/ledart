@@ -8,6 +8,8 @@
 #include <string.h>
 #include <stdio.h>
 
+#include <yaml-cpp/yaml.h>
+
 #include <graphics/colors.h>
 
 typedef struct
@@ -20,14 +22,27 @@ typedef struct
 
 typedef RGBColor_t * source_ptr;
 
+template<class T>
+T get_arg(YAML::Node arg, T _default)
+{
+    if(arg)
+    {
+        return arg.as<T>();
+    }
+    return _default;
+}
+
 class Surface
 {
 public:
     Surface();
     Surface(rect_t);
+    Surface(rect_t, YAML::Node);
+
     void create_surface();
 
     rect_t get_rect();
+    YAML::Node get_args();
     source_ptr &get_surface();
     void set_surface(source_ptr &);
 
@@ -41,6 +56,7 @@ public:
 
     ~Surface();
 private:
+    YAML::Node args;
     RGBColor_t *surface;
     rect_t rect;
 };
