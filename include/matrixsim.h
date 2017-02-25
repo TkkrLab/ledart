@@ -14,6 +14,14 @@ extern "C"
 #include <eventhandler.h>
 #include <graphics/surface.h>
 
+class MatrixSimulator;
+typedef struct 
+{
+    // i'll allow this pointer and not wrap it in a smart pointer.
+    // since it's just a reference nothing more.
+    MatrixSimulator* instance;
+} handler_params_t;
+
 class MatrixSimulator
 {
     public:
@@ -39,7 +47,9 @@ class MatrixSimulator
         uint32_t interval = 1000 / 25;
         uint32_t pre_tick = 0;
 
-        uint32_t num_instances;
+        static uint32_t num_instances;
+        handler_params_t handler_params;
+
         // sdl
         Uint32 window_id;
         SDL_Window *window;
@@ -47,6 +57,7 @@ class MatrixSimulator
 
         surface_ptr last_surf;
 };
+
 
 typedef std::shared_ptr<MatrixSimulator> simulator_ptr;
 

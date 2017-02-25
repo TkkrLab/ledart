@@ -3,14 +3,7 @@
 // access to the global event handler
 extern EventHandler global_event_handler;
 
-typedef struct 
-{
-    // i'll allow this pointera and not wrap it in a smart pointer.
-    // since it's just a reference nothing more.
-    MatrixSimulator* instance;
-} handler_params_t;
-
-static handler_params_t handler_params;
+uint32_t MatrixSimulator::num_instances = 0;
 
 MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
 {
@@ -87,8 +80,9 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
     this->last_surf = surface_ptr(new Surface(dims));
 
     // set a event handler callback.
-    handler_params.instance = this;
-    global_event_handler.register_handler(this->handle_input, (void *)&handler_params);
+    this->handler_params.instance = this;
+    global_event_handler.register_handler(this->handle_input, (void *)&(this->handler_params));
+
     this->num_instances++;
 }
 
@@ -166,10 +160,12 @@ void MatrixSimulator::handle_input(SDL_Event event, void *p)
         fprintf(stderr, "received NULL instance.\n");
         exit(-1);
     }
+
     // thins == this instance
     // see what i did there?
     MatrixSimulator *thins = params->instance;
 
+    // make sure the right events go to the right window.
     if(thins->window_id != event.window.windowID)
     {
         return;

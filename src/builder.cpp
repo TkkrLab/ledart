@@ -14,6 +14,11 @@ surface_ptr Builder::surface_builder(std::string name, rect_t dims)
         surf = surface_ptr(new GraphicsTest(dims));
         return surf;
     }
+    if(name == GETNAME(Life))
+    {
+        surf = surface_ptr(new Life(dims));
+        return surf;
+    }
     return surf;
 }
 

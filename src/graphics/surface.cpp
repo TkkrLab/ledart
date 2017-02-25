@@ -20,10 +20,12 @@ Surface::Surface(rect_t dims)
 // fill a surface to a certain color.
 void Surface::fill(RGBColor_t color)
 {
+    // static RGBColor_t pre_color = BLACK;
     for(int px = 0; px < this->rect.width; px++)
     {
         for(int py = 0; py < this->rect.height; py++)
         {
+            // this->read_pixel(px, py, color);
             this->write_pixel(px, py, color);
         }
     }
@@ -32,46 +34,36 @@ void Surface::fill(RGBColor_t color)
 // cordinate (x, y) to 1D pos
 size_t Surface::ctop(int x, int y)
 {
-    return y * this->rect.width + x;
+    x = std::max(std::min(this->rect.width, x), 0);
+    y = std::max(std::min(this->rect.height, y), 0);
+    
+    size_t index = (y * this->rect.width + x);
+    return index;
 }
 
-void Surface::write_pixel(int x, int y, RGBColor_t color)
+void Surface::write_pixel(int x, int y, RGBColor_t &color)
 {
-    if(x > (this->rect.width - 1) || x < 0)
-    {
-        return;
-    }
-    if(y > (this->rect.height - 1) || y < 0)
-    {
-        return;
-    }
+    // x = std::max(std::min(this->rect.width, x), 0);
+    // y = std::max(std::min(this->rect.height, y), 0);
+
     // get index for color.
-    int index = this->ctop(x, y);
+    const size_t index = this->ctop(x, y);
     this->surface[index] = color;
 }
 
 void Surface::read_pixel(int x, int y, RGBColor_t &color)
 {
-    if(x > (this->rect.width - 1) || x < 0)
-    {
-        return;
-    }
-    if(y > (this->rect.height - 1) || y < 0)
-    {
-        return;
-    }
+    // x = std::max(std::min(this->rect.width, x), 0);
+    // y = std::max(std::min(this->rect.height, y), 0);
     // get base index
-    size_t index = this->ctop(x, y);
+    const size_t index = this->ctop(x, y);
     // fill in the colors
-    color.red = this->surface[index].red;
-    color.green = this->surface[index].green;
-    color.blue = this->surface[index].blue;
-    color.alpha = this->surface[index].alpha;
+    color = this->surface[index];
 }
 
 void Surface::create_surface()
 {
-    size_t size = this->rect.width * this->rect.height;
+    const size_t size = this->rect.width * this->rect.height;
     this->surface = new RGBColor_t[size];
     if(this->surface == NULL)
     {
@@ -85,9 +77,14 @@ rect_t Surface::get_rect()
     return this->rect;
 }
 
-RGBColor_t *Surface::get_surface()
+source_ptr &Surface::get_surface()
 {
     return this->surface;
+}
+
+void Surface::set_surface(source_ptr &surf)
+{
+    this->surface = surf;
 }
 
 Surface::~Surface()

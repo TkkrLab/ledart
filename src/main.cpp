@@ -79,7 +79,7 @@ Builder builder = Builder();
 void ki_func(int sig)
 {
     printf("\nCaught keyboard interrupt.! signal: %d\n", sig);
-    exit(1);
+    exit(0);
 }
 
 void general_info()

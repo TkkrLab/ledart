@@ -18,6 +18,8 @@ typedef struct
     int height;
 } rect_t;
 
+typedef RGBColor_t * source_ptr;
+
 class Surface
 {
 public:
@@ -26,9 +28,10 @@ public:
     void create_surface();
 
     rect_t get_rect();
-    RGBColor_t *get_surface();
+    source_ptr &get_surface();
+    void set_surface(source_ptr &);
 
-    void write_pixel(int, int, RGBColor_t);
+    void write_pixel(int, int, RGBColor_t &);
     void read_pixel(int, int, RGBColor_t &);
     void fill(RGBColor_t);
     size_t ctop(int, int);

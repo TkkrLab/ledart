@@ -58,8 +58,11 @@ int yaml_parse(std::string config_file)
         if(matrixsim)
         {
             int pixelsize = matrixsim["pixelsize"].as<int>();
+            bool fullscreen = false;
+            if(matrixsim["fullscreen"])
+                fullscreen = matrixsim["fullscreen"].as<bool>();
             /* there is a small leak here, probably due to SDL */
-            sim = simulator_ptr(new MatrixSimulator(matrix_rect, pixelsize));
+            sim = simulator_ptr(new MatrixSimulator(matrix_rect, pixelsize, fullscreen));
         }
         else
         {
