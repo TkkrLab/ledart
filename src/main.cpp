@@ -40,33 +40,11 @@ extern "C"
 {
     #include <SDL2/SDL.h>
 }
-#include <yaml-parse.h>
 
-// project includes
+#include <argparse.h>
+#include <builder.h>
 #include <eventhandler.h>
 #include <patterns/patterns.h>
-
-#include <gflags/gflags.h>
-
-// gflags name space
-using namespace google;
-
-DEFINE_double(fps, 0, "Set Fps for program.");
-DEFINE_bool(showFps, false, "enable fps printing.");
-DEFINE_bool(n, false, "run program once.");
-DEFINE_string(config_file, "test.yml", "run with selected config_file.");
-
-typedef struct {
-    double fps = 0;
-    bool showFps = false;
-    bool run_once = false;
-    bool list = false;
-    bool debug = false;
-    // serves as prefix.
-    std::string config_file = "configs/";
-} options_t;
-
-options_t options;
 
 // search for it with extern if you want to register a event handler.
 EventHandler global_event_handler = EventHandler();
@@ -89,15 +67,6 @@ void general_info()
     printf("\n");
 }
 
-void arg_parse(int argc, char **argv)
-{
-    ParseCommandLineFlags(&argc, &argv, true);
-    options.fps = 1 / (FLAGS_fps / 1000);
-    options.run_once = FLAGS_n;
-    options.showFps = FLAGS_showFps;
-    options.config_file += std::string(FLAGS_config_file);
-}
-
 int main(int argc, char **argv)
 {
     uint32_t current_ticks = 0;
@@ -109,12 +78,13 @@ int main(int argc, char **argv)
     
     signal(SIGINT, ki_func);
     general_info();
-    arg_parse(argc, argv);
+
+    options_t options = arg_parse(argc, argv);
 
     // parse yaml config_file.
     // if return less then 0 things went wrong.
     printf("using config_file: %s\n", options.config_file.c_str());
-    if(yaml_parse(options.config_file) < 0)
+    if(parse_yaml(options.config_file) < 0)
     {
         return -1;
     }

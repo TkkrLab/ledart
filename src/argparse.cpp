@@ -1,6 +1,13 @@
-#include "yaml-parse.h"
+#include "argparse.h"
 
-int yaml_parse(std::string config_file)
+using namespace google;
+
+DEFINE_double(fps, 0, "Set Fps for program.");
+DEFINE_bool(showFps, false, "enable fps printing.");
+DEFINE_bool(n, false, "run program once.");
+DEFINE_string(config_file, "test.yml", "run with selected config_file.");
+
+int parse_yaml(std::string config_file)
 {
     rect_t matrix_rect = {0, 0, 0, 0};
 
@@ -115,4 +122,16 @@ int yaml_parse(std::string config_file)
 
     // so far so good! lets return 0 for that!
     return 0;
+}
+
+options_t arg_parse(int argc, char** argv)
+{
+    options_t options;
+
+    ParseCommandLineFlags(&argc, &argv, true);
+    options.fps = 1 / (FLAGS_fps / 1000);
+    options.run_once = FLAGS_n;
+    options.showFps = FLAGS_showFps;
+    options.config_file += std::string(FLAGS_config_file);
+    return options;
 }
