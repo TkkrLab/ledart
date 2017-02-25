@@ -1,11 +1,11 @@
 #include "graphics/colors.h"
 
-// ostream& operator<< (ostream& os, const RGBColor_t& obj) {
-//     os << "obj.getXYZ() << obj.getABC()" << '\n';
-//     return os;
-// }
+std::ostream& operator<< (std::ostream& os, const RGBColor_t& obj) {
+    os << "RGBColor_t(" << obj.red << obj.green << obj.blue << obj.alpha << ")" << std::endl;
+    return os;
+}
 
-std::map<std::string, RGBColor_t> color_map()
+inline std::map<std::string, RGBColor_t> color_map()
 {
     static std::map<std::string, RGBColor_t> colors = {{"WHITE", WHITE},
                                                        {"BLACK", BLACK},
@@ -67,8 +67,8 @@ int parse_color(std::string colorstr, RGBColor_t &color)
     /* or when it's a know string value in colors. */
     else if(alpha_str(colorstr) && (color_map().count(colorstr) > 0))
     {
-        RGBColor_t new_color = color_map()[colorstr];
-        // new_color = ;
+        color = color_map()[colorstr];
+        std::cout << "color: " << color << std::endl;
         return 0;
     }
     return 1;

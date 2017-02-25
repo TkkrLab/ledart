@@ -41,7 +41,7 @@ typedef struct RGBColor_t
     uint8_t alpha;
 } RGBColor_t;
 
-// std::ostream& operator<<(std::ostream&, const RGBColor_t&);
+std::ostream& operator<<(std::ostream&, const RGBColor_t&);
 
 /* smart pointer for allocated RGBColor_t structures. */
 typedef std::shared_ptr<RGBColor_t> RGBColor_ptr;
