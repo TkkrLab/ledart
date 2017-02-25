@@ -46,6 +46,7 @@ extern "C"
 #include <builder.h>
 #include <argparse.h>
 #include <eventhandler.h>
+#include <graphics/colors.h>
 #include <patterns/patterns.h>
 
 // search for it with extern if you want to register a event handler.

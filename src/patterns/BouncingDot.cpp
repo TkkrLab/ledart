@@ -14,7 +14,15 @@ Graphics(dims, args)
 
     std::string str_color = get_arg<std::string>(args["color"], "BLUE");
     std::cout << "std color is: " << str_color << std::endl;
-    
+
+    RGBColor_t color = BLACK;
+    parse_color("BLUE", color);
+    parse_color("(1, 2, 3)", color);
+    parse_color("[1, 2, 3]", color);
+    parse_color("(1, 2, 3, 4)", color);
+    parse_color("(1)", color);
+    parse_color("(1, 2, 3, 4, 5)", color);
+
     this->fill(BLACK);
 }
 

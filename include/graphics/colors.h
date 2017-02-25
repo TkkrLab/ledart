@@ -3,8 +3,16 @@
 
 #include <map>
 #include <memory>
+#include <iostream>
 #include <stdint.h>
+#include <algorithm>
 
+#include <mtools.h>
+
+/*
+    basic color structure that supports == and != comparisons.
+    and instantiation by ({r, g, b, a})
+*/
 typedef struct RGBColor_t
 {
     RGBColor_t():
@@ -33,8 +41,12 @@ typedef struct RGBColor_t
     uint8_t alpha;
 } RGBColor_t;
 
+// std::ostream& operator<<(std::ostream&, const RGBColor_t&);
+
+/* smart pointer for allocated RGBColor_t structures. */
 typedef std::shared_ptr<RGBColor_t> RGBColor_ptr;
 
+/* some generic color values. */
 #define WHITE       RGBColor_t({0xff, 0xff, 0xff, 0x00})
 #define BLACK       RGBColor_t({0x00, 0x00, 0x00, 0x00})
 #define GRAY        RGBColor_t({0x80, 0x80, 0x80, 0x00})
@@ -52,31 +64,8 @@ typedef std::shared_ptr<RGBColor_t> RGBColor_ptr;
 #define PURPLE      RGBColor_t({0x80, 0x00, 0x80, 0x00})
 #define FUCHSIA     RGBColor_t({0xff, 0x00, 0xff, 0x00})
 
-std::map<std::string, RGBColor_t> colors;
-colors["WHITE"] = WHITE;
-colors["BLACK"] = BLACK;
-colors["GRAY"] = GRAY;
-colors["SILVER"] = SILVER;
-colors["MAROON"] = MAROON;
-colors["RED"] = RED;
-colors["OLIVE"] = OLIVE;
-colors["YELLOW"] = YELLOW;
-colors["GREEN"] = GREEN;
-colors["LIME"] = LIME;
-colors["TEAL"] = TEAL;
-colors["AQUA"] = AQUA;
-colors["NAVY"] = NAVY;
-colors["BLUE"] = BLUE;
-colors["PURPLE"] = PURPLE;
-colors["FUCHSIA"] = FUCHSIA;
-
-
-RGBColor_t parse_color(std::string colorstr)
-{
-    if(colorstr.startswith("(") || colorstr.startswith("["))
-    {}
-    else
-    {}
-}
+/* parses input(string) to valid RGBColor_t data */
+int parse_color(std::string, RGBColor_t &);
+std::map<std::string, RGBColor_t> color_map();
 
 #endif
