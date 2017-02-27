@@ -11,12 +11,12 @@ surface_ptr Builder::surface_builder(std::string name, rect_t dims, YAML::Node a
     }
     if(name == GETNAME(GraphicsTest))
     {
-        surf = surface_ptr(new GraphicsTest(dims));
+        surf = surface_ptr(new GraphicsTest(dims, args));
         return surf;
     }
     if(name == GETNAME(Life))
     {
-        surf = surface_ptr(new Life(dims));
+        surf = surface_ptr(new Life(dims, args));
         return surf;
     }
     return surf;
