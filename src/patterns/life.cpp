@@ -7,13 +7,21 @@ Graphics(rect)
     this->fill(BLACK);
     this->buffer->fill(BLACK);
 
-    int x = 0;
-    int y = 0;
-    this->draw_pixel(x + 1, y + 0, this->color_alive);
-    this->draw_pixel(x + 2, y + 1, this->color_alive);
-    this->draw_pixel(x + 0, y + 2, this->color_alive);
-    this->draw_pixel(x + 1, y + 2, this->color_alive);
-    this->draw_pixel(x + 2, y + 2, this->color_alive);
+    // int x = 0;
+    // int y = 0;
+    // this->draw_pixel(x + 1, y + 0, this->color_alive);
+    // this->draw_pixel(x + 2, y + 1, this->color_alive);
+    // this->draw_pixel(x + 0, y + 2, this->color_alive);
+    // this->draw_pixel(x + 1, y + 2, this->color_alive);
+    // this->draw_pixel(x + 2, y + 2, this->color_alive);
+    for(int x = 0; x < this->get_rect().width; x++)
+    {
+        for(int y = 0; y < this->get_rect().height; y++)
+        {
+            RGBColor_t color = rand()%2 ? this->color_alive : this->color_dead;
+            this->draw_pixel(x, y, color);
+        }
+    }
 }
 
 void Life::swap_buffers()
