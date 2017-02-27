@@ -13,7 +13,7 @@
 class GraphicsTest: public Graphics
 {
 public:
-    GraphicsTest(rect_t rect): Graphics(rect){};
+    GraphicsTest(rect_t rect, YAML::Node args): Graphics(rect, args){};
     void generate();
 private:
 };

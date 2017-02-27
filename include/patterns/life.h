@@ -10,7 +10,7 @@
 class Life: public Graphics
 {
 public:
-    Life(rect_t);
+    Life(rect_t, YAML::Node);
     void process();
     void generate();
     void init(int, int);

@@ -1,6 +1,6 @@
 #include "patterns/patterns.h"
 
-Life::Life(rect_t rect):
+Life::Life(rect_t rect, YAML::Node):
 Graphics(rect)
 {
     this->buffer = graphics_ptr(new Graphics(rect));
