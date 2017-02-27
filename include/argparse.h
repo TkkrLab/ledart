@@ -16,7 +16,7 @@
 
 #include <builder.h>
 #include <matrixsim.h>
-#include <network/network.h>
+#include <outputs/interface.h>
 #include <graphics/surface.h>
 
 typedef struct {

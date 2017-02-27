@@ -98,7 +98,7 @@ void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
 }
 
 // draws everything to the windows/screen.
-void MatrixSimulator::draw(surface_ptr surf)
+void MatrixSimulator::draw(const surface_ptr &surf)
 {
     static rect_t surf_rect = {0, 0, 0, 0};
     static RGBColor_t color = {0, 0, 0, 0};
@@ -135,7 +135,7 @@ void MatrixSimulator::draw(surface_ptr surf)
 }
 
 // this just handles any process,
-void MatrixSimulator::process(surface_ptr surf)
+void MatrixSimulator::process(const surface_ptr &surf)
 {
     if(!running)
         return;

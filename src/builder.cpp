@@ -22,12 +22,12 @@ surface_ptr Builder::surface_builder(std::string name, rect_t dims, YAML::Node a
     return surf;
 }
 
-network_ptr Builder::protocol_builder(std::string name, std::string target, uint16_t port)
+output_ptr Builder::protocol_builder(std::string name, YAML::Node args)
 {
-    network_ptr net;
+    output_ptr net;
     if(name == GETNAME(Lmcp))
     {
-        net = network_ptr(new Lmcp(target.c_str(), port));
+        net = output_ptr(new Lmcp(args));
         return net;
     }
     return net;

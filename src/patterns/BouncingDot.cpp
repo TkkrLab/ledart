@@ -17,7 +17,7 @@ Graphics(dims, args)
 
 void BouncingDot::generate()
 {
-    this->fill(this->bg_color);
+    // this->fill(this->bg_color);
     rect_t grect = this->get_rect();
 
     this->draw_pixel(this->posx, this->posy, this->dot_color);

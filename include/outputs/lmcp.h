@@ -1,13 +1,13 @@
 #ifndef __LMCP_H__
 #define __LMCP_H__
 
+#include <outputs/network.h>
 #include <graphics/surface.h>
-#include <network/network.h>
 
 class Lmcp: public Network
 {
 public:
-    Lmcp(std::string target="", uint16_t port=1337);
+    Lmcp(YAML::Node);
     void process(surface_ptr);
     void send_command(uint8_t);
 private:

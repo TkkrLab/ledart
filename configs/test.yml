@@ -1,7 +1,7 @@
 minimatrix:
     matrix: {x: 0, y: 0, width: 128, height: 64}
-    # pattern: {job: BouncingDot, bgcolor: black, dotcolor: white}
-    pattern: {job: GraphicsTest}
+    pattern: {job: BouncingDot, bgcolor: black, dotcolor: white}
+    # pattern: {job: GraphicsTest}
     # pattern: {job: Life}
     # protocol: {type: Lmcp, target: minimatrix, port: 1337}
     matrixsim: {pixelsize: 10}

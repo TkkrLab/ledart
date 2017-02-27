@@ -11,8 +11,7 @@
 #include <matrixsim.h>
 
 // include network interfaces here.
-#include <network/network.h>
-#include <network/lmcp.h>
+#include <outputs/interface.h>
 
 // include available patterns here.
 #include <patterns/BouncingDot.h>
@@ -22,7 +21,7 @@
 typedef struct
 {
     surface_ptr surf;
-    network_ptr net;
+    output_ptr out;
     simulator_ptr sim;
 } Pattern_t;
 

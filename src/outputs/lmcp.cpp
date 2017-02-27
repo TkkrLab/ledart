@@ -1,7 +1,7 @@
-#include "network/lmcp.h"
+#include "outputs/lmcp.h"
 
-Lmcp::Lmcp(std::string target, uint16_t port):
-Network(target, port)
+Lmcp::Lmcp(YAML::Node args):
+Network(args)
 {
     
 }

@@ -19,9 +19,9 @@ void PatternJobs::process()
         if(pattern->surf)
         {
             pattern->surf->generate();
-            if(pattern->net)
+            if(pattern->out)
             {
-                pattern->net->process(pattern->surf);
+                pattern->out->process(pattern->surf);
             }
             if(pattern->sim)
             {

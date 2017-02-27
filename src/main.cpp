@@ -38,6 +38,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <iostream>
+#include <vector>
 
 extern "C"
 {

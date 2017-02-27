@@ -1,4 +1,4 @@
-#include "network/network.h"
+#include "outputs/network.h"
 
 int hostname_to_ip(const char *hostname, char *ip)
 {
@@ -22,29 +22,23 @@ int hostname_to_ip(const char *hostname, char *ip)
     return 1;
 }
 
-Network::Network(std::string target, uint16_t port)
+Network::Network(YAML::Node args)
 {
     char temp_target[20];
-    
-    if(this->target.empty() && target.empty())
+    this->target = get_arg<std::string>(args["target"], "127.0.0.1");
+    this->port = get_arg<int>(args["port"], 1337);
+
+    if(hostname_to_ip(target.c_str(), temp_target))
     {
-        this->target = "127.0.0.1";
+        fprintf(stderr, "Failed to resolve hostname! exiting.\n");
+        exit(1);
     }
     else
     {
-        if(hostname_to_ip(target.c_str(), temp_target))
-        {
-            printf("Failed to resolve hostname! exiting.\n");
-            exit(1);
-        }
-        else
-        {
-            this->target = temp_target;
-            printf("[%s] resolved to [%s].\n", target.c_str(), this->target.c_str());
-        }
+        this->target = temp_target;
+        printf("[%s] resolved to [%s].\n", target.c_str(), this->target.c_str());
     }
-    this->port = port;
-    printf("target: %s:%d\n", this->target.c_str(), this->port);
+
     this->open();
 }
 
@@ -93,15 +87,6 @@ void Network::transmit(uint8_t *data, size_t size)
     // close(this->sockfd);
 }
 
-/*
-  this function is what
-  you should override to implement protocol specifics.
-*/
-void Network::process(surface_ptr surface)
-{
-    UNUSED(surface);
-}
-
 void Network::set_port(uint16_t port)
 {
     this->port = port;
@@ -115,5 +100,5 @@ uint16_t Network::get_port()
 
 Network::~Network()
 {
-    close(this->sockfd);
+    ::close(this->sockfd);
 }

@@ -17,7 +17,7 @@ int parse_yaml(std::string config_file)
 
     simulator_ptr sim = NULL;
     surface_ptr surf = NULL;
-    network_ptr net = NULL;
+    output_ptr out = NULL;
 
     YAML::Node config = YAML::LoadFile(config_file);
     if(config.size() == 0 || !(config))
@@ -87,10 +87,8 @@ int parse_yaml(std::string config_file)
         if(protocol)
         {
             std::string type = protocol["type"].as<std::string>();
-            std::string target = protocol["target"].as<std::string>();
-            int port = protocol["port"].as<int>();
-            net = builder.protocol_builder(type, target, port);
-            if(net == NULL)
+            out = builder.protocol_builder(type, protocol);
+            if(out == NULL)
             {
                 fprintf(stderr,
                         "%s couldn't be created. not sending.\n",
@@ -120,7 +118,7 @@ int parse_yaml(std::string config_file)
         pattern_ptr pat = pattern_ptr(new Pattern_t());
         pat->surf = surf;
         pat->sim = sim;
-        pat->net = net;
+        pat->out = out;
         patternjobs.register_pattern(pat);
     }
 

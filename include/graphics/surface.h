@@ -22,6 +22,11 @@ typedef struct
 
 typedef RGBColor_t * source_ptr;
 
+/*
+    use like: variable = get_arg(YAML::Node["field"], "default value")
+    where:
+        variable is of the same type as the default value.
+*/
 template<class T>
 T get_arg(YAML::Node arg, T _default)
 {
