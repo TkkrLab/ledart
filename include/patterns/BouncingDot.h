@@ -14,6 +14,7 @@ public:
     void generate();
 private:
     RGBColor_t dot_color = WHITE;
+    RGBColor_t bg_color = BLACK;
     int posx=0, posy=0;
     int dirx=1, diry=1;
 };

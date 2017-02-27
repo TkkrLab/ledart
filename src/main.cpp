@@ -35,6 +35,8 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
 #include <iostream>
 
 extern "C"
@@ -56,6 +58,13 @@ PatternJobs patternjobs = PatternJobs();
 // this build objects that are known from name.
 Builder builder = Builder();
 
+volatile sig_atomic_t ki_int = 0;
+void ki_function(int sig)
+{
+    UNUSED(sig);
+    ki_int = 1;
+}
+
 void general_info()
 {
     printf("Build with gcc version: %s.\n", __VERSION__);
@@ -70,9 +79,11 @@ int main(int argc, char **argv)
 
     Timer fps_timer = Timer(1000);
 
-    general_info();
-
     options_t options = arg_parse(argc, argv);
+
+    signal(SIGINT, ki_function);
+
+    general_info();
 
     // parse yaml config_file.
     // if return less then 0 things went wrong.
@@ -104,6 +115,10 @@ int main(int argc, char **argv)
         
         // single run we break early or right after the first itteration.
         if(options.run_once)
+            break;
+
+        // exit on keyboard interrupt.
+        if(ki_int)
             break;
 
         // keep track of how many frames we have ran.

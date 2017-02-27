@@ -3,32 +3,21 @@
 BouncingDot::BouncingDot(rect_t dims, YAML::Node args):
 Graphics(dims, args)
 {
-    // for(YAML::const_iterator it=this->get_args().begin(); it != this->get_args().end(); ++it)
-    // {
-    //     std::cout << "Key: " << it->first.as<std::string>() << " Value: " << it->second.as<std::string>() << std::endl;
-    // }
-
     // can we get our own name?
     std::string name = get_arg<std::string>(args["job"], "nope didn't get");
     std::cout << "our name is: " << name << std::endl;
 
-    std::string str_color = get_arg<std::string>(args["color"], "BLUE");
-    std::cout << "std color is: " << str_color << std::endl;
+    std::string bgcolorstr = get_arg<std::string>(args["bgcolor"], "BLACK");
+    parse_color(bgcolorstr, this->bg_color);
+    this->fill(this->bg_color);
 
-    RGBColor_t color = BLACK;
-    parse_color("BLUE", color);
-    parse_color("(11, 2, 3)", color);
-    parse_color("[111, 2, 23]", color);
-    parse_color("(11, 2, 45, 4)", color);
-    parse_color("(1)", color);
-    parse_color("(1, 2, 3, 4, 5)", color);
-
-    this->fill(BLACK);
+    std::string dotcolorstr = get_arg<std::string>(args["dotcolor"], "WHITE");
+    parse_color(dotcolorstr, this->dot_color);
 }
 
 void BouncingDot::generate()
 {
-    // this->fill(BLACK);
+    this->fill(this->bg_color);
     rect_t grect = this->get_rect();
 
     this->draw_pixel(this->posx, this->posy, this->dot_color);

@@ -3,6 +3,8 @@
 
 #include <map>
 #include <memory>
+#include <vector>
+#include <sstream>
 #include <iostream>
 #include <stdint.h>
 #include <algorithm>
