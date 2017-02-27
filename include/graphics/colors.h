@@ -9,6 +9,8 @@
 
 #include <mtools.h>
 
+#define color_str color_map()
+
 /*
     basic color structure that supports == and != comparisons.
     and instantiation by ({r, g, b, a})

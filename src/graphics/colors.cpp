@@ -1,13 +1,17 @@
 #include "graphics/colors.h"
 
-std::ostream& operator<< (std::ostream& os, const RGBColor_t& obj) {
-    os << "RGBColor_t(" << obj.red << obj.green << obj.blue << obj.alpha << ")" << std::endl;
+std::ostream& operator<< (std::ostream& os, const RGBColor_t& color) {
+    os << "RGBColor_t(" << int(color.red) << ", " <<
+                           int(color.green) << ", " <<
+                           int(color.blue) << ", " <<
+                           int(color.alpha) <<
+                           ")" << std::endl;
     return os;
 }
 
 inline std::map<std::string, RGBColor_t> color_map()
 {
-    static std::map<std::string, RGBColor_t> colors = {{"WHITE", WHITE},
+    static std::map<std::string, RGBColor_t> _colors = {{"WHITE", WHITE},
                                                        {"BLACK", BLACK},
                                                        {"GRAY", GRAY},
                                                        {"SILVER", SILVER},
@@ -23,7 +27,7 @@ inline std::map<std::string, RGBColor_t> color_map()
                                                        {"BLUE", BLUE},
                                                        {"PURPLE", PURPLE},
                                                        {"FUCHSIA", FUCHSIA}};
-    return colors;
+    return _colors;
 }
 
 bool alpha_str(const std::string &str)
@@ -38,10 +42,12 @@ bool alpha_str(const std::string &str)
     return false;
 }
 
+#define COLOR_PARSE_OK 0
+#define COLOR_PARSE_FAIL 1
+
 /* returns 0 on succes and !0 on error. */
 int parse_color(std::string colorstr, RGBColor_t &color)
 {
-    UNUSED(color);
     std::string::iterator end_pos = std::remove(colorstr.begin(), colorstr.end(), ' ');
     colorstr.erase(end_pos, colorstr.end());
 
@@ -54,22 +60,31 @@ int parse_color(std::string colorstr, RGBColor_t &color)
             if(colorstr[i] == ',')
                 numcommas++;
         }
+
+        std::string red_str = "";
+        std::string green_str = "";
+        std::string blue_str = "";
+        std::string alpha_str = "";
         /* either with 3 or 4 values. like (r, g, b) or (r, g, b, a) */
-        if(numcommas == 2 || numcommas == 3)
+        if(numcommas == 2)
         {
             std::cout << "this is a valid color: " << colorstr << std::endl;
-            return 0;
+            return COLOR_PARSE_OK;
+        }
+        else if(numcommas == 3)
+        {
+            return COLOR_PARSE_OK;
         }
 
         std::cout << "this is not a valid color: " << colorstr << std::endl;
-        return 1;
+        return COLOR_PARSE_FAIL;
     }
     /* or when it's a know string value in colors. */
     else if(alpha_str(colorstr) && (color_map().count(colorstr) > 0))
     {
         color = color_map()[colorstr];
-        std::cout << "color: " << color << std::endl;
-        return 0;
+        return COLOR_PARSE_OK;
     }
-    return 1;
+
+    return COLOR_PARSE_FAIL;
 }

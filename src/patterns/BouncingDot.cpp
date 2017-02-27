@@ -17,9 +17,9 @@ Graphics(dims, args)
 
     RGBColor_t color = BLACK;
     parse_color("BLUE", color);
-    parse_color("(1, 2, 3)", color);
-    parse_color("[1, 2, 3]", color);
-    parse_color("(1, 2, 3, 4)", color);
+    parse_color("(11, 2, 3)", color);
+    parse_color("[111, 2, 23]", color);
+    parse_color("(11, 2, 45, 4)", color);
     parse_color("(1)", color);
     parse_color("(1, 2, 3, 4, 5)", color);
 

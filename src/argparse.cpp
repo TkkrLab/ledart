@@ -5,6 +5,7 @@ using namespace google;
 extern PatternJobs patternjobs;
 extern Builder builder;
 
+DEFINE_bool(debug, false, "enable debug logging.");
 DEFINE_double(fps, 0, "Set Fps for program.");
 DEFINE_bool(showFps, false, "enable fps printing.");
 DEFINE_bool(n, false, "run program once.");
@@ -130,8 +131,10 @@ int parse_yaml(std::string config_file)
 options_t arg_parse(int argc, char** argv)
 {
     options_t options;
+    SetUsageMessage("Usage: ");
 
     ParseCommandLineFlags(&argc, &argv, true);
+    options.debug = FLAGS_debug;
     options.fps = 1 / (FLAGS_fps / 1000);
     options.run_once = FLAGS_n;
     options.showFps = FLAGS_showFps;
