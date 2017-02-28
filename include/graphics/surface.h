@@ -61,7 +61,7 @@ public:
     virtual void generate(){};
 
 
-    virtual ~Surface(){};
+    virtual ~Surface() = default;
 
 private:
     YAML::Node args;
