@@ -21,9 +21,40 @@ typedef struct RGBColor_t
 {
     RGBColor_t():
     red(0), green(0), blue(0), alpha(0){}
+
+    RGBColor_t(RGBColor_t &&o):
+    red(o.red), green(o.green), blue(o.blue), alpha(o.alpha){}
+    RGBColor_t(const RGBColor_t &o):
+    red(o.red), green(o.green), blue(o.blue), alpha(o.alpha){}
     
     RGBColor_t(uint8_t r, uint8_t g, uint8_t b, uint8_t a):
     red(r), green(g), blue(b), alpha(a){}
+
+    RGBColor_t &operator=(const RGBColor_t &o)
+    {
+        if(this != &o)
+        {
+            this->red = o.red;
+            this->green = o.green;
+            this->blue = o.blue;
+            this->alpha = o.alpha;
+        }
+
+        return *this;
+    }
+
+    RGBColor_t &operator=(RGBColor_t &&o)
+    {
+        if(this != &o)
+        {
+            this->red = o.red;
+            this->green = o.green;
+            this->blue = o.blue;
+            this->alpha = o.alpha;
+        }
+
+        return *this;
+    }
     
     bool operator==(const RGBColor_t &other) const
     {

@@ -27,7 +27,7 @@ local_libs = ['gflags', 'yaml-cpp']
 # compiler flags for when doing development.
 cc_dev_flags = []
 cc_dev_flags.append('-ggdb3')
-cc_dev_flags.append('-O0')
+cc_dev_flags.append('-O2')
 cc_dev_flags.append('-fdiagnostics-color=auto')
 cc_dev_flags.append('-fno-omit-frame-pointer')
 

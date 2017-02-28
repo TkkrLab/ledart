@@ -3,6 +3,7 @@
 
 #include <new>
 #include <memory>
+#include <vector>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,7 +21,7 @@ typedef struct
     int height;
 } rect_t;
 
-typedef RGBColor_t * source_ptr;
+typedef std::shared_ptr<RGBColor_t> source_ptr;
 
 /*
     use like: variable = get_arg(YAML::Node["field"], "default value")
@@ -46,23 +47,25 @@ public:
 
     void create_surface();
 
-    rect_t get_rect();
-    YAML::Node get_args();
+    const rect_t &get_rect();
+    const YAML::Node get_args();
     source_ptr &get_surface();
     void set_surface(source_ptr &);
 
-    void write_pixel(int, int, RGBColor_t &);
+    void write_pixel(int, int, const RGBColor_t &);
     void read_pixel(int, int, RGBColor_t &);
-    void fill(RGBColor_t);
+    void fill(const RGBColor_t &);
     size_t ctop(int, int);
 
     // virtual generate for derived classes that override.
     virtual void generate(){};
 
-    ~Surface();
+
+    virtual ~Surface(){};
+
 private:
     YAML::Node args;
-    RGBColor_t *surface;
+    source_ptr surface;
     rect_t rect;
 };
 

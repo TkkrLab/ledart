@@ -14,11 +14,11 @@ Graphics(rect)
     // this->draw_pixel(x + 0, y + 2, this->color_alive);
     // this->draw_pixel(x + 1, y + 2, this->color_alive);
     // this->draw_pixel(x + 2, y + 2, this->color_alive);
-    for(int x = 0; x < this->get_rect().width; x++)
+    for(int x = 0; x < rect.width; x++)
     {
-        for(int y = 0; y < this->get_rect().height; y++)
+        for(int y = 0; y < rect.height; y++)
         {
-            RGBColor_t color = rand()%2 ? this->color_alive : this->color_dead;
+            RGBColor_t color = (rand() % 2) ? this->color_alive : this->color_dead;
             this->draw_pixel(x, y, color);
         }
     }
@@ -35,16 +35,15 @@ void Life::swap_buffers()
 
 void Life::process()
 {
-    static int around;
-    static RGBColor_t color;
+    static rect_t rect = this->get_rect();
+    RGBColor_t color;
 
-    for(int x = 0; x < this->get_rect().width; x++)
+    for(int x = 0; x < rect.width; x++)
     {
-        for(int y = 0; y < this->get_rect().height; y++)
+        for(int y = 0; y < rect.height; y++)
         {
+            int around = this->cells_around(x, y);
             this->read_pixel(x, y, color);
-
-            around = this->cells_around(x, y);
             color = this->new_state(color, around);
             this->buffer->write_pixel(x, y, color);
         }
@@ -52,7 +51,7 @@ void Life::process()
     this->swap_buffers();
 }
 
-RGBColor_t Life::new_state(RGBColor_t current, int neighbors)
+RGBColor_t &Life::new_state(RGBColor_t &current, int neighbors)
 {
     if(current == this->color_alive && (neighbors < 2 || neighbors > 3))
     {
@@ -67,16 +66,18 @@ RGBColor_t Life::new_state(RGBColor_t current, int neighbors)
 
 int Life::cells_around(int x, int y)
 {
+    static rect_t rect = this->get_rect();
     int n = 0;
     int nx = 0;
     int ny = 0;
     RGBColor_t color;
+
     for(int i = -1; i <= 1; i++)
     {
         for(int j = -1; j <= 1; j++)
         {
-            nx = (x + i + this->get_rect().width) % this->get_rect().width;
-            ny = (y + j + this->get_rect().height) % this->get_rect().height;
+            nx = (x + i + rect.width) % rect.width;
+            ny = (y + j + rect.height) % rect.height;
             this->read_pixel(nx, ny, color);
             if(color == this->color_alive)
                 n++;

@@ -15,7 +15,7 @@ public:
     void generate();
     void init(int, int);
     void swap_buffers();
-    RGBColor_t new_state(RGBColor_t, int);
+    RGBColor_t &new_state(RGBColor_t &, int);
     int cells_around(int, int);
 private:
     graphics_ptr buffer;
