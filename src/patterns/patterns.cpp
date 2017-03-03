@@ -21,11 +21,11 @@ void PatternJobs::process()
             pattern->surf->generate();
             if(pattern->out)
             {
-                pattern->out->process(std::move(pattern->surf));
+                pattern->out->process(pattern->surf);
             }
             if(pattern->sim)
             {
-                pattern->sim->process(std::move(pattern->surf));
+                pattern->sim->process(pattern->surf);
             }
         }
     }

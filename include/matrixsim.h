@@ -59,6 +59,6 @@ class MatrixSimulator
 };
 
 
-typedef std::unique_ptr<MatrixSimulator> simulator_ptr;
+typedef std::shared_ptr<MatrixSimulator> simulator_ptr;
 
 #endif

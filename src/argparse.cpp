@@ -116,9 +116,9 @@ int parse_yaml(std::string config_file)
             return -1;
         }
         pattern_ptr pat = pattern_ptr(new Pattern_t());
-        pat->surf = std::move(surf);
-        pat->sim = std::move(sim);
-        pat->out = std::move(out);
+        pat->surf = surf;
+        pat->sim = sim;
+        pat->out = out;
         patternjobs.register_pattern(pat);
     }
 

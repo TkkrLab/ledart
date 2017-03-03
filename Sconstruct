@@ -5,8 +5,8 @@ import fnmatch
 project_name = 'ledart'
 
 prefix = ''
-cc = prefix + 'clang'
-cxx = prefix + 'clang++'
+cc = prefix + 'gcc'
+cxx = prefix + 'g++'
 ar = prefix + 'ar'
 ranlib = prefix + 'ranlib'
 
@@ -27,7 +27,7 @@ local_libs = ['gflags', 'yaml-cpp']
 # compiler flags for when doing development.
 cc_dev_flags = []
 cc_dev_flags.append('-ggdb3')
-cc_dev_flags.append('-O0')
+cc_dev_flags.append('-O2')
 cc_dev_flags.append('-fdiagnostics-color=auto')
 cc_dev_flags.append('-fno-omit-frame-pointer')
 
