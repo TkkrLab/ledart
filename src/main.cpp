@@ -68,7 +68,7 @@ void ki_function(int sig)
 
 void general_info()
 {
-    printf("Build with gcc version: %s.\n", __VERSION__);
+    printf("Build version: %s.\n", __VERSION__);
     printf("Compiled at: %s.\n", __TIMESTAMP__);
     printf("\n");
 }
