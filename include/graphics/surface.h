@@ -55,7 +55,7 @@ public:
     void write_pixel(int, int, const RGBColor_t &);
     void read_pixel(int, int, RGBColor_t &);
     void fill(const RGBColor_t &);
-    size_t ctop(int, int);
+    int ctop(int, int);
 
     // virtual generate for derived classes that override.
     virtual void generate(){};

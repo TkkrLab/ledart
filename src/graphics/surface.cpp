@@ -37,30 +37,31 @@ void Surface::fill(const RGBColor_t &color)
 }
 
 // coordinate (x, y) to 1D pos
-size_t Surface::ctop(int x, int y)
+int Surface::ctop(int x, int y)
 {
-    // x = std::max(std::min(this->rect.width, x), 0);
-    // y = std::max(std::min(this->rect.height, y), 0);
-    const size_t index = (y * this->rect.width + x);
+    if(x < 0 || x > this->rect.width || y < 0 || y > this->rect.height)
+        return -1;
+    const int index = (y * this->rect.width + x);
     return index;
 }
 
 void Surface::write_pixel(int x, int y, const RGBColor_t &color)
 {
     // get index for color.
-    const size_t index = this->ctop(x, y);
-    this->surface.get()[index] = color;
+    const int index = this->ctop(x, y);
+    if(index >= -1)
+        this->surface.get()[index] = color;
 }
 
 void Surface::read_pixel(int x, int y, RGBColor_t &color)
 {
     // get base index
-    const size_t index = this->ctop(x, y);
-    // fill in the colors
-    color = this->surface.get()[index];
+    const int index = this->ctop(x, y);
+    if(index >= 0)
+        color = this->surface.get()[index];
 }
 
-template<typename T> std::shared_ptr<T> make_shared_array(size_t size)
+template<typename T> std::shared_ptr<T> make_shared_array(int size)
 {
    return std::shared_ptr<T>(new T[size], std::default_delete<T[]>());
 }
