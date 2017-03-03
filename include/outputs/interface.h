@@ -21,6 +21,6 @@ private:
     YAML::Node args;
 };
 
-typedef std::shared_ptr<Interface> output_ptr;
+typedef std::unique_ptr<Interface> output_ptr;
 
 #endif
