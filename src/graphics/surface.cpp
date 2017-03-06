@@ -49,7 +49,7 @@ void Surface::write_pixel(int x, int y, const RGBColor_t &color)
 {
     // get index for color.
     const int index = this->ctop(x, y);
-    if(index >= -1)
+    if(index != -1)
         this->surface.get()[index] = color;
 }
 
@@ -57,7 +57,7 @@ void Surface::read_pixel(int x, int y, RGBColor_t &color)
 {
     // get base index
     const int index = this->ctop(x, y);
-    if(index >= 0)
+    if(index != -1)
         color = this->surface.get()[index];
 }
 

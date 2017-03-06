@@ -17,7 +17,7 @@ static_lib_dir = 'lib/'
 lib_dir = 'libraries/'
 
 # system installed libs that are needed.
-system_libs = ['pthread', 'SDL2']
+system_libs = ['pthread', 'SDL2', 'asound']
 
 # local libs are libraries inside of the project libraries folder.
 # asuming the library folder has the same name as the library folderl (lib+foldername).
@@ -27,7 +27,7 @@ local_libs = ['gflags', 'yaml-cpp']
 # compiler flags for when doing development.
 cc_dev_flags = []
 cc_dev_flags.append('-ggdb3')
-cc_dev_flags.append('-O2')
+cc_dev_flags.append('-O0')
 cc_dev_flags.append('-fdiagnostics-color=auto')
 cc_dev_flags.append('-fno-omit-frame-pointer')
 

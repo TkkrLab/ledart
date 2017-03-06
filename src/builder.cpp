@@ -19,6 +19,11 @@ surface_ptr Builder::surface_builder(std::string name, rect_t dims, YAML::Node a
         surf = surface_ptr(new Life(dims, args));
         return surf;
     }
+    if(name == GETNAME(Fft))
+    {
+        surf = surface_ptr(new Fft(dims, args));
+        return surf;
+    }
     return surf;
 }
 

@@ -17,6 +17,7 @@
 #include <patterns/BouncingDot.h>
 #include <patterns/GraphicsTest.h>
 #include <patterns/life.h>
+#include <patterns/fft.h>
 
 typedef struct
 {
