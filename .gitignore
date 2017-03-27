@@ -2,3 +2,4 @@ build/
 lib/
 *.sconsign*
 *.sublime*
+core.*
