@@ -111,6 +111,9 @@ void MatrixSimulator::draw(const surface_ptr &surf)
 
     surf_rect = surf->get_rect();
 
+    // clear screen
+    this->draw_rect(this->screen_dims, BLACK, false);
+
     // // draw pixels
     for(int y = 0; y < surf_rect.height; y++)
     {
