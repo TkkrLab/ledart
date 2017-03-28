@@ -84,6 +84,9 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
     global_event_handler.register_handler(this->handle_input, (void *)&(this->handler_params));
 
     this->num_instances++;
+
+    // clear window
+    SDL_RenderClear(this->renderer);
 }
 
 void MatrixSimulator::draw_rect(rect_t rect, RGBColor_t color, bool border)
@@ -110,9 +113,6 @@ void MatrixSimulator::draw(const surface_ptr &surf)
     }
 
     surf_rect = surf->get_rect();
-
-    // clear screen
-    this->draw_rect(this->screen_dims, BLACK, false);
 
     // // draw pixels
     for(int y = 0; y < surf_rect.height; y++)
