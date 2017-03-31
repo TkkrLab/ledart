@@ -1,7 +1,6 @@
 #ifndef __PATTERNS_H__
 #define __PATTERNS_H__
 
-
 #include <memory>
 #include <vector>
 #include <string.h>
@@ -26,13 +25,13 @@ typedef struct
     simulator_ptr sim;
 } Pattern_t;
 
-typedef std::shared_ptr<Pattern_t> pattern_ptr;
+typedef std::unique_ptr<Pattern_t> pattern_ptr;
 
 class PatternJobs
 {
 public:
     PatternJobs();
-    void register_pattern(pattern_ptr);
+    void register_pattern(pattern_ptr &);
     void process();
 private:
     std::vector<pattern_ptr> patterns;

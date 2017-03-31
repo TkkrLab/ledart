@@ -21,7 +21,10 @@ typedef struct
     int height;
 } rect_t;
 
-typedef std::shared_ptr<RGBColor_t> source_ptr;
+// underlaying type of the surface (the type of the pixel data)
+typedef RGBColor_t surface_t;
+// unique_ptr to the underlying pixeldata-array.
+typedef std::unique_ptr<surface_t[]> source_ptr;
 
 /*
     use like: variable = get_arg(YAML::Node["field"], "default value")
@@ -69,6 +72,6 @@ private:
     rect_t rect;
 };
 
-typedef std::shared_ptr<Surface> surface_ptr;
+typedef std::unique_ptr<Surface> surface_ptr;
 
 #endif

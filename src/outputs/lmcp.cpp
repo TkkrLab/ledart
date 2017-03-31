@@ -14,7 +14,7 @@ void Lmcp::send_command(uint8_t command)
     transmit(data, 1);
 }
 
-void Lmcp::process(surface_ptr surf)
+void Lmcp::process(const surface_ptr &surf)
 {
     int size;
     int x;

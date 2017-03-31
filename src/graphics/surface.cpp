@@ -61,15 +61,10 @@ void Surface::read_pixel(int x, int y, RGBColor_t &color)
         color = this->surface.get()[index];
 }
 
-template<typename T> std::shared_ptr<T> make_shared_array(int size)
-{
-   return std::shared_ptr<T>(new T[size], std::default_delete<T[]>());
-}
-
 void Surface::create_surface()
 {
     const int size = this->rect.width * this->rect.height;
-    this->surface = make_shared_array<RGBColor_t>(size);
+    this->surface = source_ptr(new surface_t[size], std::default_delete<surface_t[]>());
 }
 
 const YAML::Node Surface::get_args()
@@ -89,5 +84,5 @@ source_ptr &Surface::get_surface()
 
 void Surface::set_surface(source_ptr &surf)
 {
-    this->surface = surf;
+    this->surface = std::move(surf);
 }

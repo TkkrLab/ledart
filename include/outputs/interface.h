@@ -16,11 +16,11 @@ public:
     virtual void open(){};
     virtual void close(){};
     virtual void transmit(uint8_t *, size_t){};
-    virtual void process(surface_ptr){};
+    virtual void process(const surface_ptr &){};
 private:
     YAML::Node args;
 };
 
-typedef std::shared_ptr<Interface> output_ptr;
+typedef std::unique_ptr<Interface> output_ptr;
 
 #endif

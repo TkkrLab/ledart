@@ -8,7 +8,7 @@ class Lmcp: public Network
 {
 public:
     Lmcp(YAML::Node);
-    void process(surface_ptr);
+    void process(const surface_ptr &);
     void send_command(uint8_t);
 private:
     static const uint8_t WRITE_BUFF = 0x01;

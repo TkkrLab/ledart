@@ -145,9 +145,6 @@ typedef struct RGBColor_t
 
 std::ostream& operator<<(std::ostream&, const RGBColor_t&);
 
-/* smart pointer for allocated RGBColor_t structures. */
-typedef std::shared_ptr<RGBColor_t> RGBColor_ptr;
-
 /* some generic color values. */
 #define WHITE       RGBColor_t({0xff, 0xff, 0xff, 0x00})
 #define BLACK       RGBColor_t({0x00, 0x00, 0x00, 0x00})

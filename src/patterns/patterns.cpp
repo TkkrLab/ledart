@@ -5,9 +5,9 @@ PatternJobs::PatternJobs()
     this->patterns.reserve(100);
 }
 
-void PatternJobs::register_pattern(pattern_ptr pattern)
+void PatternJobs::register_pattern(pattern_ptr &pattern)
 {
-    this->patterns.push_back(pattern);
+    this->patterns.push_back(std::move(pattern));
 }
 
 void PatternJobs::process()

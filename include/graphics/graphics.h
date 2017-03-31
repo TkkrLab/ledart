@@ -30,6 +30,6 @@ public:
 private:
 };
 
-typedef std::shared_ptr<Graphics> graphics_ptr;
+typedef std::unique_ptr<Graphics> graphics_ptr;
 
 #endif
