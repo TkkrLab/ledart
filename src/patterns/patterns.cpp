@@ -5,6 +5,8 @@ PatternJobs::PatternJobs()
     this->patterns.reserve(100);
 }
 
+// this function transfers ownershpi of pattern to the internal vector container
+// beware of that fact.
 void PatternJobs::register_pattern(pattern_ptr &pattern)
 {
     this->patterns.push_back(std::move(pattern));
