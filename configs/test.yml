@@ -5,7 +5,7 @@ minimatrix:
     # pattern: {job: Life, mode: 1}
     pattern: {job: Fft}
     # protocol: {type: Lmcp, target: minimatrix, port: 1337}
-    # matrixsim: {pixelsize: 10}
+    matrixsim: {pixelsize: 10}
 # megamatrix:
 #     matrix: {x: 0, y: 0, width: 64, height: 32}
 #     pattern: {job: BouncingDot}
