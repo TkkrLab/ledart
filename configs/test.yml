@@ -3,7 +3,8 @@ minimatrix:
     # pattern: {job: BouncingDot, bgcolor: "black", dotcolor: "white"}
     # pattern: {job: GraphicsTest}
     # pattern: {job: Life, mode: 1}
-    pattern: {job: Fft}
+    # pattern: {job: Fft}
+    pattern: {job: Fire}
     # protocol: {type: Lmcp, target: minimatrix, port: 1337}
     matrixsim: {pixelsize: 10}
 # megamatrix:

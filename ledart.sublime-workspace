@@ -17,26 +17,19 @@
 			}
 		},
 		{
-			"file": "include/matrixsim.h",
-			"settings":
-			{
-				"buffer_size": 1440,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/matrixsim.cpp",
-			"settings":
-			{
-				"buffer_size": 7200,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "include/patterns/fft.h",
 			"settings":
 			{
-				"buffer_size": 445,
+				"buffer_size": 316,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Sconstruct",
+			"settings":
+			{
+				"buffer_size": 3480,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -45,24 +38,24 @@
 			"file": "src/patterns/fft.cpp",
 			"settings":
 			{
-				"buffer_size": 2363,
+				"buffer_size": 17,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/patterns/life.cpp",
+			"file": "/home/duality/Documents/code/pasa/Makefile",
 			"settings":
 			{
-				"buffer_size": 3733,
+				"buffer_size": 109,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Sconstruct",
+			"file": "/home/duality/Documents/code/pasa/pasa.c",
 			"settings":
 			{
-				"buffer_size": 3446,
+				"buffer_size": 4492,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -314,36 +307,52 @@
 	},
 	"expanded_folders":
 	[
-		"/home/duality/Documents/projects/ledart"
+		"/home/duality/Documents/projects/ledart",
+		"/home/duality/Documents/projects/ledart/include",
+		"/home/duality/Documents/projects/ledart/include/graphics",
+		"/home/duality/Documents/projects/ledart/include/outputs",
+		"/home/duality/Documents/projects/ledart/include/patterns",
+		"/home/duality/Documents/projects/ledart/src",
+		"/home/duality/Documents/projects/ledart/src/graphics",
+		"/home/duality/Documents/projects/ledart/src/outputs",
+		"/home/duality/Documents/projects/ledart/src/patterns"
 	],
 	"file_history":
 	[
-		"/home/duality/Documents/uuren-htmlvoip.txt",
-		"/home/duality/.config/inkscape/extensions/boxmaker.py",
-		"/home/duality/Documents/projects/ledart/src/patterns/patterns.cpp",
-		"/home/duality/Documents/projects/ledart/include/patterns/patterns.h",
 		"/home/duality/Documents/projects/ledart/include/graphics/graphics.h",
 		"/home/duality/Documents/projects/ledart/src/graphics/graphics.cpp",
-		"/home/duality/Documents/projects/ledart/src/patterns/life.cpp",
-		"/home/duality/Documents/projects/ledart/include/graphics/surface.h",
 		"/home/duality/Documents/projects/ledart/src/graphics/surface.cpp",
 		"/home/duality/Documents/projects/ledart/include/graphics/colors.h",
+		"/home/duality/Documents/projects/ledart/include/patterns/GraphicsTest.h",
+		"/home/duality/Documents/projects/ledart/src/argparse.cpp",
+		"/home/duality/Documents/projects/ledart/src/patterns/patterns.cpp",
+		"/home/duality/Documents/projects/ledart/include/outputs/interface.h",
+		"/home/duality/Documents/projects/ledart/include/outputs/lmcp.h",
+		"/home/duality/Documents/projects/ledart/src/outputs/lmcp.cpp",
+		"/home/duality/Documents/projects/ledart/include/graphics/surface.h",
+		"/home/duality/Documents/projects/ledart/include/patterns/patterns.h",
+		"/home/duality/Documents/projects/ledart/include/matrixsim.h",
 		"/home/duality/Documents/projects/ledart/src/matrixsim.cpp",
+		"/home/duality/Documents/projects/ledart/Sconstruct",
+		"/home/duality/Documents/projects/ledart/src/outputs/interface.cpp",
+		"/home/duality/Documents/projects/ledart/include/outputs/network.h",
+		"/home/duality/Documents/projects/ledart/src/patterns/life.cpp",
+		"/home/duality/Documents/projects/ledart/src/patterns/fft.cpp",
+		"/home/duality/Documents/projects/ledart/include/patterns/fft.h",
+		"/home/duality/Documents/projects/ledart/include/patterns/life.h",
+		"/home/duality/.config/openbox/lxde-rc.xml",
+		"/home/duality/.config/openbox/rc.xml",
+		"/home/duality/Documents/projects/ledart/configs/default.yaml",
+		"/home/duality/Documents/projects/ledart/.gitignore",
+		"/home/duality/Documents/uuren-htmlvoip.txt",
+		"/home/duality/.config/inkscape/extensions/boxmaker.py",
 		"/home/duality/Documents/projects/ledart/src/main.cpp",
 		"/run/media/duality/0cd2641d-1939-403c-b5dc-5da38bb316a3/home/duality/Documents/Sip_html/html/index.html",
 		"/run/media/duality/0cd2641d-1939-403c-b5dc-5da38bb316a3/home/duality/Documents/Sip_html/test/test_index.html",
-		"/home/duality/Documents/projects/ledart/src/argparse.cpp",
-		"/home/duality/Documents/projects/ledart/src/outputs/lmcp.cpp",
-		"/home/duality/Documents/projects/ledart/include/outputs/lmcp.h",
-		"/home/duality/Documents/projects/ledart/include/outputs/interface.h",
 		"/home/duality/Documents/projects/ledart/include/outputs/artnet.h",
-		"/home/duality/Documents/projects/ledart/include/matrixsim.h",
 		"/home/duality/Documents/projects/ledart/src/eventhandler.cpp",
 		"/home/duality/Documents/projects/ledart/include/eventhandler.h",
-		"/home/duality/Documents/projects/ledart/src/outputs/interface.cpp",
-		"/home/duality/Documents/projects/ledart/include/outputs/network.h",
 		"/home/duality/Documents/projects/ledart/src/builder.cpp",
-		"/home/duality/Documents/projects/ledart/Sconstruct",
 		"/home/duality/Downloads/Matrix/sw/fs/trunk/src/buildroot-2015.02/output/build/ncurses-5.9/ncurses/base/MKlib_gen.sh",
 		"/home/duality/Downloads/Matrix/sw/fs/trunk/src/buildroot-2015.02/output/build/host-ncurses-5.9/ncurses/base/MKlib_gen.sh",
 		"/home/duality/.config/sublime-text-3/Packages/Origami/Default (Linux).sublime-keymap",
@@ -351,7 +360,6 @@
 		"/home/duality/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/duality/.config/sublime-text-3/Packages/Origami/Origami.sublime-settings",
 		"/home/duality/.config/sublime-text-3/Packages/User/Origami.sublime-settings",
-		"/home/duality/Documents/projects/ledart/include/patterns/life.h",
 		"/home/duality/Documents/projects/ledart/include/builder.h",
 		"/home/duality/Documents/projects/ledart/include/timer.h",
 		"/home/duality/Documents/projects/ledart/src/outputs/artnet.cpp",
@@ -362,7 +370,6 @@
 		"/home/duality/Documents/projects/ledart/include/patterns/BouncingDot.h",
 		"/home/duality/Documents/projects/ledart/include/network/network.h",
 		"/home/duality/Documents/projects/ledart/include/network/interface.h",
-		"/home/duality/Documents/projects/ledart/include/patterns/GraphicsTest.h",
 		"/home/duality/Documents/projects/ledart/src/graphics/colors.cpp",
 		"/home/duality/Documents/projects/ledart/include/mtools.h",
 		"/home/duality/Documents/projects/ledart/src/patterns/GraphicsTest.cpp",
@@ -439,13 +446,7 @@
 		"/home/robert/py-ledart/Ledart/configs/byob_conf.py",
 		"/home/robert/py-ledart/Ledart/MatrixSim/__init__.py",
 		"/home/robert/py-ledart/Ledart/Tools/Controllers/__init__.py",
-		"/home/robert/py-ledart/Ledart/Tools/NumberSegmentBitMap.py",
-		"/home/robert/py-ledart/Ledart/Tools/__init__.py",
-		"/home/robert/py-ledart/Ledart/configs/__init__.py",
-		"/home/robert/py-ledart/Ledart/MatrixSim/Interfaces/__init__.py",
-		"/home/robert/py-ledart/Ledart/requirements.txt",
-		"/home/robert/py-ledart/Ledart/Tools/Graphics/__init__.py",
-		"/home/robert/py-ledart/Ledart/Tools/Graphics/Surface.py_old"
+		"/home/robert/py-ledart/Ledart/Tools/NumberSegmentBitMap.py"
 	],
 	"find":
 	{
@@ -464,6 +465,23 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"LINES",
+			"upper_freq",
+			"NULL",
+			"optind",
+			"LINES",
+			"framesPerSecond",
+			"RGBColor_t",
+			"shared_ptr",
+			"menu",
+			"Escape",
+			"Prior",
+			"double",
+			"maximize",
+			"A-C-l",
+			"Right",
+			"move",
+			"resize",
 			"();\n",
 			"inkex",
 			"rect.width",
@@ -574,24 +592,7 @@
 			"first",
 			" ",
 			"     ",
-			"    ",
-			"   ",
-			"  ",
-			"colors",
-			"define",
-			"args",
-			"lineup",
-			"arg_node",
-			"dims",
-			"case ",
-			"field",
-			"buffer",
-			"this->field",
-			"            \n",
-			"num_around",
-			"totalAround",
-			"field_height",
-			"field_width"
+			"    "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -609,7 +610,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -625,8 +626,8 @@
 						"selection":
 						[
 							[
-								382,
-								382
+								318,
+								318
 							]
 						],
 						"settings":
@@ -637,84 +638,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "include/matrixsim.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1440,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 351.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/matrixsim.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7200,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3364,
-								3364
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1365.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "include/patterns/fft.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 445,
+						"buffer_size": 316,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								445,
-								445
+								304,
+								304
 							]
 						],
 						"settings":
@@ -722,91 +663,27 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 99.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "src/patterns/fft.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2363,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2035,
-								2035
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1131.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/patterns/life.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 357.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 2,
 					"file": "Sconstruct",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3446,
+						"buffer_size": 3480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								396,
-								396
+								400,
+								400
 							]
 						],
 						"settings":
@@ -819,7 +696,98 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/patterns/fft.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/duality/Documents/code/pasa/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 84.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "/home/duality/Documents/code/pasa/pasa.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1998,
+								1998
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 468.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -827,7 +795,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -844,21 +812,21 @@
 				1
 			],
 			[
+				1,
 				0,
-				1,
-				1,
-				2
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.5,
 			1.0
 		]
 	},
@@ -35333,7 +35301,7 @@
 	},
 	"output.exec":
 	{
-		"height": 155.0
+		"height": 153.0
 	},
 	"output.find_results":
 	{
@@ -55419,7 +55387,7 @@
 	"project": "ledart.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -55453,7 +55421,7 @@
 		],
 		"width": 393.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
