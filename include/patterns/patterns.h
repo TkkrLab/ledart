@@ -17,6 +17,7 @@
 #include <patterns/GraphicsTest.h>
 #include <patterns/life.h>
 #include <patterns/fft.h>
+#include <fire.h>
 
 typedef struct
 {
