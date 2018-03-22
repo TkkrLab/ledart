@@ -69,7 +69,7 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
     }
     this->window_id = SDL_GetWindowID(this->window);
 
-    this->renderer = SDL_CreateRenderer(this->window, -1, 0);
+    this->renderer = SDL_CreateRenderer(this->window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_ACCELERATED);
     if(this->renderer == NULL)
     {
         printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
@@ -86,6 +86,7 @@ MatrixSimulator::MatrixSimulator(rect_t dims, int pixelsize, bool go_fullscreen)
     this->num_instances++;
 
     // clear window
+    SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, 0xff);
     SDL_RenderClear(this->renderer);
 }
 
@@ -113,7 +114,7 @@ void MatrixSimulator::draw(const surface_ptr &surf)
     }
 
     surf_rect = surf->get_rect();
-
+    SDL_RenderClear(this->renderer);
     // // draw pixels
     for(int y = 0; y < surf_rect.height; y++)
     {
@@ -123,12 +124,9 @@ void MatrixSimulator::draw(const surface_ptr &surf)
             pixel.y = y * this->pixel.height;
             surf->read_pixel(x, y, color);
             this->last_surf->read_pixel(x, y, previous_color);
-            if(color != previous_color)
-            {
-                // draw border when pixelsize > 5
-                this->draw_rect(pixel, color, (this->pixelsize > 5) ? true:false);
-                this->last_surf->write_pixel(x, y, color);
-            }
+            // draw border when pixelsize > 5
+            this->draw_rect(pixel, color, (this->pixelsize > 5) ? true:false);
+            this->last_surf->write_pixel(x, y, color);
         }
     }
 

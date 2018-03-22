@@ -1,13 +1,19 @@
-minimatrix:
-    matrix: {x: 0, y: 0, width: 128, height: 64}
-    # pattern: {job: BouncingDot, bgcolor: "black", dotcolor: "white"}
-    # pattern: {job: GraphicsTest}
-    # pattern: {job: Life, mode: 1}
-    pattern: {job: Fft}
-    # protocol: {type: Lmcp, target: minimatrix, port: 1337}
-    # matrixsim: {pixelsize: 10}
+# minimatrix:
+#     matrix: {x: 0, y: 0, width: 128, height: 64}
+#     # pattern: {job: BouncingDot, bgcolor: "black", dotcolor: "white"}
+#     # pattern: {job: GraphicsTest}
+#     pattern: {job: Life, mode: 1}
+#     # pattern: {job: Fft}
+#     # pattern: {job: Fire}
+#     # protocol: {type: Lmcp, target: minimatrix, port: 1337}
+#     matrixsim: {pixelsize: 10}
 # megamatrix:
 #     matrix: {x: 0, y: 0, width: 64, height: 32}
 #     pattern: {job: BouncingDot}
 #     matrixsim: {pixelsize: 10}
     # protocol: {type: Lmcp, target: megamatrix, port: 1337}
+testjob:
+  pattern: {job: BouncingDot, bgcolor: "black", dotcolor: "white"}
+  matrix: {x: 0, y: 0, width: 64, height: 32}
+  matrixsim: {pixelsize: 10}
+  # protocol: {type: Lmcp, target: megamatrix, port: 4200}
