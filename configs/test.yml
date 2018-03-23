@@ -13,7 +13,11 @@
 #     matrixsim: {pixelsize: 10}
     # protocol: {type: Lmcp, target: megamatrix, port: 1337}
 testjob:
-  pattern: {job: BouncingDot, bgcolor: "black", dotcolor: "white"}
-  matrix: {x: 0, y: 0, width: 64, height: 32}
-  matrixsim: {pixelsize: 10}
+  # pattern: {job: BouncingDot, bgcolor: "black", dotcolor: "white"}
+  pattern: {job: GraphicsTest}
+  # pattern: {job: Life}
+  # pattern: {job: Fire}
+  # pattern: {job: Fft}
+  matrix: {x: 0, y: 0, width: 128, height: 64}
+  matrixsim: {pixelsize: 20}
   # protocol: {type: Lmcp, target: megamatrix, port: 4200}
